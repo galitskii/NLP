@@ -86,7 +86,7 @@ def check(str):
                             res = list(set(res))
                             if len(res) > 0:
                                 for r in res:
-                                    result.append(r)
+                                    result.append(r[0])
             result = list(set(result))
             if len(result) > 0:
                 if 'N' in result:
