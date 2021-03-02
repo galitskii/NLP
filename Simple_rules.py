@@ -121,7 +121,9 @@ def check(str):
 
 def spl(str):
     l = check(str)
-    if len(str) == len(l):
+    if len(l) == 0:
+        print("Ошибок в согласовании единственного и множественного числа нет")
+    elif len(str) == len(l):
         if 'E' in l:
             print("Есть незнакакомые сочетания")
         elif 'N' in l:
