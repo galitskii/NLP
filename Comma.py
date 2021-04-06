@@ -99,9 +99,7 @@ def comma(l):
                         return(['я', 'рубили'])
                 i = i - 2
             l.pop(id)
-            if (part in ['1', 'b']) and time == 'Y':
-                l.insert(id, 'он')
-            elif (part in ['1', 'b']) and time == 'N':
+            if (part in ['1', 'b']):
                 l.insert(id, 'они')
             elif (part == '5') and time == 'N':
                 l.insert(id, 'делали')
