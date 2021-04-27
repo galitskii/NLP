@@ -167,6 +167,51 @@
 \EndFunction
 \end{algorithmic}
 \end{algorithm}
+\newpage
+\begin{algorithm}
+	\caption{Обработка запятых}
+	\begin{algorithmic}[1]
+		\Function{comma}{l} \Comment{l~--- подготовленная строка}
+		\State l $\gets$ l.split()
+		\State llen $\gets$ len(l) \Comment{llen~--- длина списка l}
+		\State h $\gets$ --1 \Comment{h~--- индекс начала заменяемой части}
+		\State t $\gets$ --1 \Comment{t~--- индекс конца заменяемой части}
+		\While{'и' $ \in l$}
+		\State id1 $\gets$ l.index('и') \Comment{в id1 хранится индекс вхождения 'и'}
+		\If{l[id1 -- 2] = ','}
+		\State res1 $\gets$ l[id1 -- 1].(pos, singular, cow) \Comment{res1 содержит часть речи, число и падеж слова}
+		\For{$i \in$ res1}
+		\State part = i.pos \Comment{Записываем в part часть речи}
+		\State h $\gets $ id1 -- 1 \Comment{Левая граница заменяемого перечисления}
+		\State t $\gets$ id1 \Comment{Правая граница заменяемого перечисления}
+		\If{part = '6'} \Comment{Обработка перечисления инфинитивов}
+		\If{id1 + 1 $\le$ llen}
+		\State res2 $\gets$ l[id1 + 1].(pos, singular, cow) \Comment{Анализируем слово, расположенное следом за 'и'}
+		\If{res2.pos = part} \Comment{Если оно оказалось инфинитивом}
+		\State t $\gets$ id1 + 1
+		\EndIf
+		\State idpr = id1 -- 2 \Comment{Индекс потенциальной запятой}
+		\State idd = False \Comment{Индикатор перечисления}
+		\While{idpr $\ge$ 0}
+		\EndWhile
+		\EndIf
+		\EndIf
+		\EndFor
+		\EndIf
+		\EndWhile
+		\EndFunction
+		\algstore{bkbreak}
+		 \end{algorithmic}
+	\end{algorithm}
+ 
+\begin{algorithm}
+	\caption{Пример алгоритма}\label{alg:Examples}
+	\begin{algorithmic}[1]
+		
+		\algrestore{bkbreak}
+		\State l
+	\end{algorithmic}
+\end{algorithm}
 \begin{comment}
 
 
