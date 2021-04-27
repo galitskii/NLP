@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2019.11.7)  27 APR 2021 11:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2019.11.7)  27 APR 2021 11:51
 entering extended mode
 **./Algo.tex
 (Algo.tex
@@ -1194,32 +1194,32 @@ Package babel Info: Redefining russian shorthand "|
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language  on input line 170.
 [3] Excluding 'comment' comment.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 231.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 240.
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language  on input line 231.
+(babel)             in language  on input line 240.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language  on input line 231.
+(babel)             in language  on input line 240.
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language  on input line 231.
+(babel)             in language  on input line 240.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language  on input line 231.
+(babel)             in language  on input line 240.
  [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 231.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 240.
  (Algo.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 231.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 231.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 240.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 240.
 Package rerunfilecheck Info: File `Algo.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 231.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 240.
  ) 
 Here is how much of TeX's memory you used:
- 13979 strings out of 493323
- 195702 string characters out of 3139069
- 284199 words of memory out of 3000000
- 17245 multiletter control sequences out of 15000+200000
+ 13985 strings out of 493323
+ 195801 string characters out of 3139069
+ 286199 words of memory out of 3000000
+ 17251 multiletter control sequences out of 15000+200000
  19267 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,6n,38p,824b,451s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,6n,38p,824b,457s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Home\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi600\lac
 c1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-t2a\dpi
 600\larm1000.pk> <C:\Users\Home\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\lh\lh-
@@ -1234,9 +1234,9 @@ les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/amsfonts/symbols/msam10.pfb>
-Output written on Algo.pdf (4 pages, 141630 bytes).
+Output written on Algo.pdf (4 pages, 142523 bytes).
 PDF statistics:
- 340 PDF objects out of 1000 (max. 8388607)
+ 342 PDF objects out of 1000 (max. 8388607)
  21 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

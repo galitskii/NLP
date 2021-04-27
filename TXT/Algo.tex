@@ -190,9 +190,18 @@
 		\If{res2.pos = part} \Comment{Если оно оказалось инфинитивом}
 		\State t $\gets$ id1 + 1
 		\EndIf
-		\State idpr = id1 -- 2 \Comment{Индекс потенциальной запятой}
-		\State idd = False \Comment{Индикатор перечисления}
-		\While{idpr $\ge$ 0}
+		\State idpr $\gets$ id1 -- 2 \Comment{Индекс потенциальной запятой}
+		\State idd $\gets$ False \Comment{Индикатор перечисления}
+		\While{idpr $\ge$ 0}\Comment{Пока не дошли до начала слова}
+		\If{l[idpr] = ','}
+		\State res2 $\gets$ l[idpr + 1].(pos, singular, cow)
+		\If{res2.pos = part}
+		\State l[idpr] $\gets$ <<`>>\Comment{Заменяем <<,>> на <<'>>, чтобы дальше не находить эту запятую}
+		\State h $\gets$ idpr \Comment{Сдвигаем <<голову>> заменяемой части}
+		\State idpr $\gets$ idpr -- 2
+		\State idd $\gets$ True
+		\EndIf
+		\EndIf
 		\EndWhile
 		\EndIf
 		\EndIf
