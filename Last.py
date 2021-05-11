@@ -47,7 +47,7 @@ def comma(l):
     t = -1
     if 'и' in l:
         id1 = l.index('и')
-        if l[id1 - 2] == ',':
+        if l[id1 - 2] == ',' and id1 - 2 >= 0:
             cur.execute("select pos, singular, cow from words where word = '%s'" % l[id1 - 1])
             res1 = cur.fetchall()
             for i in res1:
@@ -86,7 +86,7 @@ def comma(l):
                             elif idd:
                                 break
                     l = l[0 : h - 1] + ['учиться'] + l[t + 1 :]
-        elif l[id1 - 3] == ',':
+        elif l[id1 - 3] == ',' and id1 - 3 >= 0:
             cur.execute("select pos, singular, cow from words where word = '%s'" % l[id1 - 2])
             res1 = cur.fetchall()
             cur.execute("select pos, singular, cow from words where word = '%s'" % l[id1 - 1])
@@ -139,7 +139,87 @@ def comma(l):
                                     h = h - 3
                                     idb = True
                                     break
+                        if h - 4 >= 0 and l[h - 1] == ',' and not(idb):
+                            cur.execute("select pos, singular, cow from words where word = '%s'" % l[h - 4])
+                            res3 = cur.fetchall()
+                            for k in res3:
+                                if k[0] == part1:
+                                    h = h - 4
+                                    idb = True
+                                    break
                         return l[:h] + ['учиться'] + l[t + 1:]
+        elif id1 - 4 >= 0 and l[id1 - 4] == ',':
+            cur.execute("select pos, singular, cow from words where word = '%s'" % l[id1 - 3])
+            res1 = cur.fetchall()
+            cur.execute("select pos, singular, cow from words where word = '%s'" % l[id1 - 2])
+            res2 = cur.fetchall()
+            cur.execute("select pos, singular, cow from words where word = '%s'" % l[id1 - 1])
+            res3 = cur.fetchall()
+            for i in res1:
+                for j in res2:
+                    for k in res3:
+                        part1 = i[0]
+                        part2 = j[0]
+                        part3 = k[0]
+                        s1 = i[1]
+                        s2 = j[1]
+                        s3 = k[1]
+                        c1 = i[2]
+                        c2 = j[2]
+                        c3 = k[2]
+                        if i[0] == '6':
+                            h = id1 - 3
+                            t = id1
+                            if id1 + 1 < llen:
+                                cur.execute("select pos, singular, cow from words where word = '%s'" % l[id1 + 1])
+                                res4 = cur.fetchall()
+                                for q in res4:
+                                    if q[0] == part1:
+                                        t = id1 + 1
+                                        break
+                            idpr = id1 - 6
+                            idd = False
+                            while idpr >= 0:
+                                if l[idpr] == ',':
+                                    h = idpr + 1
+                                    idd = True
+                                    idpr = idpr - 2
+                                elif idpr - 1 >= 0 and l[idpr - 1] == ',':
+                                    h = idpr
+                                    idd = True
+                                    idpr = idpr - 3
+                                elif idpr - 2 >= 0 and l[idpr - 2] == ',':
+                                    h = idpr - 1
+                                    idd = True
+                                    idpr = idpr - 4
+                                else:
+                                    break
+                            idb = False # индикатор того, что сработало правило для начала перечисления
+                            if l[h - 1] == ',':
+                                cur.execute("select pos, singular, cow from words where word = '%s'" % l[h - 2])
+                                res4 = cur.fetchall()
+                                for q in res4:
+                                    if q[0] == part1:
+                                        h = h - 2
+                                        idb = True
+                                        break
+                            if h - 3 >= 0 and l[h - 1] == ',' and not(idb):
+                                cur.execute("select pos, singular, cow from words where word = '%s'" % l[h - 3])
+                                res4 = cur.fetchall()
+                                for q in res4:
+                                    if q[0] == part1:
+                                        h = h - 3
+                                        idb = True
+                                        break
+                            if h - 4 >= 0 and l[h - 1] == ',' and not(idb):
+                                cur.execute("select pos, singular, cow from words where word = '%s'" % l[h - 4])
+                                res4 = cur.fetchall()
+                                for q in res4:
+                                    if q[0] == part1:
+                                        h = h - 4
+                                        idb = True
+                                        break
+                            return l[:h] + ['учиться'] + l[t + 1:]
     return l
 
 def check(lst):
