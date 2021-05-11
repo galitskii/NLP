@@ -45,7 +45,7 @@ def comma(l):
     llen = len(l)
     h = -1
     t = -1
-    if'и' in l:
+    if 'и' in l:
         id1 = l.index('и')
         if l[id1 - 2] == ',':
             cur.execute("select pos, singular, cow from words where word = '%s'" % l[id1 - 1])
@@ -55,7 +55,7 @@ def comma(l):
                 h = id1 - 1
                 t = id1
                 if part == '6':
-                    if id1 + 1 <= llen:
+                    if id1 + 1 < llen:
                         cur.execute("select pos, singular, cow from words where word = '%s'" % l[id1 + 1])
                         res2 = cur.fetchall()
                         for j in res2:
@@ -86,6 +86,60 @@ def comma(l):
                             elif idd:
                                 break
                     l = l[0 : h - 1] + ['учиться'] + l[t + 1 :]
+        elif l[id1 - 3] == ',':
+            cur.execute("select pos, singular, cow from words where word = '%s'" % l[id1 - 2])
+            res1 = cur.fetchall()
+            cur.execute("select pos, singular, cow from words where word = '%s'" % l[id1 - 1])
+            res2 = cur.fetchall()
+            for i in res1:
+                for j in res2:
+                    part1 = i[0]
+                    part2 = j[0]
+                    s1 = i[1]
+                    s2 = j[1]
+                    c1 = i[2]
+                    c2 = j[2]
+                    if part1 == '6': # идентифицировал, что словосочетание из двух слов, левое - инфинитив
+                        h = id1 - 2
+                        t = id1
+                        if id1 + 1 < llen:
+                            cur.execute("select pos, singular, cow from words where word = '%s'" % l[id1 + 1])
+                            res3 = cur.fetchall()
+                            for k in res3:
+                                if k[0] == part1:
+                                    t = id1 + 1
+                                    break
+                        idd = False
+                        idpr = id1 - 5
+                        while idpr >= 0:
+                            if l[idpr] == ',':
+                                h = idpr + 1
+                                idd = True
+                                idpr = idpr - 2
+                            elif idpr - 1 >= 0 and l[idpr - 1] == ',':
+                                h = idpr
+                                idd = True
+                                idpr = idpr - 3
+                            else:
+                                break
+                        idb = False # индикатор того, что сработало правило для начала перечисления
+                        if l[h - 1] == ',':
+                            cur.execute("select pos, singular, cow from words where word = '%s'" % l[h - 2])
+                            res3 = cur.fetchall()
+                            for k in res3:
+                                if k[0] == part1:
+                                    h = h - 2
+                                    idb = True
+                                    break
+                        if h - 3 >= 0 and l[h - 1] == ',' and not(idb):
+                            cur.execute("select pos, singular, cow from words where word = '%s'" % l[h - 3])
+                            res3 = cur.fetchall()
+                            for k in res3:
+                                if k[0] == part1:
+                                    h = h - 3
+                                    idb = True
+                                    break
+                        return l[:h] + ['учиться'] + l[t + 1:]
     return l
 
 def check(lst):
