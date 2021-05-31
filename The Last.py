@@ -154,147 +154,196 @@ def comma(l):
     if id1 + 1 < llen:
         for i in resp1:
             if i[0] == '6':
-                print("6 и 6")
+                print("6")
                 right = id1 + 1
                 part = '6'
                 break
-    if part == '6' and id1 - 4 >= 0 and left == -1: # это раньше, поскольку может быть 2 инфинитива
-        for i in resl4:
-            if i[0] == part:
-                r = check(l[id1 - 4: id1])
-                if 'N' in r:
-                    return ['N']
-                else:
-                    left = id1 - 4
-                    break
-    if part == '6' and id1 - 3 >= 0 and left == -1: 
-        for i in resl3:
-            if i[0] == part:
-                r = check(l[id1 - 3: id1])
-                if 'N' in r:
-                    return ['N']
-                else:
-                    left = id1 - 3
-                    break
-    if part == '6' and id1 - 2 >= 0 and left == -1: 
-        for i in resl2:
-            if i[0] == part:
-                r = check(l[id1 - 2: id1])
-                if 'N' in r:
-                    return ['N']
-                else:
-                    left = id1 - 2
-                    break
-    if part == '6' and id1 - 1 >= 0 and left == -1:
-        for i in resl1:
-            if i[0] == part:
-                left = id1 - 1
+            elif i[0] == '5':
+                print("5")
+                right = id1 + 1
+                part = '5'
+                sng = i[1]
                 break
-    print(left)
-    print(l)
-    if left != -1 and part == '6':
-        print("Инфинитив")
-        while l[left - 1] == ',' or l[left - 2] == ',' or l[left - 3] == ',' or l[left - 4] == ',':
-            if l[left - 1] == ',' and l[left - 3] == ',':
-                cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 2])
-                res1 = cur.fetchall()
-                res1 = list(set(res1))
-                for i in res1:
-                    if i[0] == '6':
-                        left = left - 2
+    if part == '6':
+        if id1 - 4 >= 0 and left == -1: # это раньше, поскольку может быть 2 инфинитива
+            for i in resl4:
+                if i[0] == part:
+                    r = check(l[id1 - 4: id1])
+                    if 'N' in r:
+                        return ['он', 'писали']
+                    else:
+                        left = id1 - 4
                         break
-            elif l[left - 1] == ',' and l[left - 4] == ',':
-                cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 3])
-                res1 = cur.fetchall()
-                res1 = list(set(res1))
-                for i in res1:
-                    if i[0] == '6':
-                        r = check(l[left - 3:left - 1])
-                        print("R", r)
-                        if 'N' in r:
-                            return ['N']
-                        elif 'Y' in r:
-                            left = left - 3
-                            break
-            elif l[left - 1] == ',' and l[left - 5] == ',':
-                cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 4])
-                res1 = cur.fetchall()
-                res1 = list(set(res1))
-                for i in res1:
-                    if i[0] == '6':
-                        r = check(l[left - 4:left - 1])
-                        print("R", r)
-                        if 'N' in r:
-                            return ['N']
-                        elif 'Y' in r:
-                            left = left - 4
-                            break
-            elif l[left - 1] == ',' and l[left - 6] == ',':
-                cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 5])
-                res1 = cur.fetchall()
-                res1 = list(set(res1))
-                for i in res1:
-                    if i[0] == '6':
-                        r = check(l[left - 5:left - 1])
-                        print("R", r)
-                        if 'N' in r:
-                            return ['N']
-                        elif 'Y' in r:
-                            left = left - 5
-                            break
-            elif l[left - 1] == ',' and left - 2 >= 0:
-                cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 2])
-                res1 = cur.fetchall()
-                res1 = list(set(res1))
-                for i in res1:
-                    if i[0] == '6':
-                        left = left - 2
-                        print(i[0])
+        if id1 - 3 >= 0 and left == -1: 
+            for i in resl3:
+                if i[0] == part:
+                    r = check(l[id1 - 3: id1])
+                    if 'N' in r:
+                        return ['он', 'писали']
+                    else:
+                        left = id1 - 3
                         break
-                    elif l[left - 1] == ',' and left - 3 >= 0:
-                        cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 3])
-                        res1 = cur.fetchall()
-                        res1 = list(set(res1))
-                        for i in res1:
-                            if i[0] == '6':
-                                r = check(l[left - 3:left - 1])
-                                print("R!", r)
-                                if 'N' in r:
-                                    return ['N']
-                                elif 'Y' in r:
-                                    left = left - 3
-                                    print("OK!!!")
-                                    break
-                            elif l[left - 1] == ',' and left - 4 >= 0:
-                                cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 4])
-                                res1 = cur.fetchall()
-                                res1 = list(set(res1))
-                                for i in res1:
-                                    if i[0] == '6':
-                                        r = check(l[left - 4:left - 1])
-                                        print("R!!!", r)
-                                        if 'N' in r:
-                                            return ['N']
-                                        elif 'Y' in r:
-                                            left = left - 4
-                                            print("OK!!!!!")
-                                            break
-                                    elif l[left - 1] == ',' and left - 5 >= 0:
-                                        cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 5])
-                                        res1 = cur.fetchall()
-                                        res1 = list(set(res1))
-                                        for i in res1:
-                                            if i[0] == '6':
-                                                r = check(l[left - 5:left - 1])
-                                                print("R!!!", r)
-                                                if 'N' in r:
-                                                    return ['N']
-                                                elif 'Y' in r:
-                                                    left = left - 5
-                                                    print("OK!!!!!")
-                                                    break
-    print(l)
-    l = l[:left] + ['учить'] + l[right + 1:]
+        if id1 - 2 >= 0 and left == -1: 
+            for i in resl2:
+                if i[0] == part:
+                    r = check(l[id1 - 2: id1])
+                    if 'N' in r:
+                        return ['он', 'писали']
+                    else:
+                        left = id1 - 2
+                        break
+        if id1 - 1 >= 0 and left == -1:
+            for i in resl1:
+                if i[0] == part:
+                    left = id1 - 1
+                    break
+        print(left)
+        print(l)
+        if left != -1:
+            print("Инфинитив")
+            while l[left - 1] == ',' or l[left - 2] == ',' or l[left - 3] == ',' or l[left - 4] == ',':
+                if l[left - 1] == ',' and l[left - 3] == ',':
+                    cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 2])
+                    res1 = cur.fetchall()
+                    res1 = list(set(res1))
+                    for i in res1:
+                        if i[0] == '6':
+                            left = left - 2
+                            break
+                elif l[left - 1] == ',' and l[left - 4] == ',':
+                    cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 3])
+                    res1 = cur.fetchall()
+                    res1 = list(set(res1))
+                    for i in res1:
+                        if i[0] == '6':
+                            r = check(l[left - 3:left - 1])
+                            print("R", r)
+                            if 'N' in r:
+                                return ['он', 'писали']
+                            elif 'Y' in r:
+                                left = left - 3
+                                break
+                elif l[left - 1] == ',' and l[left - 5] == ',':
+                    cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 4])
+                    res1 = cur.fetchall()
+                    res1 = list(set(res1))
+                    for i in res1:
+                        if i[0] == '6':
+                            r = check(l[left - 4:left - 1])
+                            print("R", r)
+                            if 'N' in r:
+                                return ['он', 'писали']
+                            elif 'Y' in r:
+                                left = left - 4
+                                break
+                elif l[left - 1] == ',' and l[left - 6] == ',':
+                    cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 5])
+                    res1 = cur.fetchall()
+                    res1 = list(set(res1))
+                    for i in res1:
+                        if i[0] == '6':
+                            r = check(l[left - 5:left - 1])
+                            print("R", r)
+                            if 'N' in r:
+                                return ['он', 'писали']
+                            elif 'Y' in r:
+                                left = left - 5
+                                break
+                elif l[left - 1] == ',' and left - 2 >= 0:
+                    cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 2])
+                    res1 = cur.fetchall()
+                    res1 = list(set(res1))
+                    for i in res1:
+                        if i[0] == '6':
+                            left = left - 2
+                            print(i[0])
+                            break
+                        elif l[left - 1] == ',' and left - 3 >= 0:
+                            cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 3])
+                            res1 = cur.fetchall()
+                            res1 = list(set(res1))
+                            for i in res1:
+                                if i[0] == '6':
+                                    r = check(l[left - 3:left - 1])
+                                    print("R!", r)
+                                    if 'N' in r:
+                                        return ['он', 'писали']
+                                    elif 'Y' in r:
+                                        left = left - 3
+                                        print("OK!!!")
+                                        break
+                                elif l[left - 1] == ',' and left - 4 >= 0:
+                                    cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 4])
+                                    res1 = cur.fetchall()
+                                    res1 = list(set(res1))
+                                    for i in res1:
+                                        if i[0] == '6':
+                                            r = check(l[left - 4:left - 1])
+                                            print("R!!!", r)
+                                            if 'N' in r:
+                                                return ['он', 'писали']
+                                            elif 'Y' in r:
+                                                left = left - 4
+                                                print("OK!!!!!")
+                                                break
+                                        elif l[left - 1] == ',' and left - 5 >= 0:
+                                            cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 5])
+                                            res1 = cur.fetchall()
+                                            res1 = list(set(res1))
+                                            for i in res1:
+                                                if i[0] == '6':
+                                                    r = check(l[left - 5:left - 1])
+                                                    print("R!!!", r)
+                                                    if 'N' in r:
+                                                        return ['он', 'писали']
+                                                    elif 'Y' in r:
+                                                        left = left - 5
+                                                        print("OK!!!!!")
+                                                        break
+        print(l)
+        l = l[:left] + ['учить'] + l[right + 1:]
+    elif part == '5':
+        print("verb")
+        if id1 - 4 >= 0 and left == -1: # это раньше, поскольку может быть 2 инфинитива
+            for i in resl4:
+                if i[0] == part:
+                    r = check(l[id1 - 4: id1])
+                    if 'N' in r or i[1] != sng:
+                        return ['он', 'писали']
+                    else:
+                        left = id1 - 4
+                        break
+        if id1 - 3 >= 0 and left == -1: 
+            for i in resl3:
+                if i[0] == part:
+                    r = check(l[id1 - 3: id1])
+                    if 'N' in r or i[1] != sng:
+                        return ['он', 'писали']
+                    else:
+                        left = id1 - 3
+                        break
+        if id1 - 2 >= 0 and left == -1: 
+            for i in resl2:
+                if i[0] == part:
+                    r = check(l[id1 - 2: id1])
+                    if 'N' in r or i[1] != sng:
+                        return ['он', 'писали']
+                    else:
+                        left = id1 - 2
+                        break
+        if id1 - 1 >= 0 and left == -1:
+            for i in resl1:
+                if i[0] == part:
+                    left = id1 - 1
+                    print(left)
+                    if sng != i[1]:
+                        return ['он', 'писали']
+                    break
+        print(l)
+        if sng == 'Y':
+            l = l[:left] + ['учил'] + l[right + 1:]
+        elif sng == 'N':
+            l = l[:left] + ['учили'] + l[right + 1:]
     return l
 
 def check(l):
