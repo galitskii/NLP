@@ -408,12 +408,16 @@ def comma(l):
                     else:
                         return ['он', 'писали']
                 elif l[left - 1] == ',' and l[left - 4] == ',':
-                    print("ОНО работает!!")
+                    print("ОНО работает!!", sng, part)
                     sng1 = []
                     r = []
-                    for i in resl3:
+                    cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 3])
+                    res1 = cur.fetchall()
+                    res1 = list(set(res1))
+                    for i in res1:
                         if i[0] == part:
                             sng1 += list(i[1])
+                            print(i[1])
                             r += check(l[left - 3: left - 1])
                     if len(sng1) > 0:
                         if sng in sng1 and 'Y' in r:
@@ -434,35 +438,6 @@ def comma(l):
                         print(left, right, "границы")
                     else:
                         return ['он', 'писали']
-        """
-        if left != -1:
-            while ',' in l[left - 4: left]:
-                if id1 - 1 >= 0 and left == -1:
-                    sng1 = []
-                    for i in resl1:
-                        if i[0] == part:
-                            if i[1] == sng:
-                                sng1 += list(sng)
-                                print(sng1, "число!")
-                    if sng in sng1:
-                        left = id1 - 1
-                    else:
-                        return ['он', 'писали']
-                    print(left, right, "границы")
-                elif l[left - 1] == ',' and left - 2 >= 0:
-                    sng1 = []
-                    cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 2])
-                    res1 = cur.fetchall()
-                    res1 = list(set(res1))
-                    for i in res1:
-                        if i[0] == part:
-                            if i[1] == sng:
-                                sng1 += list(sng)
-                    if sng in sng1:
-                        left = left - 2
-                    else:
-                        return ['он', 'писали']
-                    print(left, right, "границы")"""
         if sng == 'Y':
             l = l[:left] + ['учил'] + l[right + 1:]
         elif sng == 'N':
