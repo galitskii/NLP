@@ -1,0 +1,23 @@
+\documentclass[main]{subfiles}
+
+
+
+
+
+\begin{document}
+\section{Система правил для анализа словосочетаний из двух слов}\label{app:A}
+\begin{table}[!h]
+	\begin{center}
+		\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
+	\caption{Система правил для словосочетаний из двух слов}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|l|}
+			\hline
+			\textbf{№} & \textbf{prt\_l} &\textbf{ sing\_l}  & \textbf{cow\_r} & \textbf{prt\_r }& \textbf{sing\_r} & \textbf{cow\_l} & \textbf{ans}  & \multicolumn{1}{c|}{\textbf{example}} \\ \hline
+			1 & b & N & 1 & 5 & N & --  & Y  & мы делали \\ \hline
+			2 &  1 &Y & 1 & 5 & N & -- & N & собака лаяли\\ \hline
+			3 & 1 & Y & 1 & 5 & Y & -- & Y & самолёт летит\\ \hline 
+			4 & b & Y & 1 & 5 & Y & -- & Y & я делаю \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+\end{document}

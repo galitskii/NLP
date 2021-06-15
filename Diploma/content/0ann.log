@@ -1,0 +1,36 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  15 JUN 2021 09:05
+entering extended mode
+**./0ann.tex
+(0ann.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-05-11>
+(C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/subfiles\subfiles.cls
+Document Class: subfiles 2020/11/14 v2.2 Multi-file projects (class)
+Preamble taken from file `main'
+(C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/import\import.sty
+Package: import 2020/04/01  v 6.2
+)
+
+! LaTeX Error: File `main.tex' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
+
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.45 \input{\preamble@file}
+                           
+*** (cannot \read from terminal in nonstop modes)
+
+ 
+Here is how much of TeX's memory you used:
+ 65 strings out of 479163
+ 1360 string characters out of 2854475
+ 287615 words of memory out of 3000000
+ 17777 multiletter control sequences out of 15000+600000
+ 403430 words of font info for 27 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 40i,0n,48p,144b,13s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!

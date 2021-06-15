@@ -1,0 +1,157 @@
+\documentclass[oneside, final, 12pt]{article}
+% пакеты для поддержки языков
+\usepackage{cmap} % поиск в PDF
+\usepackage[T1, T2A]{fontenc} % кодировка
+\usepackage[utf8]{inputenc} % кодировка исходного текста
+\usepackage[english,russian]{babel} % локализация и переносы
+
+\usepackage{comment}
+%% Гиперссылки
+\usepackage[colorlinks,urlcolor=blue]{hyperref}
+
+% основные пакеты
+\usepackage{xcolor}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{array,tabularx,tabulary,booktabs} % дополнительная работа с таблицами
+\usepackage{graphicx} % для вставки рисунков
+\usepackage{subfig} % для нескольких рисунков на одной строке
+
+
+\usepackage{cite}
+\addto\captionsrussian{\def\refname{Список литературы}} %это чтобы было русское название
+
+
+
+%\usepackage{biblatex} % библиография
+\usepackage{adjustbox}						
+\usepackage{tabularx,booktabs}
+\usepackage{multicol}
+
+\usepackage{newunicodechar}
+\newunicodechar{ﬁ}{fi}
+
+% доп. пакеты
+\usepackage{mathtext} % русские буквы в формулах
+\usepackage{csquotes} % цитирование, в т.ч. русских источников
+\usepackage{subfiles} % для сбора из частей
+\usepackage{amssymb}
+\usepackage{multirow}
+
+% теоремы, определения и пр
+\theoremstyle{plain}
+
+%\newtheorem{theorem}{Теорема}[section]
+
+
+\theoremstyle{plain} % "Примечание"
+%\newtheorem{utv}{Утверждение}[section]
+
+
+% объявляем новую команду для переноса строки внутри ячейки таблицы
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+%% Алгоритмы
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+
+% НАСТРОЙКА МАКЕТА
+% поля страницы
+\usepackage{vmargin} 
+\setpapersize{A4}
+\setmarginsrb{3cm}{1.5cm}{2cm}{2cm}{0pt}{0mm}{0pt}{13mm}
+
+
+\usepackage{indentfirst} %красная строка у первого параграфа 
+
+% 1.5 межстрочный интервал 
+\usepackage{setspace}
+\setstretch{1.5}
+
+% 1.25 для абзацного отступа
+\setlength{\parindent}{1.25cm} 
+
+% позволяет вставлять разрыв страниц
+\allowdisplaybreaks
+
+% установка шрифтов
+% шрифты для глав и секций
+\usepackage{titlesec}
+
+\titleformat{\section}
+{\normalsize\bfseries\centering}
+{\thesection.}
+{14pt}{}
+
+\titleformat{\subsection}
+{\normalsize\bfseries\centering}
+{\thesubsection.}
+{14pt}{}
+
+\titleformat{\subsubsection}
+{\normalsize\bfseries\centering}
+{\thesubsubsection.}
+{14pt}{}
+
+\floatname{algorithm}{\normalfont Алгоритм}
+
+\makeatletter
+\newcommand\appendix@section[1]{\refstepcounter{section}
+\orig@section*{{\normalfont ПРИЛОЖЕНИЕ \@Alph\c@section\\} #1}%
+\addcontentsline{toc}{section}{{\normalfont ПРИЛОЖЕНИЕ \@Alph\c@section. #1}}%
+}
+\let\orig@section\section
+\g@addto@macro\appendix{\let\section\appendix@section}
+\makeatother
+
+
+% путь к библиографии и рисункам
+\graphicspath{{images/}}
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	citecolor=blue,
+	linkcolor=blue,
+	urlcolor=blue}
+
+\begin{document}
+\subfile{title}
+\pagebreak
+\section*{Аннотация} 
+\subfile{content/5ann}
+\pagebreak
+
+\tableofcontents
+
+
+\pagebreak 
+
+%введение
+\section{Введение} 
+\subfile{content/0vved}
+\pagebreak
+
+\section{Описание подхода}
+\subfile{content/1algo}
+
+\pagebreak
+\addcontentsline{toc}{section}{\refname}
+\bibliography{bib_name}
+\begin{thebibliography}{500}
+
+\bibitem{forms}\textbf{ Журавлёв, Ю.И. Дискретный анализ. Формальные системы и алгоритмы}: Учебное пособие / Ю.И. Журавлёв, Ю.А. Флёров, Н.М. Вялый~-- М.: ООО Контакт Плюс, 2010.~--~ 336 с.: ил.
+
+\bibitem{langt} LanguageTool~--- Проверка грамматики и стилистики [Электронный ресурс] --- \href{https://languagetool.org/ru}{https://languagetool.org/ru}
+
+
+\end{thebibliography}
+\pagebreak
+
+\appendix
+
+%Приложения
+\subfile{content/3pr1}
+
+\end{document}
