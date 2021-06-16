@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  16 JUN 2021 22:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  17 JUN 2021 01:06
 entering extended mode
 **./main.tex
 (main.tex
@@ -1010,32 +1010,46 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [3] (content/0vved.tex) [4] (content/1algo.tex
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 15.
- [5] [6] [7] [8]) [9] (main.bbl)
-[10] (content/3pr1.tex) [11] (main.aux)
+ [5] [6] [7]
+
+LaTeX Warning: Float too large for page by 38.06894pt on input line 208.
+
+[8] [9]) [10] (main.bbl) [11] (content/3pr1.tex
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]|\T2A/cmr/m/n/12 гордиться
+ []
+
+
+Overfull \hbox (0.83862pt too wide) in paragraph at lines 13--27
+ [] 
+ []
+
+) [12] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 771940B7477765B75FC35FCAAB410DA2;1726.
+(rerunfilecheck)             Checksum: 8EDB00640948A84CF51E8B801DA01D9B;1726.
  ) 
 Here is how much of TeX's memory you used:
- 17023 strings out of 479163
- 256264 string characters out of 2854475
- 604991 words of memory out of 3000000
- 34254 multiletter control sequences out of 15000+600000
- 413800 words of font info for 52 fonts, out of 8000000 for 9000
+ 17037 strings out of 479163
+ 256427 string characters out of 2854475
+ 608070 words of memory out of 3000000
+ 34264 multiletter control sequences out of 15000+600000
+ 414137 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,10n,79p,715b,654s stack positions out of 5000i,500n,10000p,200000b,80000s
- <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labi120
-0.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati
-1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\l
-acc1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
-0\larm1000.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dp
-i600\larm1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a
-/dpi600\labx1200.pk><C:/Users/Home/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmmi12.pfb><C:/Users/Home/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Home/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (10 pages, 144073 bytes).
+ 69i,11n,79p,715b,658s stack positions out of 5000i,500n,10000p,200000b,80000s
+ <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
+200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
+bi1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600
+\lati1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi
+600\lacc1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/
+dpi600\larm1000.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t
+2a/dpi600\larm1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/l
+h-t2a/dpi600\labx1200.pk><C:/Users/Home/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Home/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Home/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (11 pages, 151010 bytes).
 PDF statistics:
- 389 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
+ 410 PDF objects out of 1000 (max. 8388607)
+ 33 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

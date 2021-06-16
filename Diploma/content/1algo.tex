@@ -129,59 +129,111 @@
 
 Прежде всего, нужно определить начало левого операнда <<и>>. В зависимости от длины буквосочетания, возможны различные варианты:
 \begin{enumerate}
-	\item Словосочетание длины $6$. Например, инф. + сущ. + сущ. + сущ. + сущ. + сущ.: <<Проводить проверку знаний требований охраны труда>>.
-	\item Словосочетание длины $5$. Например, инф. + сущ. + сущ. + сущ. + сущ.: <<Организовать проверку знаний основ программирования>>.
-	\item Словосочетание длины $4$. Например, инф. + инф. + сущ. + сущ.: <<Пойти спать сном младенца>>.
-	\item Словосочетание длины $3$. Например, инф. + сущ. + сущ.: <<Оценить игру слов>>.
-	\item Словосочетание длины $2$. Например, инф. + инф.: <<Пойти позавтракать>>.
-	\item Одиночный инфинитив. Например: <<Быть>>.
+	\item Словосочетание длины $6$. Например, инф. + сущ. + сущ. + сущ. + сущ. + сущ.: \textit{<<Проводить проверку знаний требований охраны труда>>}.
+	\item Словосочетание длины $5$. Например, инф. + сущ. + сущ. + сущ. + сущ.: \textit{<<Организовать проверку знаний основ программирования>>}.
+	\item Словосочетание длины $4$. Например, инф. + инф. + сущ. + сущ.: \textit{<<Пойти спать сном младенца>>}.
+	\item Словосочетание длины $3$. Например, инф. + сущ. + сущ.: \textit{<<Оценить игру слов>>}.
+	\item Словосочетание длины $2$. Например, инф. + инф.: \textit{<<Пойти позавтракать>>}.
+	\item Одиночный инфинитив. Например: \textit{<<Быть>>}.
 \end{enumerate}
-
+Итак, первым делом инициализируем левую границу заменяемого <<куска>> списка.
 \begin{algorithm}
 	\caption{-- Продолжение алгоритма \ref{alg3}}\label{alg4}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
-		\If{part $=$<<6>>}
-		\If{id1$-4\ge 0$ \textbf{and} left$=(-1)$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 4:\,$ id1$]$} \Comment{Проверяем буквосочетания длины $4$}
-		\For{\textbf{from} $i = 0$ \textbf{to} len(resl4)$-1$}
-		\State r$\gets$ check(l$[$id1$-4$ : id1$]$)
+		\If{part $=$<<6>>}\Comment{Если перечисляемая часть речи~--- инфинитив}
+		\If{id1$-6\ge 0$ \textbf{and} left$=(-1)$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 6:\,$ id1$]$} \Comment{Проверяем буквосочетания длины $6$}
+		\For{\textbf{from} $i = 0$ \textbf{to} len(resl6)$-1$}
+		\If{resl6$[i][0]=$part}
+		\State r$\gets$ check(l$[$id1$-6$ : id1$]$)
 		\If{<<N>>$\in $ r}
-		\State \Return $[$<<он>>, <<писали>> $]$ \Comment{Заведомо неверное предложение}
 		\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
-\newpage
+
 \begin{algorithm}
 	\caption{-- Продолжение алгоритма \ref{alg4}}\label{alg5}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
+		\State \Return $[$<<он>>, <<писали>> $]$ \Comment{Заведомо неверное предложение}
 		\ElsIf{<<Y>>$\in $ r}
-		\State left $\gets$ id1$-4$ \Comment{Инициализировали границу левого операнда <<и>>}
+		\State left $\gets$ id1$-6$ \Comment{Инициализировали границу левого операнда <<и>>}
 		\State \textbf{break}
+		\EndIf
+		\EndIf
+		\EndFor
+		\EndIf
+		\If{id1$-5\ge 0$ \textbf{and} left$=-1$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 5:\,$ id1$]$}
+		\For{\textbf{from} $i = 0$ \textbf{to} len(resl5)$-1$}
+		\If{resl5$[i][0]=$part}
+		\State r$\gets$ check(l$[$id1$-5$ : id1$]$)
+		\If{<<N>>$\in $ r}
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\ElsIf{<<Y>>$\in $ r}
+		\State left $\gets$ id1$-5$ 
+		\State \textbf{break}
+		\EndIf
+		\EndIf
+		\EndFor
+		\EndIf
+		\If{id1$-4\ge 0$ \textbf{and} left$=-1$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 4:\,$ id1$]$}
+		\For{\textbf{from} $i = 0$ \textbf{to} len(resl4)$-1$}
+		\If{resl4$[i][0]=$part}
+		\State r$\gets$ check(l$[$id1$-4$ : id1$]$)
+		\If{<<N>>$\in $ r}
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\ElsIf{<<Y>>$\in $ r}
+		\State left $\gets$ id1$-4$ 
+		\State \textbf{break}
+		\EndIf
 		\EndIf
 		\EndFor
 		\EndIf
 		\If{id1$-3\ge 0$ \textbf{and} left$=-1$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 3:\,$ id1$]$}
 		\For{\textbf{from} $i = 0$ \textbf{to} len(resl3)$-1$}
 		\State r$\gets$ check(l$[$id1$-3$ : id1$]$)
-		\If{<<N>>$\in $ r}
-		\State \Return $[$<<он>>, <<писали>> $]$
-				\ElsIf{<<Y>>$\in $ r}
-		\EndIf
-				\State left $\gets$ id1$-3$ 
-		\State \textbf{break}
-		\EndFor
-		\EndIf
-		\If{id1$-2\ge 0$ \textbf{and} left$=-1$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 2:\,$ id1$]$}
-		\For{\textbf{from} $i = 0$ \textbf{to} len(resl2)$-1$}
-		\State r$\gets$ check(l$[$id1$-2$ : id1$]$)
+	\If{<<N>>$\in $ r}
+\State \Return $[$<<он>>, <<писали>> $]$
+\ElsIf{<<Y>>$\in $ r}
+\EndIf
+\State left $\gets$ id1$-3$ 
+\State \textbf{break}
+\EndFor
+\EndIf
+\If{id1$-2\ge 0$ \textbf{and} left$=-1$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 2:\,$ id1$]$}
+\For{\textbf{from} $i = 0$ \textbf{to} len(resl2)$-1$}
+\State r$\gets$ check(l$[$id1$-2$ : id1$]$)
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+Таким образом, в результате выполнения данного фрагмента кода будет определены границы левого и правого операндов <<и>>.
+
+В алгоритме \ref{alg5} неоднократно фигурирует функция check(). В данном случае она используется для проверки предложения, не содержащего знаки пунктуации. Её описание будет в следующем параграфе.
+
+Далее может быть несколько вариантов:
+\begin{itemize}
+	\item Союз <<и>> связывает только два сочетания.
+	\item Союз <<и>> используется для перечисления $3$ и более словосочетаний.
+\end{itemize}
+\begin{algorithm}
+	\caption{-- Продолжение алгоритма \ref{alg5}}\label{alg6}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}	
 		\If{<<N>>$\in $ r}
 		\State \Return $[$<<он>>, <<писали>> $]$
 		\ElsIf{<<Y>>$\in $ r}
-			\State left $\gets$ id1$-3$ 
-			\State \textbf{break}
-			\EndIf
-			\EndFor
+		\State left $\gets$ id1$-2$ 
+		\State \textbf{break}
+		\EndIf
+		\EndFor
+		\EndIf
+		\If{id1$-1\ge 0$ \textbf{and} left$=(-1)$}
+		\For{\textbf{from} $i = 0$ \textbf{to} len(resl1)$-1$}
+		\If{l$[i][0]=$part}
+		\State left $\gets$ id1$-1$
+		\State \textbf{break}
+		\EndIf
+		\EndFor
 		\EndIf
 		\EndIf
 		\EndIf
