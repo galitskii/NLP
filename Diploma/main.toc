@@ -4,5 +4,5 @@
 \contentsline {subsection}{\numberline {2.1}Подготовительный этап}{5}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Обработка предложения}{5}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Упрощение предложения}{6}{subsubsection.2.2.1}%
-\contentsline {section}{Список литературы}{9}{algorithm.4}%
-\contentsline {section}{{\normalfont ПРИЛОЖЕНИЕ A. Система правил для анализа словосочетаний из двух слов}}{10}{appendix.A}%
+\contentsline {section}{Список литературы}{10}{algorithm.5}%
+\contentsline {section}{{\normalfont ПРИЛОЖЕНИЕ A. Система правил для анализа словосочетаний из двух слов}}{11}{appendix.A}%

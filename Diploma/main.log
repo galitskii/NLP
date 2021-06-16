@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  15 JUN 2021 11:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  16 JUN 2021 22:02
 entering extended mode
 **./main.tex
 (main.tex
@@ -989,67 +989,53 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
- (title.tex
-Underfull \hbox (badness 10000) in paragraph at lines 35--36
+ (content/5ann.tex) [2
 
- []
-
-<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
-LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
-
+{C:/Users/Home/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (main.toc<<t1.cm
+ap>><<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
 
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \hbox (badness 10000) in paragraph at lines 34--52
-
- []
-
-) [1
-
-{C:/Users/Home/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-(content/5ann.tex) [2] (main.toc<<t1.cmap>>)
+))
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [3] (content/0vved.tex) [4]
-(content/1algo.tex
+
+[3] (content/0vved.tex) [4] (content/1algo.tex
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 15.
- [5] [6] [7]) [8] (main.bbl) [9] (content/3pr1.tex) [10]
-(main.aux)
+ [5] [6] [7] [8]) [9] (main.bbl)
+[10] (content/3pr1.tex) [11] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: AE8F0E8F498AC43CFD50BCC2F81E7420;1726.
+(rerunfilecheck)             Checksum: 771940B7477765B75FC35FCAAB410DA2;1726.
  ) 
 Here is how much of TeX's memory you used:
- 17010 strings out of 479163
- 255985 string characters out of 2854475
- 604835 words of memory out of 3000000
- 34238 multiletter control sequences out of 15000+600000
- 416982 words of font info for 60 fonts, out of 8000000 for 9000
+ 17023 strings out of 479163
+ 256264 string characters out of 2854475
+ 604991 words of memory out of 3000000
+ 34254 multiletter control sequences out of 15000+600000
+ 413800 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,9n,79p,715b,628s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,10n,79p,715b,654s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labi120
 0.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati
 1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\l
 acc1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
 0\larm1000.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dp
-i600\larm1095.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a
-/dpi600\labx1095.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-
-t2a/dpi600\labx1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/
-lh-t2a/dpi600\larm1200.pk><C:/Users/Home/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Home/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Home/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (10 pages, 164554 bytes).
+i600\larm1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a
+/dpi600\labx1200.pk><C:/Users/Home/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmmi12.pfb><C:/Users/Home/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Home/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (10 pages, 144073 bytes).
 PDF statistics:
- 455 PDF objects out of 1000 (max. 8388607)
- 24 named destinations out of 1000 (max. 500000)
+ 389 PDF objects out of 1000 (max. 8388607)
+ 31 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
