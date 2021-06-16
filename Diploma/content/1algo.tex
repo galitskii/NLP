@@ -75,34 +75,34 @@
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
 				\If{llen $>$ id1 $+ 1$}
-		\State resp1 $\gets$ l[id1 $+ 1$].[pos, singugar, cow] \Comment{Варианты интерпретации слова, стоящего за <<и>>}
+		\State resp1 $\gets$ l[id1 $+ 1$].[pos, singular, cow] \Comment{Варианты интерпретации слова, стоящего за <<и>>}
 		\EndIf
 		\If{llen $>$ id1 $+ 2$}
-		\State resp2 $\gets$ l[id1 $+ 2$].[pos, singugar, cow]
+		\State resp2 $\gets$ l[id1 $+ 2$].[pos, singular, cow]
 		\EndIf	
 		\If{llen $>$ id1 $+ 3$}
-		\State resp3 $\gets$ l[id1 $+ 3$].[pos, singugar, cow] 
+		\State resp3 $\gets$ l[id1 $+ 3$].[pos, singular, cow] 
 		\EndIf
 		\If{llen $>$ id1 $+ 4$}
-		\State resp4 $\gets$ l[id1 $+ 4$].[pos, singugar, cow]
+		\State resp4 $\gets$ l[id1 $+ 4$].[pos, singular, cow]
 		\EndIf
 		\If{id1 $-1 \ge 0$}
-		\State resl1 $\gets$ l[id1 $-1$].[pos, singugar, cow]
+		\State resl1 $\gets$ l[id1 $-1$].[pos, singular, cow]
 		\EndIf
 		\If{id1 $-2 \ge 0$}
-		\State resl2 $\gets$ l[id1 $-2$].[pos, singugar, cow]
+		\State resl2 $\gets$ l[id1 $-2$].[pos, singular, cow]
 		\EndIf
 		\If{id1 $-3 \ge 0$}
-		\State resl3 $\gets$ l[id1 $-3$].[pos, singugar, cow]
+		\State resl3 $\gets$ l[id1 $-3$].[pos, singular, cow]
 		\EndIf
 		\If{id1 $-4 \ge 0$}
-		\State resl1 $\gets$ l[id1 $-4$].[pos, singugar, cow]
+		\State resl1 $\gets$ l[id1 $-4$].[pos, singular, cow]
 		\EndIf
 		\If{id1 $-5 \ge 0$}
-		\State resl5 $\gets$ l[id1 $-5$].[pos, singugar, cow]
+		\State resl5 $\gets$ l[id1 $-5$].[pos, singular, cow]
 		\EndIf
 		\If{id1 $-6 \ge 0$}
-		\State resl6 $\gets$ l[id1 $-6$].[pos, singugar, cow]
+		\State resl6 $\gets$ l[id1 $-6$].[pos, singular, cow]
 		\EndIf
 		\If{id1 $+1 <$ llen}
 		\For{\textbf{from} $i=0$ \textbf{to} len(resp1)$- 1$}
@@ -113,10 +113,15 @@
 					\EndFor
 					\If{right$=(-1)$}\Comment{Если же это не инфинитив}
 					\For{\textbf{from} $i=0$ \textbf{to} len(resp1)$-1$}
-					\If{resp1$[i][0]=$<<5>>}\Comment{Слово оказалось инфинитивом}
+					\If{resp1$[i][0]=$<<5>>}\Comment{Слово оказалось личным глаголом}
 					\State right $\gets$id1$ + 1$ 
 					\State part $\gets$ <<5>>
-					\State sng $\gets $l$[i][1]$ \Comment{В отличие от инфинитивов для личных глаголов важно число}
+					\State sng $\gets $l$[i][1]$ \Comment{Для личных глаголов важно число}
+					\State \textbf{break}
+							\EndIf
+							\EndFor
+									\EndIf
+											\EndIf
 		\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
@@ -147,6 +152,7 @@
 		\If{resl6$[i][0]=$part}
 		\State r$\gets$ check(l$[$id1$-6$ : id1$]$)
 		\If{<<N>>$\in $ r}
+		\State \Return $[$<<он>>, <<писали>> $]$ \Comment{Заведомо неверное предложение}
 		\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
@@ -155,7 +161,6 @@
 	\caption{-- Продолжение алгоритма \ref{alg4}}\label{alg5}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
-		\State \Return $[$<<он>>, <<писали>> $]$ \Comment{Заведомо неверное предложение}
 		\ElsIf{<<Y>>$\in $ r}
 		\State left $\gets$ id1$-6$ \Comment{Инициализировали границу левого операнда <<и>>}
 		\State \textbf{break}
@@ -191,39 +196,35 @@
 		\EndIf
 		\If{id1$-3\ge 0$ \textbf{and} left$=-1$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 3:\,$ id1$]$}
 		\For{\textbf{from} $i = 0$ \textbf{to} len(resl3)$-1$}
+		\If{resl3$[i][0]=$part}
 		\State r$\gets$ check(l$[$id1$-3$ : id1$]$)
 	\If{<<N>>$\in $ r}
 \State \Return $[$<<он>>, <<писали>> $]$
 \ElsIf{<<Y>>$\in $ r}
-\EndIf
 \State left $\gets$ id1$-3$ 
 \State \textbf{break}
-\EndFor
 \EndIf
-\If{id1$-2\ge 0$ \textbf{and} left$=-1$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 2:\,$ id1$]$}
-\For{\textbf{from} $i = 0$ \textbf{to} len(resl2)$-1$}
-\State r$\gets$ check(l$[$id1$-2$ : id1$]$)
+\EndIf
+\EndFor
+		\EndIf
 		\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
 Таким образом, в результате выполнения данного фрагмента кода будет определены границы левого и правого операндов <<и>>.
-
-В алгоритме \ref{alg5} неоднократно фигурирует функция check(). В данном случае она используется для проверки предложения, не содержащего знаки пунктуации. Её описание будет в следующем параграфе.
-
-Далее может быть несколько вариантов:
-\begin{itemize}
-	\item Союз <<и>> связывает только два сочетания.
-	\item Союз <<и>> используется для перечисления $3$ и более словосочетаний.
-\end{itemize}
 \begin{algorithm}
 	\caption{-- Продолжение алгоритма \ref{alg5}}\label{alg6}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}	
+		\If{id1$-2\ge 0$ \textbf{and} left$=-1$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 2:\,$ id1$]$}
+		\For{\textbf{from} $i = 0$ \textbf{to} len(resl2)$-1$}
+		\If{resl2$[i][0]=$part}
+		\State r$\gets$ check(l$[$id1$-2$ : id1$]$)
 		\If{<<N>>$\in $ r}
 		\State \Return $[$<<он>>, <<писали>> $]$
 		\ElsIf{<<Y>>$\in $ r}
 		\State left $\gets$ id1$-2$ 
 		\State \textbf{break}
+		\EndIf
 		\EndIf
 		\EndFor
 		\EndIf
@@ -236,12 +237,39 @@
 		\EndFor
 		\EndIf
 		\EndIf
+		\State Алгоритм \ref{alg7}.
 		\EndIf
-		\EndFor
-		\EndIf
-		\EndIf
-		\EndIf
+		\State Алгоритм
 		\EndFunction
 	\end{algorithmic}
 \end{algorithm}
+
+В алгоритмах \ref{alg5} и \ref{alg6} неоднократно фигурирует функция check(). В данном случае она используется для проверки предложения, не содержащего знаки пунктуации. Её описание будет в следующем параграфе.
+
+Далее возможен один из двух вариантов:
+\begin{itemize}
+	\item Союз <<и>> связывает только два сочетания.
+	\item Союз <<и>> используется для перечисления $3$ и более словосочетаний.
+\end{itemize}
+
+В первом случае предложение готово к упрощению: <<кусок>> от left до right заменяем единичным инфинитивом.
+
+Во втором же случае необходимо продолжить анализ предложения, сдвигая левую границу заменяемого участка.
+
+Для начала будем искать участки между двумя запятыми (при их наличии). Этот и последующие этапы описаны в алгоритме \ref{alg7}.
+
+\begin{algorithm}
+	\caption{-- Фрагмент алгоритма \ref{alg6}}\label{alg7}
+	\begin{algorithmic}[1]
+	\While{<<,>>$\in$ l$[1:$ left $]$}\Comment{Пока есть запятые}
+	\If{l$[$left $-1]=$ <<,>> \textbf{and} l$[$left $-3]=$ <<,>>} \Comment{Между запятыми одно слово}
+	\State res1$\gets$ l$[$left$-2]$.[pos, singular, cow]
+	\For{\textbf{from} $i = 0$ \textbf{to} len(res1)}
+	\EndFor
+	\EndIf
+	\EndWhile
+	%\algstore{bkbreak}
+	\end{algorithmic}
+	\end{algorithm}
+
 \end{document}
