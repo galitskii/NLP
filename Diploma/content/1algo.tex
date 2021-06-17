@@ -134,7 +134,7 @@
 
 Прежде всего, нужно определить начало левого операнда <<и>>. В зависимости от длины буквосочетания, возможны различные варианты:
 \begin{enumerate}
-	\item Словосочетание длины $6$. Например, инф. + сущ. + сущ. + сущ. + сущ. + сущ.: \textit{<<Проводить проверку знаний требований охраны труда>>}.
+	\item Словосочетание длины $6$. Например, инф. + сущ. + сущ. + сущ. + сущ. + сущ.: \textit{<<Организовать проверку знаний требований охраны труда>>}.
 	\item Словосочетание длины $5$. Например, инф. + сущ. + сущ. + сущ. + сущ.: \textit{<<Организовать проверку знаний основ программирования>>}.
 	\item Словосочетание длины $4$. Например, инф. + инф. + сущ. + сущ.: \textit{<<Пойти спать сном младенца>>}.
 	\item Словосочетание длины $3$. Например, инф. + сущ. + сущ.: \textit{<<Оценить игру слов>>}.
@@ -256,7 +256,9 @@
 
 Во втором же случае необходимо продолжить анализ предложения, сдвигая левую границу заменяемого участка.
 
-Для начала будем искать участки между двумя запятыми (при их наличии). Этот и последующие этапы описаны в алгоритме \ref{alg7}.
+Для начала будем искать участки между двумя запятыми (при их наличии). Особенность данного этапа заключается в том, что между запятыми может оказаться ошибочное словосочетание,~--- потому фрагменты между запятыми нужно также проверять на согласованность.
+
+Также важен порядок рассмотрения случаев: в первую очередь следует искать самые <<короткие>> словосочетания между запятыми (иначе можем <<захватить>> подстроку с запятыми). Этот и последующие этапы описаны в алгоритме \ref{alg7}.
 
 \begin{algorithm}
 	\caption{-- Фрагмент алгоритма \ref{alg6}}\label{alg7}
@@ -265,11 +267,108 @@
 	\If{l$[$left $-1]=$ <<,>> \textbf{and} l$[$left $-3]=$ <<,>>} \Comment{Между запятыми одно слово}
 	\State res1$\gets$ l$[$left$-2]$.[pos, singular, cow]
 	\For{\textbf{from} $i = 0$ \textbf{to} len(res1)}
-	\EndFor
+	\If{res1$[i][0]=$part}
+	\State left$\gets$ left$-2$
+	\State \textbf{break}
 	\EndIf
-	\EndWhile
-	%\algstore{bkbreak}
+	\EndFor
+	\ElsIf{l$[$left $-1]=$ <<,>> \textbf{and} l$[$left $-4]=$ <<,>>} \Comment{Между запятыми словосочетание из двух слов}
+	\State  res1$\gets$ l$[$left$-3]$.[pos, singular, cow]
+	\For{\textbf{from} $i = 0$ \textbf{to} len(res1)}
+	\If{res1$[i][0]=$part}
+	\State r $\gets$ check(l$[$left$-3:$ left$-1 ]$)
+	\If{<<N>> $\in$ r}
+	\State \Return $[$<<он>>, <<писали>> $]$
+	\ElsIf{<<Y>> $\in$ r}
+	\State left$\gets$ left$-3$
+	\State \textbf{break}
+	\EndIf
+	\EndIf
+	\EndFor
+	\ElsIf{l$[$left $-1]=$ <<,>> \textbf{and} l$[$left $-5]=$ <<,>>}
+	\State  res1$\gets$ l$[$left$-4]$.[pos, singular, cow]
+	\For{\textbf{from} $i = 0$ \textbf{to} len(res1)}
+	\If{res1$[i][0]=$part}
+	\State r $\gets$ check(l$[$left$-4:$ left$-1 ]$)
+	\If{<<N>> $\in$ r}
+	\State \Return $[$<<он>>, <<писали>> $]$
+	\ElsIf{<<Y>> $\in$ r}
+	\State left$\gets$ left$-4$
+	\State \textbf{break}
+	\EndIf
+	\EndIf
+	\algstore{bkbreak}
 	\end{algorithmic}
 	\end{algorithm}
 
+\begin{algorithm}
+	\caption{-- Продолжение алгоритма \ref{alg7}}\label{alg8}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
+			\EndFor
+			\ElsIf{l$[$left $-1]=$ <<,>> \textbf{and} l$[$left $-6]=$ <<,>>}
+		\State  res1$\gets$ l$[$left$-5]$.[pos, singular, cow]
+		\For{\textbf{from} $i = 0$ \textbf{to} len(res1)}
+			\If{res1$[i][0]=$part}
+			\State r $\gets$ check(l$[$left$-5:$ left$-1 ]$)
+			\If{<<N>> $\in$ r}
+			\State \Return $[$<<он>>, <<писали>> $]$
+		\ElsIf{<<Y>> $\in$ r}
+			\State left$\gets$ left$-5$
+		\State \textbf{break}
+		\EndIf
+			\EndIf
+		\EndFor
+		\ElsIf{l$[$left $-1]=$ <<,>> \textbf{and} l$[$left $-7]=$ <<,>>}
+		\State  res1$\gets$ l$[$left$-6]$.[pos, singular, cow]
+		\For{\textbf{from} $i = 0$ \textbf{to} len(res1)}
+		\If{res1$[i][0]=$part}
+		\State r $\gets$ check(l$[$left$-6:$ left$-1 ]$)
+		\If{<<N>> $\in$ r}
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\ElsIf{<<Y>> $\in$ r}
+		\State left$\gets$ left$-6$
+		\State \textbf{break}
+		\EndIf
+		\EndIf
+		\EndFor
+		\ElsIf{l$[$left $-1]=$ <<,>> \textbf{and} l$[$left $-8]=$ <<,>>}
+		\State  res1$\gets$ l$[$left$-7]$.[pos, singular, cow]
+		\For{\textbf{from} $i = 0$ \textbf{to} len(res1)}
+		\If{res1$[i][0]=$part}
+		\State r $\gets$ check(l$[$left$-7:$ left$-1 ]$)
+		\If{<<N>> $\in$ r}
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\ElsIf{<<Y>> $\in$ r}
+		\State left$\gets$ left$-7$
+		\State \textbf{break}
+		\EndIf
+		\EndIf
+		\EndFor
+		\Else \State Алгоритм \ref{alg9}
+		\EndIf
+			\EndWhile
+		%\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+\newpage
+
+Итак, в результате работы фрагментов \ref{alg7} и \ref{alg8} будет сдвинута граница до <<первой>> запятой.
+
+Следующий этап~--- поиск начала перечисления. Соответствующий фрагмент описан алгоритмом \ref{alg9}.
+\begin{algorithm}
+	\caption{-- Фрагмент алгоритма \ref{alg8}}\label{alg9}
+	\begin{algorithmic}[1]
+	\If{l$[$left$-1]=$<<,>> \textbf{and} left$-2\ge 0$}
+	\State res1$\gets$ l$[$left$-2]$.[pos, singular, cow]
+	\For{\textbf{from} $i = 0$ \textbf{to} len(res1)$ - 1$}
+	\If{res1$[i][0]=$<<6>>}
+	\State left$\gets$ left$-2$
+	\State \textbf{break}
+	\EndIf
+	\EndFor
+	\EndIf
+	%	\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
 \end{document}
