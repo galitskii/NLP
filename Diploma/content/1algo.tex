@@ -76,8 +76,8 @@
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
 				\If{llen $>$ id1 $+ 1$}
-		\State resp1 $\gets$ l[id1 $+ 1$].[pos, singular, cow] \Comment{Варианты интерпретации слова, стоящего за <<и>>}
-		\EndIf
+		\State resp1 $\gets$ l[id1 $+ 1$].[pos, singular, cow] 
+			\EndIf
 		\If{llen $>$ id1 $+ 2$}
 		\State resp2 $\gets$ l[id1 $+ 2$].[pos, singular, cow]
 		\EndIf	
@@ -105,18 +105,19 @@
 		\If{id1 $-6 \ge 0$}
 		\State resl6 $\gets$ l[id1 $-6$].[pos, singular, cow]
 		\EndIf
+		\If{id1 $-7\ge 0$}
+		\State resl7 $\gets$ l[id1 $-7$].[pos, singular, cow]
+		\EndIf
 		\If{id1 $+1 <$ llen}
 		\For{\textbf{from} $i=0$ \textbf{to} len(resp1)$- 1$}
 		\If{resp1$[i][0]=$<<6>>} \Comment{Слово оказалось инфинитивом}
-		\State part$\gets$ <<6>>
-		\State right $\gets$ id1 $+1$
+		\State part$\gets$ <<6>> \textbf{and} right $\gets$ id1 $+1$
 				\EndIf
 					\EndFor
 					\If{right$=(-1)$}\Comment{Если же это не инфинитив}
 					\For{\textbf{from} $i=0$ \textbf{to} len(resp1)$-1$}
 					\If{resp1$[i][0]=$<<5>>}\Comment{Слово оказалось личным глаголом}
-					\State right $\gets$id1$ + 1$ 
-					\State part $\gets$ <<5>>
+					\State right $\gets$id1$ + 1$ \textbf{and}  part $\gets$ <<5>>
 					\State sng $\gets $l$[i][1]$ \Comment{Для личных глаголов важно число}
 					\State \textbf{break}
 							\EndIf
@@ -478,6 +479,10 @@
 	\item Словосочетание длины $2$. Например, личн. глаг. + инф.: \textit{<<Желает знать>>}.
 	\item Одиночный личный глагол. Например: \textit{<<Желать>>}.
 \end{enumerate}
+
+Во многом алгоритм обработки перечислений личных глаголов похож на алгоритм обработки перечислений инфинитивов.
+
+Однако, в отличие от последних, для личных глаголов определено понятие числа. И в данной ситуации возникает\textit{\textbf{ проблема омографии}}. Так, слово \textit{<<спАли>>}~--- личный глагол во множественном числе, а \textit{<<спалИ>>}~--- личный глагол в единственном числе. В самом деле, данные слова совпадают по написанию, но различны по звучанию и значению.
 \begin{algorithm}
 	\caption{-- Продолжение алгоритма \ref{alg6}}\label{alg12}
 	\begin{algorithmic}[1]
