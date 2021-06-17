@@ -168,6 +168,7 @@ def comma(l):
                 print("6")
                 right = id1 + 1
                 part = '6'
+                break
         if right == -1:
                 for i in resp1:
                     if i[0] == '5':
@@ -177,6 +178,7 @@ def comma(l):
                         sng = i[1]
                         break
     if part == '6':
+        print(part, "Часть речи", id1)
         if id1 - 6 >= 0 and left == -1 and not (',' in l[id1 - 6: id1]): 
             for i in resl6:
                 if i[0] == part:
@@ -205,6 +207,7 @@ def comma(l):
                         left = id1 - 4
                         break
         if id1 - 3 >= 0 and left == -1 and not (',' in l[id1 - 3: id1]): 
+            print("Сработало!")
             for i in resl3:
                 if i[0] == part:
                     r = check(l[id1 - 3: id1])
@@ -213,7 +216,7 @@ def comma(l):
                     elif 'Y' in r:
                         left = id1 - 3
                         break
-        if id1 - 2 >= 0 and left == -1 and not (',' in l[id1 - 3: id1]): 
+        if id1 - 2 >= 0 and left == -1 and not(',' in l[id1 - 2: id1]): 
             for i in resl2:
                 if i[0] == part:
                     r = check(l[id1 - 2: id1])
@@ -396,7 +399,20 @@ def comma(l):
         print(l)
         l = l[:left] + ['учить'] + l[right + 1:]
     elif part == '5':
-        end = (-1)
+        pov = -1
+        cur.execute("select pos, singular, cow from words where word = '%s'" % l[0])
+        res0 = cur.fetchall()
+        res0 = list(set(res0))
+        sng0 = []
+        for i in res0:
+            if i[0] == '5':
+                sng0 += list(i[1])
+        sng0 = list(set(sng0))
+        if len(sng0) > 1:
+            sng = 'Y'
+            pov = 1
+            print("Повелитель")
+        end = -1
         print("verb")
         if id1 - 7 >= 0 and left == -1 and not(',' in l[id1 - 7: id1]): # он мечтал поехать изучать основы теории кодирования и бегал
             sng1 = []
@@ -458,12 +474,13 @@ def comma(l):
                     sng1 += list(i[1])
                     r += check(l[id1 - 3: id1])
             if len(sng1) > 0:
-                if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and (sng == 'N' or pov == 1) and 'Y' in r):
                     left = id1 - 3
                     print(left, right, "границы")
                 else:
                     return ['он', 'писали']
         if id1 - 2 >= 0 and left == -1 and not(',' in l[id1 - 2: id1]): # защита от пойду схожу
+            print("ОБЯЗАНО")
             sng1 = []
             r = []
             for i in resl2:
@@ -501,7 +518,7 @@ def comma(l):
                         if i[0] == '5':
                             sng1 += list(i[1])
                     sng1 = list(set(sng1))
-                    if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
+                    if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and (sng == 'N' or pov == 1)):
                         print("OK!!!")
                         left = left - 2
                         print(left, right, "границы")    
@@ -521,7 +538,7 @@ def comma(l):
                             print(i[1])
                             r += check(l[left - 3: left - 1])
                     sng1 = list(set(sng1))
-                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and (sng == 'N' or pov == 1) and 'Y' in r):
                         print("OK!!!")
                         left = left - 3
                         print(left, right, "границы")    
@@ -542,7 +559,7 @@ def comma(l):
                             r += check(l[left - 4: left - 1])
                     sng1 = list(set(sng1))
                     print("тута!")
-                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and (sng == 'N' or pov == 1) and 'Y' in r):
                         print("OK!!!")
                         left = left - 4
                         print(left, right, "границы")    
@@ -563,7 +580,7 @@ def comma(l):
                             r += check(l[left - 5: left - 1])
                     sng1 = list(set(sng1))
                     print("тута!")
-                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and (sng == 'N' or pov == 1) and 'Y' in r):
                         print("OK!!!")
                         left = left - 5
                         print(left, right, "границы")    
@@ -584,7 +601,7 @@ def comma(l):
                             r += check(l[left - 6: left - 1])
                     sng1 = list(set(sng1))
                     print("тута!")
-                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and (sng == 'N' or pov == 1) and 'Y' in r):
                         print("OK!!!")
                         left = left - 6
                         print(left, right, "границы")    
@@ -605,7 +622,7 @@ def comma(l):
                             r += check(l[left - 7: left - 1])
                     sng1 = list(set(sng1))
                     print("тута!")
-                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and (sng == 'N' or pov == 1) and 'Y' in r):
                         print("OK!!!")
                         left = left - 7
                         print(left, right, "границы")    
@@ -626,7 +643,7 @@ def comma(l):
                             r += check(l[left - 8: left - 1])
                     sng1 = list(set(sng1))
                     print("тута!")
-                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and (sng == 'N' or pov == 1) and 'Y' in r):
                         print("OK!!!")
                         left = left - 8
                         print(left, right, "границы")    
@@ -643,7 +660,7 @@ def comma(l):
                             if i[0] == '5':
                                 sng1 += list(i[1])
                         sng1 = list(set(sng1))
-                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
+                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and (sng == 'N' or pov == 1)):
                             print("OK!!!")
                             left = left - 8
                             end = 1
@@ -660,7 +677,7 @@ def comma(l):
                             if i[0] == '5':
                                 sng1 += list(i[1])
                         sng1 = list(set(sng1))
-                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
+                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and (sng == 'N' or pov == 1)):
                             print("OK!!!")
                             left = left - 7
                             end = 1
@@ -677,7 +694,7 @@ def comma(l):
                             if i[0] == '5':
                                 sng1 += list(i[1])
                         sng1 = list(set(sng1))
-                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
+                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and (sng == 'N' or pov == 1)):
                             print("OK!!!")
                             left = left - 6
                             end = 1
@@ -694,7 +711,7 @@ def comma(l):
                             if i[0] == '5':
                                 sng1 += list(i[1])
                         sng1 = list(set(sng1))
-                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
+                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and (sng == 'N' or pov == 1)):
                             print("OK!!!")
                             left = left - 5
                             end = 1
@@ -711,7 +728,7 @@ def comma(l):
                             if i[0] == '5':
                                 sng1 += list(i[1])
                         sng1 = list(set(sng1))
-                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
+                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and (sng == 'N' or pov == 1)):
                             print("OK!!!")
                             left = left - 4
                             end = 1
@@ -728,7 +745,7 @@ def comma(l):
                             if i[0] == '5':
                                 sng1 += list(i[1])
                         sng1 = list(set(sng1))
-                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
+                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and (sng == 'N' or pov == 1)):
                             print("OK!!!")
                             left = left - 3
                             end = 1
@@ -745,7 +762,7 @@ def comma(l):
                             if i[0] == '5':
                                 sng1 += list(i[1])
                         sng1 = list(set(sng1))
-                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
+                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and (sng == 'N' or pov == 1)):
                             print("OK!!!")
                             left = left - 2
                             end = 1
