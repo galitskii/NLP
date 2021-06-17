@@ -419,7 +419,7 @@ def comma(l):
                     sng1 += list(i[1])
                     r += check(l[id1 - 6: id1])
             if len(sng1) > 0:
-                if sng in sng1 and 'Y' in r:
+                if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
                     left = id1 - 6
                     print(left, right, "границы")
                 else:
@@ -432,7 +432,7 @@ def comma(l):
                     sng1 += list(i[1])
                     r += check(l[id1 - 5: id1])
             if len(sng1) > 0:
-                if sng in sng1 and 'Y' in r:
+                if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
                     left = id1 - 5
                     print(left, right, "границы")
                 else:
@@ -445,7 +445,7 @@ def comma(l):
                     sng1 += list(i[1])
                     r += check(l[id1 - 4: id1])
             if len(sng1) > 0:
-                if sng in sng1 and 'Y' in r:
+                if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
                     left = id1 - 4
                     print(left, right, "границы")
                 else:
@@ -458,7 +458,7 @@ def comma(l):
                     sng1 += list(i[1])
                     r += check(l[id1 - 3: id1])
             if len(sng1) > 0:
-                if sng in sng1 and 'Y' in r:
+                if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
                     left = id1 - 3
                     print(left, right, "границы")
                 else:
@@ -471,7 +471,7 @@ def comma(l):
                     sng1 += list(i[1])
                     r += check(l[id1 - 2: id1])
             if len(sng1) > 0:
-                if sng in sng1 and 'Y' in r:
+                if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
                     left = id1 - 2
                     print(left, right, "границы")
                 else:
@@ -482,7 +482,7 @@ def comma(l):
                 if i[0] == part:
                     if i[1] == sng:
                         sng1 += list(sng)
-            if sng in sng1:
+            if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
                 left = id1 - 1
                 print(left, right, "границы")
             else:
@@ -490,7 +490,7 @@ def comma(l):
         print("пока всё ок")
         if left != -1:
             print("Личный глагол")
-            while ',' in l[0: left]:
+            while ',' in l[1: left]:
                 if left - 3 >= 0 and l[left - 1] == ',' and l[left - 3] == ',':
                     print("ОНО работает!")
                     sng1 = []
@@ -508,36 +508,218 @@ def comma(l):
                     else:
                         print("Нужно ругаться")
                         return ['он', 'писали']
+                elif left - 4 >= 0 and l[left - 1] == ',' and l[left - 4] == ',':
+                    print("ОНО работает!!", sng, part)
+                    sng1 = []
+                    r = []
+                    cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 3])
+                    res1 = cur.fetchall()
+                    res1 = list(set(res1))
+                    for i in res1:
+                        if i[0] == part:
+                            sng1 += list(i[1])
+                            print(i[1])
+                            r += check(l[left - 3: left - 1])
+                    sng1 = list(set(sng1))
+                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                        print("OK!!!")
+                        left = left - 3
+                        print(left, right, "границы")    
+                    else:
+                        print("Нужно ругаться")
+                        return ['он', 'писали']
+                elif left - 5 >= 0 and l[left - 1] == ',' and l[left - 5] == ',':
+                    print("ОНО работает!!", sng, part)
+                    sng1 = []
+                    r = []
+                    cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 4])
+                    res1 = cur.fetchall()
+                    res1 = list(set(res1))
+                    for i in res1:
+                        if i[0] == part:
+                            sng1 += list(i[1])
+                            print(i[1])
+                            r += check(l[left - 4: left - 1])
+                    sng1 = list(set(sng1))
+                    print("тута!")
+                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                        print("OK!!!")
+                        left = left - 4
+                        print(left, right, "границы")    
+                    else:
+                        print("Нужно ругаться")
+                        return ['он', 'писали']
+                elif left - 6 >= 0 and l[left - 1] == ',' and l[left - 6] == ',':
+                    print("ОНО работает!!", sng, part)
+                    sng1 = []
+                    r = []
+                    cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 5])
+                    res1 = cur.fetchall()
+                    res1 = list(set(res1))
+                    for i in res1:
+                        if i[0] == part:
+                            sng1 += list(i[1])
+                            print(i[1])
+                            r += check(l[left - 5: left - 1])
+                    sng1 = list(set(sng1))
+                    print("тута!")
+                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                        print("OK!!!")
+                        left = left - 5
+                        print(left, right, "границы")    
+                    else:
+                        print("Нужно ругаться")
+                        return ['он', 'писали']
+                elif left - 7 >= 0 and l[left - 1] == ',' and l[left - 7] == ',':
+                    print("ОНО работает!!", sng, part)
+                    sng1 = []
+                    r = []
+                    cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 6])
+                    res1 = cur.fetchall()
+                    res1 = list(set(res1))
+                    for i in res1:
+                        if i[0] == part:
+                            sng1 += list(i[1])
+                            print(i[1])
+                            r += check(l[left - 6: left - 1])
+                    sng1 = list(set(sng1))
+                    print("тута!")
+                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                        print("OK!!!")
+                        left = left - 6
+                        print(left, right, "границы")    
+                    else:
+                        print("Нужно ругаться")
+                        return ['он', 'писали']
+                elif left - 8 >= 0 and l[left - 1] == ',' and l[left - 8] == ',':
+                    print("ОНО работает!!", sng, part)
+                    sng1 = []
+                    r = []
+                    cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 7])
+                    res1 = cur.fetchall()
+                    res1 = list(set(res1))
+                    for i in res1:
+                        if i[0] == part:
+                            sng1 += list(i[1])
+                            print(i[1])
+                            r += check(l[left - 7: left - 1])
+                    sng1 = list(set(sng1))
+                    print("тута!")
+                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                        print("OK!!!")
+                        left = left - 7
+                        print(left, right, "границы")    
+                    else:
+                        print("Нужно ругаться")
+                        return ['он', 'писали']
+                elif left - 9 >= 0 and l[left - 1] == ',' and l[left - 9] == ',':
+                    print("ОНО работает!!", sng, part)
+                    sng1 = []
+                    r = []
+                    cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 8])
+                    res1 = cur.fetchall()
+                    res1 = list(set(res1))
+                    for i in res1:
+                        if i[0] == part:
+                            sng1 += list(i[1])
+                            print(i[1])
+                            r += check(l[left - 8: left - 1])
+                    sng1 = list(set(sng1))
+                    print("тута!")
+                    if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                        print("OK!!!")
+                        left = left - 8
+                        print(left, right, "границы")    
+                    else:
+                        print("Нужно ругаться")
+                        return ['он', 'писали']
                 else:
-                    if left - 4 >= 0 and l[left - 1] == ',' and l[left - 4] == ',' and end == -1:
-                        print("ОНО работает!!", sng, part)
+                    if left - 8 >= 0 and l[left - 1] == ',' and end == -1:
                         sng1 = []
-                        r = []
-                        cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 3])
+                        cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 8])
                         res1 = cur.fetchall()
                         res1 = list(set(res1))
                         for i in res1:
-                            if i[0] == part:
+                            if i[0] == '5':
                                 sng1 += list(i[1])
-                                print(i[1])
-                                r += check(l[left - 3: left - 1])
                         sng1 = list(set(sng1))
-                        print("тута!")
-                        if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
                             print("OK!!!")
-                            left = left - 3
+                            left = left - 8
                             end = 1
                             print(left, right, "границы")    
-                        else:
+                        elif len(sng1) > 0 and 'Y' in sng1:
                             print("Нужно ругаться")
                             return ['он', 'писали']
-                        """ if len(sng1) > 0:
-                            if sng in sng1 and 'Y' in r:
-                                left = left - 3
-                                print(left, right, "границы")
-                            else:
-                                return ['он', 'писали']"""
-                    if l[left - 1] == ',' and left - 3 >= 0 and end == -1:
+                    if left - 7 >= 0 and l[left - 1] == ',' and end == -1:
+                        sng1 = []
+                        cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 7])
+                        res1 = cur.fetchall()
+                        res1 = list(set(res1))
+                        for i in res1:
+                            if i[0] == '5':
+                                sng1 += list(i[1])
+                        sng1 = list(set(sng1))
+                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
+                            print("OK!!!")
+                            left = left - 7
+                            end = 1
+                            print(left, right, "границы")    
+                        elif len(sng1) > 0 and 'Y' in sng1:
+                            print("Нужно ругаться")
+                            return ['он', 'писали']
+                    if left - 6 >= 0 and l[left - 1] == ',' and end == -1:
+                        sng1 = []
+                        cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 6])
+                        res1 = cur.fetchall()
+                        res1 = list(set(res1))
+                        for i in res1:
+                            if i[0] == '5':
+                                sng1 += list(i[1])
+                        sng1 = list(set(sng1))
+                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
+                            print("OK!!!")
+                            left = left - 6
+                            end = 1
+                            print(left, right, "границы")    
+                        elif len(sng1) > 0 and 'Y' in sng1:
+                            print("Нужно ругаться")
+                            return ['он', 'писали']
+                    if left - 5 >= 0 and l[left - 1] == ',' and end == -1:
+                        sng1 = []
+                        cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 5])
+                        res1 = cur.fetchall()
+                        res1 = list(set(res1))
+                        for i in res1:
+                            if i[0] == '5':
+                                sng1 += list(i[1])
+                        sng1 = list(set(sng1))
+                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
+                            print("OK!!!")
+                            left = left - 5
+                            end = 1
+                            print(left, right, "границы")    
+                        elif len(sng1) > 0 and 'Y' in sng1:
+                            print("Нужно ругаться")
+                            return ['он', 'писали']
+                    if left - 4 >= 0 and l[left - 1] == ',' and end == -1:
+                        sng1 = []
+                        cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 4])
+                        res1 = cur.fetchall()
+                        res1 = list(set(res1))
+                        for i in res1:
+                            if i[0] == '5':
+                                sng1 += list(i[1])
+                        sng1 = list(set(sng1))
+                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
+                            print("OK!!!")
+                            left = left - 4
+                            end = 1
+                            print(left, right, "границы")    
+                        elif len(sng1) > 0 and 'Y' in sng1:
+                            print("Нужно ругаться")
+                            return ['он', 'писали']
+                    if left - 3 >= 0 and l[left - 1] == ',' and end == -1:
                         sng1 = []
                         cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 3])
                         res1 = cur.fetchall()
@@ -548,13 +730,13 @@ def comma(l):
                         sng1 = list(set(sng1))
                         if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
                             print("OK!!!")
-                            left = left - 2
+                            left = left - 3
                             end = 1
                             print(left, right, "границы")    
                         elif len(sng1) > 0 and 'Y' in sng1:
                             print("Нужно ругаться")
                             return ['он', 'писали']
-                    if l[left - 1] == ',' and left - 2 >= 0 and end == -1:
+                    if left - 2 >= 0 and l[left - 1] == ',' and end == -1:
                         sng1 = []
                         cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 2])
                         res1 = cur.fetchall()
@@ -565,7 +747,7 @@ def comma(l):
                         sng1 = list(set(sng1))
                         if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
                             print("OK!!!")
-                            left = left - 1
+                            left = left - 2
                             end = 1
                             print(left, right, "границы")    
                         else:
