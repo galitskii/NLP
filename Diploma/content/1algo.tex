@@ -61,8 +61,9 @@
 		\Function{comma}{l} \Comment{l~--- подготовленная строка в виде списка}
 		\If{<<и>> \textbf{in} l}
 		\State part $\gets [$ $]$ \Comment{Список значений параметра <<часть речи>> для данного слова (изначально пустой)}
-		\State left $\gets (-1)$
-		\State right $\gets (-1)$\Comment{Левая и правая границы заменяемого участка, изначально инициализируем невозможными значениями: $(-1)$}
+		\State end$\gets (-1)$ \Comment{Индикатор нахождения начала перечисления}
+		\State left $\gets (-1)$ \Comment{Левая и правая границы заменяемого участка изначально}
+		\State right $\gets (-1)$\Comment{инициализируем невозможными значениями: $(-1)$}
 		\State llen $\gets $len(l) \Comment{Длина исходного списка}
 		\State id1 $\gets$ l.index(<<и>>)\Comment{Записываем индекс <<и>> в списке} 
 		\algstore{bkbreak}
@@ -356,10 +357,12 @@
 Итак, в результате работы фрагментов \ref{alg7} и \ref{alg8} будет сдвинута граница до <<первой>> запятой.
 
 Следующий этап~--- поиск начала перечисления. Соответствующий фрагмент описан алгоритмом \ref{alg9}.
+
+Индикатор end отвечает за нахождение начала перечисления (изначально был инициализирован $(-1)$, а после нахождения начала перечисления будет равен $1$). Как и раньше, проверяем первый найденную подстроку на выполнение правил в ней.
 \begin{algorithm}
 	\caption{-- Фрагмент алгоритма \ref{alg8}}\label{alg9}
 	\begin{algorithmic}[1]
-	\If{l$[$left$-1]=$<<,>> \textbf{and} left$-2\ge 0$}
+	\If{left$-2\ge 0$\textbf{ and }l$[$left$-1]=$<<,>> \textbf{and} end$=(-1)$}
 	\State res1$\gets$ l$[$left$-2]$.[pos, singular, cow]
 	\For{\textbf{from} $i = 0$ \textbf{to} len(res1)$ - 1$}
 	\If{res1$[i][0]=$<<6>>}
@@ -368,7 +371,90 @@
 	\EndIf
 	\EndFor
 	\EndIf
-	%	\algstore{bkbreak}
+	\If{left$-3\ge 0$\textbf{ and }l$[$left$-1]=$<<,>> \textbf{and} end$=(-1)$}
+	\State res1$\gets$ l$[$left$-3]$.[pos, singular, cow]
+	\For{\textbf{from} $i = 0$ \textbf{to} len(res1)$ - 1$}
+	\If{res1$[i][0]=$<<6>>}
+	\State r $\gets$ check(l$[$left$-3:$ left$-1]$)
+	\If{<<N>>$\in$ r}
+	\State \Return $[$<<он>>, <<писали>> $]$
+	\ElsIf{<<Y>> $\in$ r}
+	\State left$\gets$ left$-3$
+	\State end $\gets 1$
+	\State \textbf{break}
+	\EndIf
+	\EndIf
+	\EndFor
+	\EndIf
+	\If{left$-4\ge 0$\textbf{ and }l$[$left$-1]=$<<,>> \textbf{and} end$=(-1)$}
+	\State res1$\gets$ l$[$left$-4]$.[pos, singular, cow]
+	\For{\textbf{from} $i = 0$ \textbf{to} len(res1)$ - 1$}
+	\If{res1$[i][0]=$<<6>>}
+	\State r $\gets$ check(l$[$left$-4:$ left$-1]$)
+	\If{<<N>>$\in$ r}
+	\State \Return $[$<<он>>, <<писали>> $]$
+	\ElsIf{<<Y>> $\in$ r}
+	\State left$\gets$ left$-4$
+	\State end $\gets 1$
+	\State \textbf{break}
+\EndIf
+	\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+	\caption{-- Продолжение алгоритма \ref{alg9}}\label{alg10}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
+			\EndIf
+			\EndFor
+			\EndIf
+				\If{left$-5\ge 0$\textbf{ and }l$[$left$-1]=$<<,>> \textbf{and} end$=(-1)$}
+			\State res1$\gets$ l$[$left$-5]$.[pos, singular, cow]
+			\For{\textbf{from} $i = 0$ \textbf{to} len(res1)$ - 1$}
+			\If{res1$[i][0]=$<<6>>}
+			\State r $\gets$ check(l$[$left$-5:$ left$-1]$)
+			\If{<<N>>$\in$ r}
+			\State \Return $[$<<он>>, <<писали>> $]$
+			\ElsIf{<<Y>> $\in$ r}
+			\State left$\gets$ left$-5$
+			\State end $\gets 1$
+			\State \textbf{break}
+			\EndIf
+			\EndIf
+			\EndFor
+			\EndIf
+			\If{left$-6\ge 0$\textbf{ and }l$[$left$-1]=$<<,>> \textbf{and} end$=(-1)$}
+			\State res1$\gets$ l$[$left$-6]$.[pos, singular, cow]
+			\For{\textbf{from} $i = 0$ \textbf{to} len(res1)$ - 1$}
+			\If{res1$[i][0]=$<<6>>}
+			\State r $\gets$ check(l$[$left$-6:$ left$-1]$)
+			\If{<<N>>$\in$ r}
+			\State \Return $[$<<он>>, <<писали>> $]$
+			\ElsIf{<<Y>> $\in$ r}
+			\State left$\gets$ left$-6$
+			\State end $\gets 1$
+			\State \textbf{break}
+			\EndIf
+			\EndIf
+			\EndFor
+			\EndIf
+			\If{left$-7\ge 0$\textbf{ and }l$[$left$-1]=$<<,>> \textbf{and} end$=(-1)$}
+			\State res1$\gets$ l$[$left$-7]$.[pos, singular, cow]
+			\For{\textbf{from} $i = 0$ \textbf{to} len(res1)$ - 1$}
+			\If{res1$[i][0]=$<<6>>}
+			\State r $\gets$ check(l$[$left$-7:$ left$-1]$)
+			\If{<<N>>$\in$ r}
+			\State \Return $[$<<он>>, <<писали>> $]$
+			\ElsIf{<<Y>> $\in$ r}
+			\State left$\gets$ left$-7$
+			\State end $\gets 1$
+			\State \textbf{break}
+			\EndIf
+			\EndIf
+			\EndFor
+			\EndIf
+		%\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
 \end{document}
