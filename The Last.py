@@ -83,15 +83,35 @@ def three(lst):
 # функция проверяет сочетания из 2 подряд идущих слов в списке lst
 def two(lst):
     result = []
+    pov = -1
+    sing = []
     for q in range(len(lst) - 1):
         ans1 = [] 
         cur.execute("select pos, singular, cow from words where word = '%s'" % lst[q])
         res_l = cur.fetchall()
         res_l = list(set(res_l))
+        
+        k = 0
+        uns = -1
+        for i in res_l:
+            if i[0] == '1' or i[0] == 'b':
+                if i[1] == 'N':
+                    uns = 1
 
         cur.execute("select pos, singular, cow from words where word = '%s'" % lst[q + 1])
         res_r = cur.fetchall()
         res_r = list(set(res_r))
+        
+        for i in res_r:
+            if i[0] == '5':
+                k += 1
+            elif i[0] == '1' or i[0] == 'b':
+                if i[1] == 'N':
+                    uns = 1
+        if k > 1:
+            pov = 1
+            print("HELP")
+        
         for i in res_l:
             for j in res_r:
                 cur.execute("select ans, comm, ex, r_id from simple_rules where prt_l = '{}' and prt_r = '{}' and sing_l = '{}' and sing_r = '{}' and cow_l = '{}' and cow_r = '{}'".format(i[0], j[0], i[1], j[1], i[2], j[2]))
@@ -100,13 +120,22 @@ def two(lst):
                 if len(res) > 0:
                     for k in res:
                         ans1.append(k[0])
-                        print(k[3])
-        if 'Y' in ans1:
-            result.append('Y')
-        elif 'N' in ans1:
-            result.append('N')
+                        print(k[3], "правило")
+        if pov == 1 and uns == -1:
+            if 'N' in ans1:
+                result.append('N')
+                print("НЕ ДОЛЖНО")
+            elif 'Y' in ans1:
+                result.append('Y')
+            else:
+                result.append('E')
         else:
-            result.append('E')
+            if 'Y' in ans1:
+                result.append('Y')
+            elif 'N' in ans1:
+                result.append('N')
+            else:
+                result.append('E')
     print("ОК2", result)
     return result
 
@@ -115,10 +144,15 @@ def comma(l):
     left = -1 # границы заменяемого диапазона
     right = -1
     print("И или ИЛИ")
+    w = ''
     llen = len(l) # длина предложения
-    id1 = l.index('и')
+    if 'и' in l:
+        w = 'и'
+    elif 'или' in l:
+        w = 'или'
+    id1 = l.index(w)
     print(id1)
-    if llen > id1 + 1: # следующее за "И" слово
+    if llen > id1 + 1: # следующее за "И" или "ИЛИ" слово
         cur.execute("select pos, singular, cow from words where word = '%s'" % l[id1 + 1])
         resp1 = cur.fetchall()
         resp1 = list(set(resp1))

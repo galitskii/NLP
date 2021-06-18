@@ -1,8 +1,9 @@
 \babel@toc {russian}{}
 \contentsline {section}{\numberline {1}Введение}{4}{section.1}%
-\contentsline {section}{\numberline {2}Описание подхода}{5}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Подготовительный этап}{5}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Обработка предложения}{5}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Упрощение предложения}{6}{subsubsection.2.2.1}%
-\contentsline {section}{Список литературы}{17}{algorithm.12}%
-\contentsline {section}{{\normalfont ПРИЛОЖЕНИЕ A. Система правил для анализа словосочетаний из двух слов}}{18}{appendix.A}%
+\contentsline {section}{\numberline {2}Литературный обзор}{5}{section.2}%
+\contentsline {section}{\numberline {3}Описание подхода}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Подготовительный этап}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Обработка предложения}{6}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Упрощение предложения}{7}{subsubsection.3.2.1}%
+\contentsline {section}{Список литературы}{19}{algorithm.12}%
+\contentsline {section}{{\normalfont ПРИЛОЖЕНИЕ A. Система правил для анализа словосочетаний из двух слов}}{20}{appendix.A}%
