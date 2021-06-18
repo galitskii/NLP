@@ -1,6 +1,6 @@
 \babel@toc {russian}{}
 \contentsline {section}{\numberline {1}Введение}{4}{section.1}%
-\contentsline {section}{\numberline {2}Литературный обзор}{5}{section.2}%
+\contentsline {section}{\numberline {2}Анализ проблемы}{5}{section.2}%
 \contentsline {section}{\numberline {3}Описание подхода}{6}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Подготовительный этап}{6}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Обработка предложения}{6}{subsection.3.2}%
