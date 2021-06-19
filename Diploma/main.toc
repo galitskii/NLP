@@ -6,9 +6,9 @@
 \contentsline {subsection}{\numberline {3.2}Подготовительный этап}{7}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Обработка предложения}{7}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Упрощение предложения}{8}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Непосредственная проверка предложения}{18}{subsubsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}Примеры работы алгоритма}{18}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Заключение}{19}{section.4}%
-\contentsline {section}{Список литературы}{20}{section.4}%
-\contentsline {section}{{\normalfont ПРИЛОЖЕНИЕ A. Структура таблиц базы данных}}{21}{appendix.A}%
-\contentsline {section}{{\normalfont ПРИЛОЖЕНИЕ B. Система правил для анализа словосочетаний из двух слов}}{22}{appendix.B}%
+\contentsline {subsubsection}{\numberline {3.3.2}Непосредственная проверка предложения}{19}{subsubsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.4}Примеры работы алгоритма}{19}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Заключение}{20}{section.4}%
+\contentsline {section}{Список литературы}{21}{section.4}%
+\contentsline {section}{{\normalfont ПРИЛОЖЕНИЕ A. Структура таблиц базы данных}}{22}{appendix.A}%
+\contentsline {section}{{\normalfont ПРИЛОЖЕНИЕ B. Система правил для анализа словосочетаний из двух слов}}{23}{appendix.B}%
