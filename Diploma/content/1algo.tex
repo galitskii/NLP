@@ -509,6 +509,7 @@
 		\State sng0 $\gets [\,]$\Comment{Для определения числа первого слова в предложении}
 		\State pov $\gets (-1)$\Comment{Индикатор повелительного наклонения}
 		\State res0$\gets$ l$[0].[$cow, singular, cow$]$
+		\State end$\gets (-1)$
 		\For{\textbf{from} $i = 0$ \textbf{to} len(res0)$ - 1$}
 		\If{res0$[i][0]=$<<5>>}
 		\State sng0 $\gets$ sng0 + list(res0$[i][1]$)
@@ -520,11 +521,28 @@
 		\State sng $\gets $<<Y>> \Comment{Считаем единственным число перечисляемых личных глаголов} 
 		\EndIf
 		\If{id1$-7\ge 0$ \textbf{and} left$=(-1)$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 7:\,$ id1$]$}
+		\State sng1 $\gets [\, ]$ \Comment{Для записи возможных значений числа}
+		\State r $\gets [\, ]$ \Comment{Для записи результата проверки по системе правил}
+		\For{\textbf{from} $i=0$ \textbf{to} len(resl7)$ - 1$}
+		\If{resl7$[i][0]=$part}
+		\State sng1$\gets$ sng1 $+$ list(resl7$[i][1]$)
+		\State r$\gets$ r $+$ list(check(l$[$id1$-7\, :\, $ id1 $]$))
+		\EndIf
+		\EndFor
+		\If{len(sng1)$ > 0$} \Comment{Если словосочетание действительно начинается с личного глагола}
+		\If{(len(sng1)$=1$ \textbf{and} sng $\in$ sng1 \textbf{and} <<Y>>$\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} sng$=$<<N>> \textbf{and} <<Y>> $\in$ r)}
+		\State left$\gets$ id1$-7$
+		\Else
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\EndIf
+		\EndIf
 		\EndIf
 		\EndIf
 		%\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
+
+Здесь следует рассмотреть решение проблемы омографии. В строках 16~--~32 алгоритма \ref{alg12}
 
 \subsubsection{Непосредственная проверка предложения}
 \subsection{Примеры работы алгоритма}
