@@ -528,12 +528,14 @@ def comma(l):
                 else:
                     return ['он', 'писали']
         if id1 - 1 >= 0 and left == -1:
+            print("ВОТ ЭТО")
             sng1 = []
             for i in  resl1:
                 if i[0] == part:
-                    if i[1] == sng:
-                        sng1 += list(sng)
-            if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and sng == 'N'):
+                    sng1 += list(i[1])
+            sng1 = list(set(sng1))
+            print(sng1, sng)
+            if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1):# and sng == 'N'):
                 left = id1 - 1
                 print(left, right, "границы")
             else:

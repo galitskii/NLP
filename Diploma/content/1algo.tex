@@ -148,9 +148,9 @@
 	\end{algorithmic}
 \end{algorithm}
 
-Таким образом, в результате исполнения блока \ref{alg3} будет определено, слова (словосочетания) какой части речи перечисляются (если в предложении присутствует перечисление с союзом <<и>>).
+Таким образом, в результате исполнения блока \ref{alg3} будет определено, слова (словосочетания) какой части речи перечисляются (если в предложении присутствует перечисление с союзом).
 
-Заметим, что в случае перечисления с союзом <<и>> за союзом идёт слово той же части речи, что и остальные перечисляемые слова. Например: \textit{<<Он хотел \textbf{читать} книги, \textbf{рисовать} картины и \textbf{познавать} тайны мироздания>>}. Легко видеть, что в предложении перечисляются инфинитивы, и в то же время после союза <<и>> идёт инфинитив <<познавать>>.
+Заметим, что в случае перечисления с союзом за союзом идёт слово той же части речи, что и остальные перечисляемые слова. Например: \textit{<<Он хотел \textbf{читать} книги, \textbf{рисовать} картины и \textbf{познавать} тайны мироздания>>}. Легко видеть, что в предложении перечисляются инфинитивы, и в то же время после союза <<и>> идёт инфинитив <<познавать>>.
 
 Если перечисляются инфинитивы, то упрощение предложения идёт согласно алгоритму \ref{alg4}.
 
@@ -618,16 +618,17 @@
 		\EndIf
 		\If{id1$-3\ge 0$ \textbf{and} left$=(-1)$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 3:\,$ id1$]$}
 		\State sng1 $\gets [\, ]$ 
+		\State r $\gets [\, ]$
+		\For{\textbf{from} $i=0$ \textbf{to} len(resl3)$ - 1$}
 		\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
-\pagebreak
+%\pagebreak
 \begin{algorithm}
 	\caption{-- Продолжение алгоритма \ref{alg14}}\label{alg15}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
-		\State r $\gets [\, ]$
-		\For{\textbf{from} $i=0$ \textbf{to} len(resl3)$ - 1$}
+		
 		\If{resl3$[i][0]=$part}
 		\State sng1$\gets$ sng1 $+$ list(resl3$[i][1]$)
 		\State r$\gets$ r $+$ list(check(l$[$id1$-3\, :\, $ id1 $]$))
@@ -658,13 +659,38 @@
 		\EndIf
 		\EndIf
 		\EndIf
+		\If{id1$-1\ge 0$ \textbf{and} left$=(-1)$}
+		\State sng1 $\gets [\, ]$ 
+		\For{\textbf{from} $i = 0$ \textbf{to} len(resl1)}
+		\If{resl1$[i][0]=$part}
+		\State sng1$\gets$ sng1 + list(resl1$[i][1]$)
+		\EndIf
+		\EndFor
+		\State sng1 $\gets$ list(set(sng1))
+		\If{(len(sng1)$=1$ \textbf{and} sng $\in$ sng1) \textbf{or} (len(sng1)$ > 1$)}
+		\State left$\gets$ id1$-1$
+			\Else
+		\State \Return $[$<<он>>, <<писали>> $]$
+			\EndIf
+				\EndIf
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\pagebreak
+Итак, по завершении работы алгоритма \ref{alg15} будут определены границы левого и правого операндов союза.
+
+Затем, как и в случае с инфинитивами, осуществляется поиск участков между двумя запятыми (при их наличии), а затем~--- поиск начала перечисления.
+\begin{algorithm}
+	\caption{-- Продолжение алгоритма \ref{alg15}}\label{alg16}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
+		\While{<<,>>$\in$ l$[1:$ left $]$}
+		\EndWhile
 		\EndIf
 		%\algstore{bkbreak}
 	\end{algorithmic}
-	
-	
 \end{algorithm}
-
 
 \subsubsection{Непосредственная проверка предложения}
 \subsection{Примеры работы алгоритма}
