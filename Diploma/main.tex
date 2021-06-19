@@ -97,8 +97,9 @@
 \floatname{algorithm}{\normalfont Алгоритм}
 
 \makeatletter
+
 \newcommand\appendix@section[1]{\refstepcounter{section}
-\orig@section*{{\normalfont ПРИЛОЖЕНИЕ \@Alph\c@section\\} #1}%
+\orig@section*{{\normalfont ПРИЛОЖЕНИЕ {\@Alph\c@section}\\} #1}%
 \addcontentsline{toc}{section}{{\normalfont ПРИЛОЖЕНИЕ \@Alph\c@section. #1}}%
 }
 \let\orig@section\section
@@ -138,18 +139,22 @@
 \subfile{content/1algo}
 
 \pagebreak
+\section{Заключение}
+\subfile{content/4zak}
+
+\pagebreak
 
 \addcontentsline{toc}{section}{\refname}
 \bibliography{bib_name}
 \begin{thebibliography}{500}
 	
-\bibitem{aho} \textbf{Ахо, А. Теория синтаксического анализа, перевода и компиляции}: в 2-х т. / А. Ахо, Дж. Ульман~-- М.: Мир, 1978.~-- Т.1.~-- 613 с.
+%\bibitem{aho} \textbf{Ахо, А. Теория синтаксического анализа, перевода и компиляции}: в 2-х т. / А. Ахо, Дж. Ульман~-- М.: Мир, 1978.~-- Т.1.~-- 613 с.
 
 \bibitem{dz}\textbf{ Дзюбенко, В.А. Согласование единственного и множественного числа в русском предложении}: бакалаврская диссертация: 03.03.01 / Дзюбенко Василий Александрович.~-- Долгопрудный, 2020.~-- 20 с.
 
 \bibitem{forms}\textbf{ Журавлёв, Ю.И. Дискретный анализ. Формальные системы и алгоритмы}: Учебное пособие / Ю.И. Журавлёв, Ю.А. Флёров, Н.М. Вялый~-- М.: ООО Контакт Плюс, 2010.~--~ 336 с.
 
-\bibitem{tryap} \textbf{Теория и реализация языков программирования}: Учебное пособие / В.А. Серебряков [и др.].~-- М.: МЗ Пресс, 2006.~-- 352 с.
+%\bibitem{tryap} \textbf{Теория и реализация языков программирования}: Учебное пособие / В.А. Серебряков [и др.].~-- М.: МЗ Пресс, 2006.~-- 352 с.
 
 \bibitem{ches} \textbf{Чесебиев, И. А. Компьютерное распознавание и порождение речи}: монография.~-- Москва: Спорт и Культура-2000, 2008.~-- 125 с.
 
@@ -169,5 +174,7 @@
 
 %Приложения
 \subfile{content/3pr1}
+\pagebreak
+\subfile{content/3pr2}
 
 \end{document}

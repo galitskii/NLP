@@ -3,15 +3,15 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 I couldn't open database file bib_name.bib
----line 38 of file main.aux
+---line 65 of file main.aux
  : \bibdata{bib_name
  :                  }
 I'm skipping whatever remains of this command
 I found no database files---while reading file main.aux
 I found no \bibstyle command---while reading file main.aux
-You've used 2 entries,
+You've used 7 entries,
             0 wiz_defined-function locations,
-            86 strings with 500 characters,
+            91 strings with 516 characters,
 and the built_in function-call counts, 0 in all, are:
 = -- 0
 > -- 0
