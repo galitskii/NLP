@@ -570,7 +570,7 @@
 		\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
-\newpage
+
 \begin{algorithm}
 	\caption{-- Продолжение алгоритма \ref{alg13}}\label{alg14}
 	\begin{algorithmic}[1]
@@ -599,9 +599,70 @@
 		\EndIf
 		\EndIf
 		\EndIf
+		\If{id1$-4\ge 0$ \textbf{and} left$=(-1)$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 4:\,$ id1$]$}
+		\State sng1 $\gets [\, ]$ 
+		\State r $\gets [\, ]$
+		\For{\textbf{from} $i=0$ \textbf{to} len(resl4)$ - 1$}
+		\If{resl4$[i][0]=$part}
+		\State sng1$\gets$ sng1 $+$ list(resl4$[i][1]$)
+		\State r$\gets$ r $+$ list(check(l$[$id1$-4\, :\, $ id1 $]$))
+		\EndIf
+		\EndFor
+		\If{len(sng1)$ > 0$}
+		\If{(len(sng1)$=1$ \textbf{and} sng $\in$ sng1 \textbf{and} <<Y>>$\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov$=1$) \textbf{and} <<Y>> $\in$ r)}
+		\State left$\gets$ id1$-4$
+		\Else
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\EndIf
+		\EndIf
+		\EndIf
+		\If{id1$-3\ge 0$ \textbf{and} left$=(-1)$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 3:\,$ id1$]$}
+		\State sng1 $\gets [\, ]$ 
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+\pagebreak
+\begin{algorithm}
+	\caption{-- Продолжение алгоритма \ref{alg14}}\label{alg15}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
+		\State r $\gets [\, ]$
+		\For{\textbf{from} $i=0$ \textbf{to} len(resl3)$ - 1$}
+		\If{resl3$[i][0]=$part}
+		\State sng1$\gets$ sng1 $+$ list(resl3$[i][1]$)
+		\State r$\gets$ r $+$ list(check(l$[$id1$-3\, :\, $ id1 $]$))
+		\EndIf
+		\EndFor
+		\If{len(sng1)$ > 0$}
+		\If{(len(sng1)$=1$ \textbf{and} sng $\in$ sng1 \textbf{and} <<Y>>$\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov$=1$) \textbf{and} <<Y>> $\in$ r)}
+		\State left$\gets$ id1$-3$
+		\Else
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\EndIf
+		\EndIf
+		\EndIf
+		\If{id1$-2\ge 0$ \textbf{and} left$=(-1)$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 2:\,$ id1$]$}
+		\State sng1 $\gets [\, ]$ 
+		\State r $\gets [\, ]$
+		\For{\textbf{from} $i=0$ \textbf{to} len(resl2)$ - 1$}
+		\If{resl2$[i][0]=$part}
+		\State sng1$\gets$ sng1 $+$ list(resl2$[i][1]$)
+		\State r$\gets$ r $+$ list(check(l$[$id1$-2\, :\, $ id1 $]$))
+		\EndIf
+		\EndFor
+		\If{len(sng1)$ > 0$}
+		\If{(len(sng1)$=1$ \textbf{and} sng $\in$ sng1 \textbf{and} <<Y>>$\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov$=1$) \textbf{and} <<Y>> $\in$ r)}
+		\State left$\gets$ id1$-2$
+		\Else
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\EndIf
+		\EndIf
+		\EndIf
 		\EndIf
 		%\algstore{bkbreak}
 	\end{algorithmic}
+	
+	
 \end{algorithm}
 
 
