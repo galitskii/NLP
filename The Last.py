@@ -456,7 +456,7 @@ def comma(l):
                     sng1 += list(i[1])
                     r += check(l[id1 - 7: id1])
             if len(sng1) > 0:
-                if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and  (sng == 'N' or pov == 1) and 'Y' in r):
                     left = id1 - 7
                     print(left, right, "границы")
                 else:
@@ -469,7 +469,7 @@ def comma(l):
                     sng1 += list(i[1])
                     r += check(l[id1 - 6: id1])
             if len(sng1) > 0:
-                if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and  (sng == 'N' or pov == 1) and 'Y' in r):
                     left = id1 - 6
                     print(left, right, "границы")
                 else:
@@ -482,7 +482,7 @@ def comma(l):
                     sng1 += list(i[1])
                     r += check(l[id1 - 5: id1])
             if len(sng1) > 0:
-                if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and  (sng == 'N' or pov == 1) and 'Y' in r):
                     left = id1 - 5
                     print(left, right, "границы")
                 else:
@@ -495,7 +495,7 @@ def comma(l):
                     sng1 += list(i[1])
                     r += check(l[id1 - 4: id1])
             if len(sng1) > 0:
-                if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and sng == 'N' and 'Y' in r):
+                if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and  (sng == 'N' or pov == 1) and 'Y' in r):
                     left = id1 - 4
                     print(left, right, "границы")
                 else:
@@ -835,7 +835,7 @@ def res(r):
     else:
         print("Есть незнакомые сочетания")
             
-print("Введите предложение из слов, являющихся местоимением, существительным или глаголом (возможно перечисление инфинитивов или инфинитивов + существительное):")
+print("Введите предложение из слов, являющихся местоимением, существительным или глаголом (возможно перечисление инфинитивов или личных глаголов с союзом и (или) и зависимыми словами данных частей речи:")
 str1 = input()
 
 res(check(space(str1)))
