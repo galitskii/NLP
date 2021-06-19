@@ -537,8 +537,7 @@
 		\EndIf
 		\EndIf
 		\EndIf
-		\EndIf
-		%\algstore{bkbreak}
+		\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
 
@@ -552,7 +551,59 @@
 	\item Число личного глагола определяется неоднозначно, первое слово в предложении не является личным глаголом в повелительном наклонении и перечисляются личные глаголы во множественном числе.
 \end{enumerate}
 
-Это мы и проверяем. В остальных случаях возвращаем заведомо неверное предложение.
+Это мы и проверяем. В остальных случаях возвращаем заведомо неверное предложение. Совершенно аналогично рассматриваются словосочетания меньшей длины:
+
+\begin{algorithm}
+	\caption{-- Продолжение алгоритма \ref{alg12}}\label{alg13}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
+		\If{id1$-6\ge 0$ \textbf{and} left$=(-1)$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 6:\,$ id1$]$}
+		\State sng1 $\gets [\, ]$ 
+		\State r $\gets [\, ]$ 
+		\For{\textbf{from} $i=0$ \textbf{to} len(resl6)$ - 1$}
+		\If{resl6$[i][0]=$part}
+		\State sng1$\gets$ sng1 $+$ list(resl6$[i][1]$)
+		\State r$\gets$ r $+$ list(check(l$[$id1$-6\, :\, $ id1 $]$))
+		\EndIf
+		\EndFor
+		\If{len(sng1)$ > 0$} 
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+\newpage
+\begin{algorithm}
+	\caption{-- Продолжение алгоритма \ref{alg13}}\label{alg14}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
+		\If{(len(sng1)$=1$ \textbf{and} sng $\in$ sng1 \textbf{and} <<Y>>$\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov$=1$) \textbf{and} <<Y>> $\in$ r)}
+		\State left$\gets$ id1$-6$
+		\Else
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\EndIf
+		\EndIf
+		\EndIf
+		\If{id1$-5\ge 0$ \textbf{and} left$=(-1)$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 5:\,$ id1$]$}
+		\State sng1 $\gets [\, ]$ 
+		\State r $\gets [\, ]$
+		\For{\textbf{from} $i=0$ \textbf{to} len(resl5)$ - 1$}
+		\If{resl5$[i][0]=$part}
+		\State sng1$\gets$ sng1 $+$ list(resl5$[i][1]$)
+		\State r$\gets$ r $+$ list(check(l$[$id1$-5\, :\, $ id1 $]$))
+		\EndIf
+		\EndFor
+		\If{len(sng1)$ > 0$}
+		\If{(len(sng1)$=1$ \textbf{and} sng $\in$ sng1 \textbf{and} <<Y>>$\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov$=1$) \textbf{and} <<Y>> $\in$ r)}
+		\State left$\gets$ id1$-5$
+		\Else
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\EndIf
+		\EndIf
+		\EndIf
+		\EndIf
+		%\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
 
 \subsubsection{Непосредственная проверка предложения}
 \subsection{Примеры работы алгоритма}

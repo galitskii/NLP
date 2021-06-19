@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  19 JUN 2021 11:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  19 JUN 2021 11:58
 entering extended mode
 **./main.tex
 (main.tex
@@ -1024,13 +1024,19 @@ LaTeX Warning: Float too large for page by 19.90024pt on input line 149.
 
 LaTeX Warning: Float too large for page by 5.40024pt on input line 480.
 
-[15] [16] [17] [18]) [19] (content/4zak.tex) [20] (main.bbl)
+[15] [16] [17] [18]
+Overfull \hbox (6.17746pt too wide) in paragraph at lines 554--555
+\T2A/cmr/m/n/12 пред-ло-же-ние. Со-вер-шен-но ана-ло-гич-но рас-смат-ри-ва-ют-с
+я сло-во-со-че-та-ния мень-шей дли-
+ []
+
+[19]) [20] (content/4zak.tex) [21] (main.bbl)
 Underfull \hbox (badness 2005) in paragraph at lines 163--164
 []\T2A/cmr/bx/n/12 Conway, D. An algorithmic approach to English pluralization 
 \T2A/cmr/m/n/12 //
  []
 
-[21] (content/3pr1.tex) [22] (content/3pr2.tex
+[22] (content/3pr1.tex) [23] (content/3pr2.tex
 Underfull \hbox (badness 10000) in paragraph at lines 23--23
 []|\T2A/cmr/m/n/12 гордиться
  []
@@ -1045,15 +1051,15 @@ Overfull \hbox (0.83862pt too wide) in paragraph at lines 13--31
  [] 
  []
 
-) [23] (main.aux)
+) [24] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A1FB9A89C5CFD3E9A00F7F7A588675C8;3089.
  ) 
 Here is how much of TeX's memory you used:
- 17105 strings out of 479163
- 256992 string characters out of 2854475
- 612789 words of memory out of 3000000
- 34279 multiletter control sequences out of 15000+600000
+ 17110 strings out of 479163
+ 257037 string characters out of 2854475
+ 612953 words of memory out of 3000000
+ 34281 multiletter control sequences out of 15000+600000
  414137 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,11n,79p,1504b,650s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1068,9 +1074,9 @@ h-t2a/dpi600\labx1200.pk><C:/Users/Home/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Home/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Home/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (22 pages, 312347 bytes).
+Output written on main.pdf (23 pages, 315401 bytes).
 PDF statistics:
- 602 PDF objects out of 1000 (max. 8388607)
- 73 named destinations out of 1000 (max. 500000)
+ 611 PDF objects out of 1000 (max. 8388607)
+ 76 named destinations out of 1000 (max. 500000)
  134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
