@@ -6,13 +6,21 @@
 
 \begin{document}
 \section{Система правил для анализа словосочетаний из двух слов}\label{app:B}
-\begin{table}[!h]
-	\begin{center}
+
+Обозначения:\begin{itemize}
+	\item prt~--- часть речи: $1$~--- существительное, $5$~--- личный глагол, $6$~--- инфинитив, $b$~--- местоимение;
+	\item sing~--- число: <<N>>~--- множественное, <<Y>>~--- единственное, <<-->>~--- не определено (инфинитивы);
+	\item cow~--- падеж: $1$~--- именительный, $2$~--- родительный, $3$~--- дательный, $4$~--- винительный, $5$~--- творительный, $6$~--- предложный, <<-->>~--- не определено (личные глаголы и инфинитивы);
+	\item ans~--- ответ: <<Y>>~--- верно, <<N>>~--- неверно.
+\end{itemize}
+\_r и \_l~--- указатель правого и левого операнда соответственно.
+\begin{longtable}[c]{|c|c|c|c|c|c|c|c|p{90px}|}
+	%\begin{center}
 		\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
-	\caption{Система правил для словосочетаний из двух слов}
-		\begin{tabular}{|c|c|c|c|c|c|c|c|p{90px}|}
+	\caption{Система правил для словосочетаний из двух слов}\\
+		%\begin{tabular}
 			\hline
-			\textbf{№} & \textbf{prt\_l} &\textbf{ sing\_l}  & \textbf{cow\_r} & \textbf{prt\_r }& \textbf{sing\_r} & \textbf{cow\_l} & \textbf{ans}  & \multicolumn{1}{c|}{\textbf{example}} \\ \hline
+			\textbf{№}&\textbf{ prt\_l} &\textbf{sing\_l}  &\textbf{cow\_r} & \textbf{prt\_r }&\textbf{sing\_r }& \textbf{cow\_l} & \textbf{ans}  &\textbf{Пример} \\ \hline
 			1 & b & N & 1 & 5 & N & --  & Y  & мы делали \\ \hline
 			2 &  1 &Y & 1 & 5 & N & -- & N & собака лаяли\\ \hline
 			3 & 1 & Y & 1 & 5 & Y & -- & Y & самолёт летит\\ \hline 
@@ -29,7 +37,12 @@
 			14&5&Y&--&b&N&1&N&вздохнул мы\\ \hline
 			15&5&Y&--&1&N&1&N&вздохнул люди\\ \hline
 			16&5&Y&--&1&Y&1&Y&бежал человек \\ \hline
-		\end{tabular}
-	\end{center}
-\end{table}
+			17&5&N&--&1&Y&1&N&бегут собака\\ \hline
+			18&5&N&--&1&N&1&Y& бежали собаки\\ \hline
+			19&5&N&--&b&Y&1&N&бежали я\\ \hline
+			20&5&N&--&b&N&1&Y&бежали мы\\ \hline
+			21&6&--&--&b&N&2&Y&укусить нас\\ \hline
+	%	\end{tabular}
+%	\end{center}
+\end{longtable}
 \end{document}

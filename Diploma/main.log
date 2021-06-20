@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  20 JUN 2021 19:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  20 JUN 2021 20:15
 entering extended mode
 **./main.tex
 (main.tex
@@ -791,12 +791,31 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \colbreak@box=\box99
 \mc@col@check@num=\count308
 )
+(C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\longtable.st
+y
+Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
+\LTleft=\skip69
+\LTright=\skip70
+\LTpre=\skip71
+\LTpost=\skip72
+\LTchunksize=\count309
+\LTcapwidth=\dimen276
+\LT@head=\box100
+\LT@firsthead=\box101
+\LT@foot=\box102
+\LT@lastfoot=\box103
+\LT@cols=\count310
+\LT@rows=\count311
+\c@LT@tables=\count312
+\c@LT@chunks=\count313
+\LT@p@ftn=\toks33
+)
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/newunicodechar\newunicod
 echar.sty
 Package: newunicodechar 2018/04/08 v1.2 Defining Unicode characters
 )
 
-Package newunicodechar Warning: Redefining Unicode character on input line 31.
+Package newunicodechar Warning: Redefining Unicode character on input line 32.
 
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/t2\mathtext.sty
 Package: mathtext 2018/04/13 v1.1 transparent text-and-math defs
@@ -807,15 +826,15 @@ Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
 
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count309
+\etb@tempcnta=\count314
 )
-\csq@reset=\count310
-\csq@gtype=\count311
-\csq@glevel=\count312
-\csq@qlevel=\count313
-\csq@maxlvl=\count314
-\csq@tshold=\count315
-\csq@ltx@everypar=\toks33
+\csq@reset=\count315
+\csq@gtype=\count316
+\csq@glevel=\count317
+\csq@qlevel=\count318
+\csq@maxlvl=\count319
+\csq@tshold=\count320
+\csq@ltx@everypar=\toks34
 
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
 File: csquotes.def 2021-02-22 v5.2l csquotes generic definitions (JAW)
@@ -834,27 +853,27 @@ Package: import 2020/04/01  v 6.2
 ))
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip69
-\multirow@cntb=\count316
-\multirow@dima=\skip70
-\bigstrutjot=\dimen276
+\multirow@colwidth=\skip73
+\multirow@cntb=\count321
+\multirow@dima=\skip74
+\bigstrutjot=\dimen277
 )
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count317
-\float@exts=\toks34
-\float@box=\box100
-\@float@everytoks=\toks35
-\@floatcapt=\box101
+\c@float@type=\count322
+\float@exts=\toks35
+\float@box=\box104
+\@float@everytoks=\toks36
+\@floatcapt=\box105
 )
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\@float@every@algorithm=\toks36
-\c@algorithm=\count318
+\@float@every@algorithm=\toks37
+\c@algorithm=\count323
 )
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseudoco
 de.sty
@@ -865,24 +884,24 @@ x.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count319
-\c@ALG@rem=\count320
-\c@ALG@nested=\count321
-\ALG@tlm=\skip71
-\ALG@thistlm=\skip72
-\c@ALG@Lnr=\count322
-\c@ALG@blocknr=\count323
-\c@ALG@storecount=\count324
-\c@ALG@tmpcounter=\count325
-\ALG@tmplength=\skip73
+\c@ALG@line=\count324
+\c@ALG@rem=\count325
+\c@ALG@nested=\count326
+\ALG@tlm=\skip75
+\ALG@thistlm=\skip76
+\c@ALG@Lnr=\count327
+\c@ALG@blocknr=\count328
+\c@ALG@storecount=\count329
+\c@ALG@tmpcounter=\count330
+\ALG@tmplength=\skip77
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/vmargin\vmargin.sty
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
 
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
-\PaperWidth=\dimen277
-\PaperHeight=\dimen278
+\PaperWidth=\dimen278
+\PaperHeight=\dimen279
 )
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\indentfirst.
 sty
@@ -893,17 +912,17 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box102
-\beforetitleunit=\skip74
-\aftertitleunit=\skip75
-\ttl@plus=\dimen279
-\ttl@minus=\dimen280
-\ttl@toksa=\toks37
-\titlewidth=\dimen281
-\titlewidthlast=\dimen282
-\titlewidthfirst=\dimen283
+\ttl@box=\box106
+\beforetitleunit=\skip78
+\aftertitleunit=\skip79
+\ttl@plus=\dimen280
+\ttl@minus=\dimen281
+\ttl@toksa=\toks38
+\titlewidth=\dimen282
+\titlewidthlast=\dimen283
+\titlewidthfirst=\dimen284
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 118.
+Package hyperref Info: Option `colorlinks' set `true' on input line 119.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -912,33 +931,33 @@ Package csquotes Info: Redefining alias 'default' -> 'russian'.
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdft
 ex.def
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count326
-\l__pdf_internal_box=\box103
+\l__color_backend_stack_int=\count331
+\l__pdf_internal_box=\box107
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Info: Redefining \th on input line 120.
-Package hyperref Info: Link coloring ON on input line 120.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Info: Redefining \th on input line 121.
+Package hyperref Info: Link coloring ON on input line 121.
 
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -950,11 +969,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 estring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count327
+\c@section@level=\count332
 )
-LaTeX Info: Redefining \ref on input line 120.
-LaTeX Info: Redefining \pageref on input line 120.
-LaTeX Info: Redefining \nameref on input line 120.
+LaTeX Info: Redefining \ref on input line 121.
+LaTeX Info: Redefining \pageref on input line 121.
+LaTeX Info: Redefining \nameref on input line 121.
  (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
@@ -963,17 +982,17 @@ LaTeX Info: Redefining \nameref on input line 120.
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
 i
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count328
-\scratchdimen=\dimen284
-\scratchbox=\box104
-\nofMPsegments=\count329
-\nofMParguments=\count330
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count331
-\MPscratchDim=\dimen285
-\MPnumerator=\count332
-\makeMPintoPDFobject=\count333
-\everyMPtoPDFconversion=\toks39
+\scratchcounter=\count333
+\scratchdimen=\dimen285
+\scratchbox=\box108
+\nofMPsegments=\count334
+\nofMParguments=\count335
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count336
+\MPscratchDim=\dimen286
+\MPnumerator=\count337
+\makeMPintoPDFobject=\count338
+\everyMPtoPDFconversion=\toks40
 )
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
 se.sty
@@ -988,8 +1007,14 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
+Package caption Info: longtable package is loaded.
+
+(C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
+Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
+)
 Package caption Info: End \AtBeginDocument code.
- (content/5ann.tex) [2
+
+(content/5ann.tex) [2
 
 {C:/Users/Home/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (main.toc<<t1.cm
 ap>><<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
@@ -1048,35 +1073,40 @@ LaTeX Warning: Float too large for page by 6.06674pt on input line 884.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ) [31] [32] (content/4zak.tex) [33] (main.bbl)
-Underfull \hbox (badness 2005) in paragraph at lines 163--164
+Underfull \hbox (badness 2005) in paragraph at lines 164--165
 []\T2A/cmr/bx/n/12 Conway, D. An algorithmic approach to English pluralization 
 \T2A/cmr/m/n/12 //
  []
 
 [34] (content/3pr1.tex) [35] (content/3pr2.tex
-Underfull \hbox (badness 10000) in paragraph at lines 23--23
+Underfull \hbox (badness 10000) in paragraph at lines 31--31
 []|\T2A/cmr/m/n/12 гордиться
  []
 
 
-Underfull \hbox (badness 1838) in paragraph at lines 26--26
+Underfull \hbox (badness 1838) in paragraph at lines 34--34
 []|\T2A/cmr/m/n/12 пришли до-го-во-
  []
 
 
-Overfull \hbox (0.83862pt too wide) in paragraph at lines 13--33
- [] 
+Overfull \hbox (0.83862pt too wide) in alignment at lines 17--41
+ [] [] [] [] [] [] [] [] [] 
  []
 
-) [36] (main.aux)
+
+Overfull \hbox (0.83862pt too wide) in alignment at lines 41--47
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[36]) [37] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A1FB9A89C5CFD3E9A00F7F7A588675C8;3089.
  ) 
 Here is how much of TeX's memory you used:
- 17166 strings out of 479163
- 257639 string characters out of 2854475
- 651387 words of memory out of 3000000
- 34310 multiletter control sequences out of 15000+600000
+ 17294 strings out of 479163
+ 259543 string characters out of 2854475
+ 653334 words of memory out of 3000000
+ 34432 multiletter control sequences out of 15000+600000
  414137 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,11n,79p,1504b,691s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1092,9 +1122,9 @@ e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Home/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Home/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Home/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (35 pages, 361952 bytes).
+Output written on main.pdf (36 pages, 364096 bytes).
 PDF statistics:
- 730 PDF objects out of 1000 (max. 8388607)
- 103 named destinations out of 1000 (max. 500000)
+ 734 PDF objects out of 1000 (max. 8388607)
+ 104 named destinations out of 1000 (max. 500000)
  134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
