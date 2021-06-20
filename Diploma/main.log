@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  20 JUN 2021 20:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  20 JUN 2021 20:34
 entering extended mode
 **./main.tex
 (main.tex
@@ -1089,12 +1089,12 @@ Underfull \hbox (badness 1838) in paragraph at lines 34--34
  []
 
 
-Overfull \hbox (0.83862pt too wide) in alignment at lines 17--41
+Overfull \hbox (39.21257pt too wide) in alignment at lines 17--41
  [] [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (0.83862pt too wide) in alignment at lines 41--47
+Overfull \hbox (39.21257pt too wide) in alignment at lines 41--52
  [] [] [] [] [] [] [] [] [] 
  []
 
@@ -1122,7 +1122,7 @@ e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Home/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Home/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Home/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (36 pages, 364096 bytes).
+Output written on main.pdf (36 pages, 364644 bytes).
 PDF statistics:
  734 PDF objects out of 1000 (max. 8388607)
  104 named destinations out of 1000 (max. 500000)
