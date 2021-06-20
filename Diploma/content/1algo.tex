@@ -1031,7 +1031,7 @@
 
 Нами были написаны функции two() (алгоритм \ref{alg24}), three() (алгоритм \ref{alg26}) и four(), которые анализируют словосочетания соответствующей длины.
 
-\begin{algorithm}
+\begin{algorithm}[!h]
 	\caption{-- Анализ словосочетаний длины $2$}\label{alg24}
 	\begin{algorithmic}[1]
 	\Function{two}{lst}
@@ -1065,8 +1065,10 @@
 	\EndIf
 	\For{\textbf{from} i $=0$ \textbf{to} len(res$_l$)$-1$}
 	\For{\textbf{from} j $=0$ \textbf{to} len(res$_r$)$-1$}
-	\State res $\gets$ (ans, comm, ex, r\_id).simple\_rules.(res$_l[i]$)(res$_r[j]$) \Comment{Записываем ответ, правило, пример для данного правила и идентификатор правила для данного словосочетания из таблицы simple\_rules, в которой хранятся правила для словосочетаний длины $2$}
+	\State res $\gets$ (ans).simple\_rules.(res$_l[i]$)(res$_r[j]$) \Comment{Записываем ответ для данного словосочетания из таблицы simple\_rules, в которой хранятся правила для словосочетаний длины $2$}
 	\If{len(res) $>0$}
+		\For{\textbf{from} $r=0$ \textbf{to} len(res)$-1$}
+	\State ans$\gets$ ans $+$ res$[r][0]$
 	\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
@@ -1077,8 +1079,6 @@
 	\caption{-- Продолжение алгоритма \ref{alg24}}\label{alg25}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
-			\For{\textbf{from} $r=0$ \textbf{to} len(res)$-1$}
-		\State ans$\gets$ ans $+$ res$[r][0]$
 			\EndFor
 		\EndIf
 			\EndFor
@@ -1120,23 +1120,67 @@
 		\State res1 $\gets$ lst$[i]$.$[$pos, singular, cow$]$
 		\State res2 $\gets$ lst$[i + 1]$.$[$pos, singular, cow$]$
 		\State res3 $\gets$ lst$[i + 2]$.$[$pos, singular, cow$]$
-		\For{}
-		\For{}
-		\For{}
-		\EndFor
-		\EndFor
+		\For{\textbf{from} $i1 =0$ \textbf{to} len(res1)$-1$}
+		\For{\textbf{from} $i2 =0$ \textbf{to} len(res2)$-1$}
+		\For{\textbf{from} $i3 =0$ \textbf{to} len(res3)$-1$}
+		\State res $\gets$ (ans).add3\_r.(res1$[i1]$)(res1$[i2]$)(res3$[i3]$) \Comment{Записываем ответ для данного словосочетания из таблицы add3\_r, в которой хранятся правила для словосочетаний длины $3$}
+		\If{len(res)$>0$}
+		\For{\textbf{from} $r=0$ to len(res)$-1$}
+		\State result$\gets$ result $+$ res$[r][0]$
 		\EndFor
 		\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
-\pagebreak
 
 \begin{algorithm}
-	\caption{-- Анализ словосочетаний длины 3}\label{alg26}
+	\caption{-- Продолжение алгоритма \ref{alg26}}\label{alg27}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
-		
+				\EndIf
 		\EndFor
+		\EndFor
+		\EndFor
+				\State result $\gets$ list(set(result))
+		\If{<<N>> $\in$ result}
+		\State \Return $[$<<N>>$]$\Comment{Если на каком-то этапе сработало правило ошибки, не проверяем дальше}
+		\EndIf
+		\EndFor
+		\State \Return result
+		\EndFunction
+		%\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+Аналогично устроена проверка словосочетаний длины 4.
+
+\begin{algorithm}[!h]
+	\caption{-- Анализ словосочетаний длины 3}\label{alg26}
+	\begin{algorithmic}[1]
+		%\algrestore{bkbreak}
+		\Function{three}{lst}
+		\State result $\gets [\, ]$ 
+		\For{\textbf{from} $i=0$ \textbf{to} len(lst)$-3$}
+		\State res1 $\gets$ lst$[i]$.$[$pos, singular, cow$]$
+		\State res2 $\gets$ lst$[i + 1]$.$[$pos, singular, cow$]$
+		\State res3 $\gets$ lst$[i + 2]$.$[$pos, singular, cow$]$
+		\For{\textbf{from} $i1 =0$ \textbf{to} len(res1)$-1$}
+		\For{\textbf{from} $i2 =0$ \textbf{to} len(res2)$-1$}
+		\For{\textbf{from} $i3 =0$ \textbf{to} len(res3)$-1$}
+		\State res $\gets$ (ans).add3\_r.(res1$[i1]$)(res1$[i2]$)(res3$[i3]$) \Comment{Записываем ответ для данного словосочетания из таблицы add3\_r, в которой хранятся правила для словосочетаний длины $3$}
+		\If{len(res)$>0$}
+		\For{\textbf{from} $r=0$ to len(res)$-1$}
+		\State result$\gets$ result $+$ res$[r][0]$
+		\EndFor
+			\EndIf
+		\EndFor
+		\EndFor
+		\EndFor
+		\State result $\gets$ list(set(result))
+		\If{<<N>> $\in$ result}
+		\State \Return $[$<<N>>$]$\Comment{Если на каком-то этапе сработало правило ошибки, не проверяем дальше}
+		\EndIf
+		\EndFor
+		\State \Return result
 		\EndFunction
 		%\algstore{bkbreak}
 	\end{algorithmic}
