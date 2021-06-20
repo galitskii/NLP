@@ -815,15 +815,16 @@
 		\Else
 		\If{left$-9\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}\Comment{Поиск начала перечисления}
 		\State sng1$\gets [\,]$
+		\State r $\gets [\, ]$ 
 		\State res1$\gets$ l$[$left$-9]$.$[$pos, singular, cow$]$
 		\State res1$\gets$ list(set(res1))
 		\For{\textbf{from} $i=0$ \textbf{to} len(res1)$-1$}
 		\If{res1$[i][0]=$ part}
 		\State sng1$\gets$ sng1 $+$ list(res$[i][1]$)
+		\State r $\gets$ r $+$ list(l$[$left $-9\, :\, $ left$-1 ]$)
 		\EndIf
 		\EndFor	
 		\State sng1$\gets$ list(set(sng1))
-		\If{(len(sng1 $=1$) \textbf{and} sng$\in$ sng1) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$))}
 		\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
@@ -832,16 +833,16 @@
 	\caption{-- Продолжение алгоритма \ref{alg18}}\label{alg19}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
+		\If{(len(sng1 $=1$) \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>> $\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>> $\in$ r)}
 				\State left $\gets$ left$-9$
 		\State end $\gets 1$
 				\ElsIf{len(sng1)$>0$ \textbf{and} <<Y>> $\in$ sng1}
 		\State \Return $[$<<он>>, <<писали>> $]$
 		\EndIf
 			\EndIf
-			
-			\If{left$-9\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}\Comment{Поиск начала перечисления}
+			\If{left$-8\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}
 			\State sng1$\gets [\,]$
-			\State res1$\gets$ l$[$left$-9]$.$[$pos, singular, cow$]$
+			\State res1$\gets$ l$[$left$-8]$.$[$pos, singular, cow$]$
 			\State res1$\gets$ list(set(res1))
 			\For{\textbf{from} $i=0$ \textbf{to} len(res1)$-1$}
 			\If{res1$[i][0]=$ part}

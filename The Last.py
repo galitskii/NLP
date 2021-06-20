@@ -689,14 +689,16 @@ def comma(l):
                 else:
                     if left - 9 >= 0 and l[left - 1] == ',' and end == -1:
                         sng1 = []
+                        r = []
                         cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 9])
                         res1 = cur.fetchall()
                         res1 = list(set(res1))
                         for i in res1:
                             if i[0] == '5':
                                 sng1 += list(i[1])
+                                r += check(l[left - 9: left - 1])
                         sng1 = list(set(sng1))
-                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and (sng == 'N' or pov == 1)):
+                        if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and (sng == 'N' or pov == 1) and 'Y' in r):
                             print("OK!!!")
                             left = left - 9
                             end = 1
@@ -706,14 +708,16 @@ def comma(l):
                             return ['он', 'писали']
                     if left - 8 >= 0 and l[left - 1] == ',' and end == -1:
                         sng1 = []
+                        r = []
                         cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 8])
                         res1 = cur.fetchall()
                         res1 = list(set(res1))
                         for i in res1:
                             if i[0] == '5':
                                 sng1 += list(i[1])
+                                r += check(l[left - 8: left - 1])
                         sng1 = list(set(sng1))
-                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and (sng == 'N' or pov == 1)):
+                        if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and (sng == 'N' or pov == 1) and 'Y' in r):
                             print("OK!!!")
                             left = left - 8
                             end = 1
@@ -723,14 +727,16 @@ def comma(l):
                             return ['он', 'писали']
                     if left - 7 >= 0 and l[left - 1] == ',' and end == -1:
                         sng1 = []
+                        r = []
                         cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 7])
                         res1 = cur.fetchall()
                         res1 = list(set(res1))
                         for i in res1:
                             if i[0] == '5':
                                 sng1 += list(i[1])
+                                r += check(l[left - 7: left - 1])
                         sng1 = list(set(sng1))
-                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and (sng == 'N' or pov == 1)):
+                        if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and (sng == 'N' or pov == 1) and 'Y' in r):
                             print("OK!!!")
                             left = left - 7
                             end = 1
@@ -740,14 +746,16 @@ def comma(l):
                             return ['он', 'писали']
                     if left - 6 >= 0 and l[left - 1] == ',' and end == -1:
                         sng1 = []
+                        r = []
                         cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 6])
                         res1 = cur.fetchall()
                         res1 = list(set(res1))
                         for i in res1:
                             if i[0] == '5':
                                 sng1 += list(i[1])
+                                r += check(l[left - 6: left - 1])
                         sng1 = list(set(sng1))
-                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and (sng == 'N' or pov == 1)):
+                        if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and (sng == 'N' or pov == 1) and 'Y' in r):
                             print("OK!!!")
                             left = left - 6
                             end = 1
@@ -757,14 +765,16 @@ def comma(l):
                             return ['он', 'писали']
                     if left - 5 >= 0 and l[left - 1] == ',' and end == -1:
                         sng1 = []
+                        r = []
                         cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 5])
                         res1 = cur.fetchall()
                         res1 = list(set(res1))
                         for i in res1:
                             if i[0] == '5':
                                 sng1 += list(i[1])
+                                r += check(l[left - 5: left - 1])
                         sng1 = list(set(sng1))
-                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and (sng == 'N' or pov == 1)):
+                        if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and (sng == 'N' or pov == 1) and 'Y' in r):
                             print("OK!!!")
                             left = left - 5
                             end = 1
@@ -774,14 +784,16 @@ def comma(l):
                             return ['он', 'писали']
                     if left - 4 >= 0 and l[left - 1] == ',' and end == -1:
                         sng1 = []
+                        r = []
                         cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 4])
                         res1 = cur.fetchall()
                         res1 = list(set(res1))
                         for i in res1:
                             if i[0] == '5':
                                 sng1 += list(i[1])
+                                r += check(l[left - 4: left - 1])
                         sng1 = list(set(sng1))
-                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and (sng == 'N' or pov == 1)):
+                        if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and (sng == 'N' or pov == 1) and 'Y' in r):
                             print("OK!!!")
                             left = left - 4
                             end = 1
@@ -791,14 +803,16 @@ def comma(l):
                             return ['он', 'писали']
                     if left - 3 >= 0 and l[left - 1] == ',' and end == -1:
                         sng1 = []
+                        r = []
                         cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 3])
                         res1 = cur.fetchall()
                         res1 = list(set(res1))
                         for i in res1:
                             if i[0] == '5':
                                 sng1 += list(i[1])
+                                r += check(l[left - 3: left - 1])
                         sng1 = list(set(sng1))
-                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and (sng == 'N' or pov == 1)):
+                        if (len(sng1) == 1 and sng in sng1 and 'Y' in r) or (len(sng1) > 1 and (sng == 'N' or pov == 1) and 'Y' in r):
                             print("OK!!!")
                             left = left - 3
                             end = 1
