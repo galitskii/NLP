@@ -828,12 +828,12 @@
 		\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
-\pagebreak
+
 \begin{algorithm}
 	\caption{-- Продолжение алгоритма \ref{alg18}}\label{alg19}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
-		\If{(len(sng1 $=1$) \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>> $\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>> $\in$ r)}
+		\If{(len(sng1) $=1$ \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>> $\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>> $\in$ r)}
 				\State left $\gets$ left$-9$
 		\State end $\gets 1$
 				\ElsIf{len(sng1)$>0$ \textbf{and} <<Y>> $\in$ sng1}
@@ -842,27 +842,168 @@
 			\EndIf
 			\If{left$-8\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}
 			\State sng1$\gets [\,]$
+			\State r $\gets [\, ]$
 			\State res1$\gets$ l$[$left$-8]$.$[$pos, singular, cow$]$
 			\State res1$\gets$ list(set(res1))
 			\For{\textbf{from} $i=0$ \textbf{to} len(res1)$-1$}
 			\If{res1$[i][0]=$ part}
 			\State sng1$\gets$ sng1 $+$ list(res$[i][1]$)
+			\State r $\gets$ r $+$ list(l$[$left $-8\, :\, $ left$-1 ]$)
 			\EndIf
 			\EndFor	
 			\State sng1$\gets$ list(set(sng1))
-			\If{(len(sng1 $=1$) \textbf{and} sng$\in$ sng1) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$))}
-			\State left $\gets$ left$-9$
+			\If{(len(sng1) $=1$ \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>> $\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>> $\in$ r)}
+			\State left $\gets$ left$-8$
 			\State end $\gets 1$
 			\ElsIf{len(sng1)$>0$ \textbf{and} <<Y>> $\in$ sng1}
 			\State \Return $[$<<он>>, <<писали>> $]$
 			\EndIf
 			\EndIf
+			\If{left$-7\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}
+			\State sng1$\gets [\,]$
+			\State r $\gets [\, ]$
+			\State res1$\gets$ l$[$left$-7]$.$[$pos, singular, cow$]$
+			\State res1$\gets$ list(set(res1))
+			\For{\textbf{from} $i=0$ \textbf{to} len(res1)$-1$}
+			\If{res1$[i][0]=$ part}
+			\State sng1$\gets$ sng1 $+$ list(res$[i][1]$)
+			\State r $\gets$ r $+$ list(l$[$left $-7\, :\, $ left$-1 ]$)
+			\EndIf
+			\EndFor	
+			\State sng1$\gets$ list(set(sng1))
+			\If{(len(sng1) $=1$ \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>> $\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>> $\in$ r)}
+			\State left $\gets$ left$-7$
+			\State end $\gets 1$
+			\ElsIf{len(sng1)$>0$ \textbf{and} <<Y>> $\in$ sng1}
+			\State \Return $[$<<он>>, <<писали>> $]$
+\EndIf
+\EndIf
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+	\caption{-- Продолжение алгоритма \ref{alg19}}\label{alg20}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
+		\If{left$-6\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}
+		\State sng1$\gets [\,]$
+		\State r $\gets [\, ]$
+		\State res1$\gets$ l$[$left$-6]$.$[$pos, singular, cow$]$
+		\State res1$\gets$ list(set(res1))
+		\For{\textbf{from} $i=0$ \textbf{to} len(res1)$-1$}
+		\If{res1$[i][0]=$ part}
+		\State sng1$\gets$ sng1 $+$ list(res$[i][1]$)
+		\State r $\gets$ r $+$ list(l$[$left $-6\, :\, $ left$-1 ]$)
+		\EndIf
+		\EndFor	
+		\State sng1$\gets$ list(set(sng1))
+		\If{(len(sng1) $=1$ \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>> $\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>> $\in$ r)}
+		\State left $\gets$ left$-6$
+		\State end $\gets 1$
+		\ElsIf{len(sng1)$>0$ \textbf{and} <<Y>> $\in$ sng1}
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\EndIf
+		\EndIf
+		\If{left$-5\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}
+		\State sng1$\gets [\,]$
+		\State r $\gets [\, ]$
+		\State res1$\gets$ l$[$left$-5]$.$[$pos, singular, cow$]$
+		\State res1$\gets$ list(set(res1))
+		\For{\textbf{from} $i=0$ \textbf{to} len(res1)$-1$}
+		\If{res1$[i][0]=$ part}
+		\State sng1$\gets$ sng1 $+$ list(res$[i][1]$)
+		\State r $\gets$ r $+$ list(l$[$left $-5\, :\, $ left$-1 ]$)
+		\EndIf
+		\EndFor	
+		\State sng1$\gets$ list(set(sng1))
+		\If{(len(sng1) $=1$ \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>> $\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>> $\in$ r)}
+		\State left $\gets$ left$-5$
+		\State end $\gets 1$
+		\ElsIf{len(sng1)$>0$ \textbf{and} <<Y>> $\in$ sng1}
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\EndIf
+		\EndIf
+		\If{left$-4\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}
+		\State sng1$\gets [\,]$
+		\State r $\gets [\, ]$
+		\State res1$\gets$ l$[$left$-4]$.$[$pos, singular, cow$]$
+		\State res1$\gets$ list(set(res1))
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+	\caption{-- Продолжение алгоритма \ref{alg20}}\label{alg21}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
+		\For{\textbf{from} $i=0$ \textbf{to} len(res1)$-1$}
+		\If{res1$[i][0]=$ part}
+		\State sng1$\gets$ sng1 $+$ list(res$[i][1]$)
+		\State r $\gets$ r $+$ list(l$[$left $-4\, :\, $ left$-1 ]$)
+		\EndIf
+		\EndFor	
+		\State sng1$\gets$ list(set(sng1))
+		\If{(len(sng1) $=1$ \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>> $\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>> $\in$ r)}
+		\State left $\gets$ left$-4$
+		\State end $\gets 1$
+		\ElsIf{len(sng1)$>0$ \textbf{and} <<Y>> $\in$ sng1}
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\EndIf
+		\EndIf
+		\If{left$-3\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}
+		\State sng1$\gets [\,]$
+		\State r $\gets [\, ]$
+		\State res1$\gets$ l$[$left$-3]$.$[$pos, singular, cow$]$
+		\State res1$\gets$ list(set(res1))
+		\For{\textbf{from} $i=0$ \textbf{to} len(res1)$-1$}
+		\If{res1$[i][0]=$ part}
+		\State sng1$\gets$ sng1 $+$ list(res$[i][1]$)
+		\State r $\gets$ r $+$ list(l$[$left $-3\, :\, $ left$-1 ]$)
+		\EndIf
+		\EndFor	
+		\State sng1$\gets$ list(set(sng1))
+		\If{(len(sng1) $=1$ \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>> $\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>> $\in$ r)}
+		\State left $\gets$ left$-3$
+		\State end $\gets 1$
+		\ElsIf{len(sng1)$>0$ \textbf{and} <<Y>> $\in$ sng1}
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\EndIf
+		\EndIf
+		\If{left$-2\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}
+		\State sng1$\gets [\,]$
+		\State res1$\gets$ l$[$left$-2]$.$[$pos, singular, cow$]$
+		\State res1$\gets$ list(set(res1))
+		\For{\textbf{from} $i=0$ \textbf{to} len(res1)$-1$}
+		\If{res1$[i][0]=$ part}
+		\State sng1$\gets$ sng1 $+$ list(res$[i][1]$)
+		\EndIf
+		\EndFor	
+		\State sng1$\gets$ list(set(sng1))
+		\If{(len(sng1) $=1$ \textbf{and} sng$\in$ sng1) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$))}
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+\pagebreak
+\begin{algorithm}
+	\caption{-- Продолжение алгоритма \ref{alg21}}\label{alg22}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
+				\State left $\gets$ left$-2$
+		\State end $\gets 1$
+		\ElsIf{len(sng1)$>0$ \textbf{and} <<Y>> $\in$ sng1}
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\EndIf
+		\EndIf
 		\EndIf
 		\EndWhile
 		\EndIf
 		%\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
+Итак, после выполнения окончания выполнения алгоритма \ref{alg22} в переменной left будет записан индекс списка, соответствующий левой границе перечисления; в переменной right~--- индекс, соответствующий правой границе перечисления; в переменной sng~--- число перечисляемых личных глаголов (данный фрагмент будет выполнен только в том случае, если имеет место перечисление личных глаголов).
+
+Далее, в зависимости от числа заменяем перечисление одним личным глаголом в таком же числе. 
 \subsubsection{Непосредственная проверка предложения}
 \subsection{Примеры работы алгоритма}
 \end{document}
