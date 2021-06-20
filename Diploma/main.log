@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  20 JUN 2021 21:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  21 JUN 2021 01:58
 entering extended mode
 **./main.tex
 (main.tex
@@ -1103,13 +1103,23 @@ Overfull \hbox (0.83862pt too wide) in alignment at lines 41--61
  [] [] [] [] [] [] [] [] [] 
  []
 
-[36]) [37] (main.aux)
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
+[]|\T2A/cmr/m/n/12 (губит) лю-дей
+ []
+
+
+Overfull \hbox (0.83862pt too wide) in alignment at lines 61--78
+ [] [] [] [] [] [] [] [] [] 
+ []
+
+[37]) [38] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A1FB9A89C5CFD3E9A00F7F7A588675C8;3089.
  ) 
 Here is how much of TeX's memory you used:
- 17294 strings out of 479163
- 259543 string characters out of 2854475
+ 17295 strings out of 479163
+ 259550 string characters out of 2854475
  653334 words of memory out of 3000000
  34432 multiletter control sequences out of 15000+600000
  414137 words of font info for 53 fonts, out of 8000000 for 9000
@@ -1127,9 +1137,9 @@ e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Home/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Home/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Home/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (36 pages, 365627 bytes).
+Output written on main.pdf (37 pages, 368493 bytes).
 PDF statistics:
- 734 PDF objects out of 1000 (max. 8388607)
- 104 named destinations out of 1000 (max. 500000)
+ 741 PDF objects out of 1000 (max. 8388607)
+ 105 named destinations out of 1000 (max. 500000)
  134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
