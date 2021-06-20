@@ -1141,8 +1141,10 @@
 		\EndFor
 		\EndFor
 				\State result $\gets$ list(set(result))
+		\If{len(result)$>0$}
 		\If{<<N>> $\in$ result}
 		\State \Return $[$<<N>>$]$\Comment{Если на каком-то этапе сработало правило ошибки, не проверяем дальше}
+		\EndIf
 		\EndIf
 		\EndFor
 		\State \Return result
@@ -1154,19 +1156,21 @@
 Аналогично устроена проверка словосочетаний длины 4.
 
 \begin{algorithm}[!h]
-	\caption{-- Анализ словосочетаний длины 3}\label{alg26}
+	\caption{-- Анализ словосочетаний длины 3}\label{alg28}
 	\begin{algorithmic}[1]
 		%\algrestore{bkbreak}
-		\Function{three}{lst}
+		\Function{four}{lst}
 		\State result $\gets [\, ]$ 
-		\For{\textbf{from} $i=0$ \textbf{to} len(lst)$-3$}
+		\For{\textbf{from} $i=0$ \textbf{to} len(lst)$-4$}
 		\State res1 $\gets$ lst$[i]$.$[$pos, singular, cow$]$
 		\State res2 $\gets$ lst$[i + 1]$.$[$pos, singular, cow$]$
 		\State res3 $\gets$ lst$[i + 2]$.$[$pos, singular, cow$]$
+		\State res4 $\gets$ lst$[i + 3]$.$[$pos, singular, cow$]$
 		\For{\textbf{from} $i1 =0$ \textbf{to} len(res1)$-1$}
 		\For{\textbf{from} $i2 =0$ \textbf{to} len(res2)$-1$}
 		\For{\textbf{from} $i3 =0$ \textbf{to} len(res3)$-1$}
-		\State res $\gets$ (ans).add3\_r.(res1$[i1]$)(res1$[i2]$)(res3$[i3]$) \Comment{Записываем ответ для данного словосочетания из таблицы add3\_r, в которой хранятся правила для словосочетаний длины $3$}
+		\For{\textbf{from} $i4 =0$ \textbf{to} len(res4)$-1$}
+		\State res $\gets$ (ans).add4\_r.(res1$[i1]$)(res1$[i2]$)(res3$[i3]$)(res4$[i4]$) \Comment{Записываем ответ для данного словосочетания из таблицы add4\_r, в которой хранятся правила для словосочетаний длины $4$}
 		\If{len(res)$>0$}
 		\For{\textbf{from} $r=0$ to len(res)$-1$}
 		\State result$\gets$ result $+$ res$[r][0]$
@@ -1175,9 +1179,20 @@
 		\EndFor
 		\EndFor
 		\EndFor
+		\EndFor
 		\State result $\gets$ list(set(result))
+		\If{len(result)}
 		\If{<<N>> $\in$ result}
 		\State \Return $[$<<N>>$]$\Comment{Если на каком-то этапе сработало правило ошибки, не проверяем дальше}
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!h]
+	\caption{-- Продолжение алгоритма \ref{alg28}}\label{alg29}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
+		\EndIf
 		\EndIf
 		\EndFor
 		\State \Return result
