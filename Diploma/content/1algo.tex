@@ -262,6 +262,7 @@
 		\State Алгоритм \ref{alg7}
 		\State Алгоритм \ref{alg11}
 		\State Алгоритм \ref{alg12}
+		\State \Return l
 		\EndFunction
 	\end{algorithmic}
 \end{algorithm}
@@ -317,8 +318,6 @@
 	\ElsIf{<<Y>> $\in$ r}
 	\State left$\gets$ left$-4$
 	\State \textbf{break}
-	\EndIf
-	\EndIf
 	\algstore{bkbreak}
 	\end{algorithmic}
 	\end{algorithm}
@@ -327,6 +326,8 @@
 	\caption{-- Продолжение алгоритма \ref{alg7}}\label{alg8}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
+			\EndIf
+		\EndIf
 			\EndFor
 			\ElsIf{l$[$left $-1]=$ <<,>> \textbf{and} l$[$left $-6]=$ <<,>>}
 		\State  res1$\gets$ l$[$left$-5]$.[pos, singular, cow]
@@ -997,13 +998,31 @@
 		\EndIf
 		\EndIf
 		\EndWhile
-		\EndIf
-		%\algstore{bkbreak}
+		\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
 Итак, после выполнения окончания выполнения алгоритма \ref{alg22} в переменной left будет записан индекс списка, соответствующий левой границе перечисления; в переменной right~--- индекс, соответствующий правой границе перечисления; в переменной sng~--- число перечисляемых личных глаголов (данный фрагмент будет выполнен только в том случае, если имеет место перечисление личных глаголов).
 
-Далее, в зависимости от числа заменяем перечисление одним личным глаголом в таком же числе. 
+Далее, в зависимости от числа заменяем перечисление одним личным глаголом в таком же числе. Мы решили заменять перечисление личных глаголов на слово \textit{<<учил>>} или \textit{<<учили>>} в зависимости от числа.
+
+Так, \textit{<<Он \textbf{писал диплом, ел и спал}>>} будет преобразовано в \textit{<<Он \textbf{учил}>>}.
+
+Данный этап описан алгоритмом \ref{alg23}.
+
+\begin{algorithm}
+	\caption{-- Продолжение алгоритма \ref{alg22}}\label{alg23}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
+		\If{sng $=$ <<Y>>}
+		\State l$\gets$ l$[\, :$ left$]+$ [<<учил>>] $+$ l$[$ right $+1:\, ]$
+		\ElsIf{sng $=$ <<N>>}
+		\State l$\gets$ l$[\, :$ left$]+$ [<<учили>>] $+$ l$[$ right $+1:\, ]$
+		\EndIf
+		\EndIf
+		%\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+Итак, на этом завершается обработка перечисления. Далее будет описан алгоритм, как же проверяются предложения без перечислений.
 \subsubsection{Непосредственная проверка предложения}
 \subsection{Примеры работы алгоритма}
 \end{document}
