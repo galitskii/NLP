@@ -687,6 +687,23 @@ def comma(l):
                         print("Нужно ругаться")
                         return ['он', 'писали']
                 else:
+                    if left - 9 >= 0 and l[left - 1] == ',' and end == -1:
+                        sng1 = []
+                        cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 9])
+                        res1 = cur.fetchall()
+                        res1 = list(set(res1))
+                        for i in res1:
+                            if i[0] == '5':
+                                sng1 += list(i[1])
+                        sng1 = list(set(sng1))
+                        if (len(sng1) == 1 and sng in sng1) or (len(sng1) > 1 and (sng == 'N' or pov == 1)):
+                            print("OK!!!")
+                            left = left - 9
+                            end = 1
+                            print(left, right, "границы")    
+                        elif len(sng1) > 0 and 'Y' in sng1:
+                            print("Нужно ругаться")
+                            return ['он', 'писали']
                     if left - 8 >= 0 and l[left - 1] == ',' and end == -1:
                         sng1 = []
                         cur.execute("select pos, singular, cow from words where word = '%s'" % l[left - 8])
