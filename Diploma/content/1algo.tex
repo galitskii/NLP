@@ -1029,7 +1029,7 @@
 
 Так, предложение \textit{<<Он тебя видит и слышит>> }разбивается на части: \textit{<<Он тебя видит>>} (длины 3) и \textit{<<слышит>>} (длины 1). Союз <<и>> в данном случае выполняет роль связки.
 
-Нами были написаны функции two() (алгоритм \ref{alg24}), three() и four(), которые анализируют словосочетания соответствующей длины.
+Нами были написаны функции two() (алгоритм \ref{alg24}), three() (алгоритм \ref{alg26}) и four(), которые анализируют словосочетания соответствующей длины.
 
 \begin{algorithm}
 	\caption{-- Анализ словосочетаний длины $2$}\label{alg24}
@@ -1070,6 +1070,8 @@
 	\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
+
+Здесь, как в случае и с личными глаголами, дополнительный анализ текста производится для решения проблемы омографии.
 \pagebreak
 \begin{algorithm}
 	\caption{-- Продолжение алгоритма \ref{alg24}}\label{alg25}
@@ -1106,5 +1108,38 @@
 	\end{algorithmic}
 \end{algorithm}
 
+Подобным образом устроена проверка словосочетаний длины 3.
+
+\begin{algorithm}[!h]
+	\caption{-- Анализ словосочетаний длины 3}\label{alg26}
+	\begin{algorithmic}[1]
+		%\algrestore{bkbreak}
+		\Function{three}{lst}
+		\State result $\gets [\, ]$ 
+		\For{\textbf{from} $i=0$ \textbf{to} len(lst)$-3$}
+		\State res1 $\gets$ lst$[i]$.$[$pos, singular, cow$]$
+		\State res2 $\gets$ lst$[i + 1]$.$[$pos, singular, cow$]$
+		\State res3 $\gets$ lst$[i + 2]$.$[$pos, singular, cow$]$
+		\For{}
+		\For{}
+		\For{}
+		\EndFor
+		\EndFor
+		\EndFor
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+\pagebreak
+
+\begin{algorithm}
+	\caption{-- Анализ словосочетаний длины 3}\label{alg26}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
+		
+		\EndFor
+		\EndFunction
+		%\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
 \subsection{Примеры работы алгоритма}
 \end{document}
