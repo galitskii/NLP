@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  21 JUN 2021 16:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  21 JUN 2021 17:17
 entering extended mode
 **./main.tex
 (main.tex
@@ -933,7 +933,11 @@ ex.def
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count331
 \l__pdf_internal_box=\box107
-) (main.aux)
+) (main.aux
+
+LaTeX Warning: Label `synt' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
@@ -958,8 +962,7 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 121.
 LaTeX Font Info:    ... okay on input line 121.
 LaTeX Info: Redefining \th on input line 121.
 Package hyperref Info: Link coloring ON on input line 121.
-
-(C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+ (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
@@ -1032,35 +1035,26 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout5 = `main.toc'.
 
 
-[3] (content/0vved.tex) [4] (content/1lit.tex) [5] (content/1algo.tex
-<content//im1.png, id=108, 875.52094pt x 688.82344pt>
+[3] (content/0vved.tex
+Overfull \hbox (14.4796pt too wide) in paragraph at lines 22--23
+[]\T2A/cmr/m/n/12 »так, по-сте-пен-но сфор-ми-ро-ва-лась но-ва€ на-уч-на€ дис-ц
+и-пли-на --- Natural Language
+ []
+
+[4] [5]) [6] (content/1lit.tex) [7] (content/1algo.tex
+<content//im1.png, id=130, 875.52094pt x 688.82344pt>
 File: content//im1.png Graphic file (type png)
 <use content//im1.png>
 Package pdftex.def Info: content//im1.png  used on input line 18.
 (pdftex.def)             Requested size: 455.8843pt x 358.67374pt.
- [6 <./content//im1.png>]
+ [8 <./content//im1.png>]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 35.
- [7] [8] [9] [10]
+[9] [10] [11] [12]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[11] [12]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[13]
-
-LaTeX Warning: Text page 14 contains only floats.
-
-
-Overfull \vbox (7.40024pt too high) has occurred while \output is active []
-
-
-[14]
+[13] [14]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1072,10 +1066,25 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: Text page 16 contains only floats.
 
 
+Overfull \vbox (7.40024pt too high) has occurred while \output is active []
+
+
+[16]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[17]
+
+LaTeX Warning: Text page 18 contains only floats.
+
+
 Overfull \vbox (5.33359pt too high) has occurred while \output is active []
 
 
-[16] [17] [18] [19]
+[18] [19] [20] [21]
 Overfull \hbox (6.17746pt too wide) in paragraph at lines 597--598
 \T2A/cmr/m/n/12 пред-ло-же-ние. —о-вер-шен-но ана-ло-гич-но рас-смат-ри-ва-ют-с
 € сло-во-со-че-та-ни€ мень-шей дли-
@@ -1087,15 +1096,15 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[20]
+[22]
 
-LaTeX Warning: Text page 21 contains only floats.
+LaTeX Warning: Text page 23 contains only floats.
 
 
 Overfull \vbox (4.40024pt too high) has occurred while \output is active []
 
 
-[21] [22]
+[23] [24]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1110,14 +1119,6 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[23]
-
-LaTeX Warning: Text page 24 contains only floats.
-
-[24]
-
-LaTeX Warning: Text page 25 contains only floats.
 
 [25]
 
@@ -1127,32 +1128,46 @@ LaTeX Warning: Text page 26 contains only floats.
 
 LaTeX Warning: Text page 27 contains only floats.
 
-[27] [28]
+[27]
+
+LaTeX Warning: Text page 28 contains only floats.
+
+[28]
+
+LaTeX Warning: Text page 29 contains only floats.
+
+[29] [30]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[29]
+[31]
 
-LaTeX Warning: Text page 30 contains only floats.
+LaTeX Warning: Text page 32 contains only floats.
 
-[30] [31] [32] [33] [34]) (content/4zak.tex) [35] (main.bbl)
-Underfull \hbox (badness 2005) in paragraph at lines 164--165
+[32] [33] [34] [35] [36]) (content/4zak.tex) [37] (main.bbl)
+Underfull \hbox (badness 2005) in paragraph at lines 170--171
 []\T2A/cmr/bx/n/12 Conway, D. An algorithmic approach to English pluralization 
 \T2A/cmr/m/n/12 //
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
 []\T2A/cmr/m/n/12 ћорфологический ана-ли-за-тор pymorphy2 [Ёлек-трон-ный ре-сур
 с] ---
  []
 
-[36] (content/3pr1.tex [37] [38]) [39] (content/3pr2.tex [40] [41] [42]
+[38pdfTeX warning (ext4): destination with the same identifier (name{cite.synt}
+) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.179 
+      ] [39] (content/3pr1.tex [40] [41]) [42] (content/3pr2.tex [43] [44]
+[45]
 Underfull \hbox (badness 4967) in paragraph at lines 123--123
 []|\T2A/cmr/m/n/12 их об-ра-зы по-нра-ви-
  []
 
-[43]
+[46]
 Underfull \hbox (badness 5203) in paragraph at lines 151--151
 []|\T2A/cmr/m/n/12 он хо-тел быть
  []
@@ -1167,33 +1182,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 155--155
 []|\T2A/cmr/m/n/12 птицы хо-те-ли
  []
 
-) [44] (main.aux)
+) [47] (main.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 10390BFE24B2CE008BF13C957D942210;3091.
  ) 
 Here is how much of TeX's memory you used:
- 17337 strings out of 479163
- 259856 string characters out of 2854475
- 672678 words of memory out of 3000000
- 34452 multiletter control sequences out of 15000+600000
+ 17350 strings out of 479163
+ 259946 string characters out of 2854475
+ 672800 words of memory out of 3000000
+ 34455 multiletter control sequences out of 15000+600000
  414137 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,11n,79p,1504b,685s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
 200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
-bi1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600
-\lati1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi
-600\lacc1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/
-dpi600\larm1000.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t
+cc1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600
+\larm1000.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi
+600\labi1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/
+dpi600\lati1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t
 2a/dpi600\larm1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/l
 h-t2a/dpi600\labx1200.pk><C:/Users/Home/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Home/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Home/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Home/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (43 pages, 402369 bytes).
+Output written on main.pdf (46 pages, 419034 bytes).
 PDF statistics:
- 828 PDF objects out of 1000 (max. 8388607)
- 127 named destinations out of 1000 (max. 500000)
+ 872 PDF objects out of 1000 (max. 8388607)
+ 137 named destinations out of 1000 (max. 500000)
  134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
