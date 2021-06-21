@@ -285,7 +285,7 @@
 	\end{algorithmic}
 \end{algorithm}
 
-В алгоритмах \ref{alg5} и \ref{alg6} неоднократно фигурирует функция check(). В данном случае она используется для проверки предложения, не содержащего знаки пунктуации. Её описание будет в следующем параграфе.
+В алгоритмах \ref{alg4}, \ref{alg5} и \ref{alg6} неоднократно фигурирует функция check(). В данном случае она используется для проверки предложения, не содержащего знаки пунктуации. Её описание будет в следующем параграфе (алгоритм \ref{alg36}).
 
 Далее возможен один из двух вариантов:
 \begin{itemize}
@@ -380,7 +380,7 @@
 \end{algorithm}
 
 \begin{algorithm}[!h]
-	\caption{-- Продолжение алгоритма \ref{alg7}}\label{alg32}
+	\caption{-- Продолжение алгоритма \ref{alg8}}\label{alg32}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
 		\State  res1$\gets$ l$[$left$-7]$.[pos, singular, cow]
@@ -402,7 +402,7 @@
 	\end{algorithmic}
 \end{algorithm}
 
-Итак, в результате работы фрагментов \ref{alg7} и \ref{alg8} будет сдвинута граница до <<первой>> запятой.
+Итак, в результате работы фрагментов \ref{alg7}, \ref{alg8} и \ref{alg32} будет сдвинута граница до <<первой>> запятой.
 
 Следующий этап~--- поиск начала перечисления. Соответствующий фрагмент описан алгоритмом \ref{alg9}.
 
@@ -1070,7 +1070,7 @@
 
 Так, предложение \textit{<<Он тебя видит и слышит>> }разбивается на части: \textit{<<Он тебя видит>>} (длины 3) и \textit{<<слышит>>} (длины 1). Союз <<и>> в данном случае выполняет роль связки.
 
-Нами были написаны функции two() (алгоритм \ref{alg24}), three() (алгоритм \ref{alg26}) и four(), которые анализируют словосочетания соответствующей длины.
+Нами были написаны функции two() (алгоритм \ref{alg24}), three() (алгоритм \ref{alg26}) и four() (алгоритм \ref{alg36}), которые анализируют словосочетания соответствующей длины.
 
 \begin{algorithm}[!h]
 	\caption{-- Анализ словосочетаний длины $2$}\label{alg24}
@@ -1138,7 +1138,7 @@
 		\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
-
+\pagebreak
 \begin{algorithm}[!h]
 	\caption{-- Продолжение алгоритма \ref{alg25}}\label{alg35}
 	\begin{algorithmic}[1]
@@ -1192,7 +1192,7 @@
 	\end{algorithmic}
 \end{algorithm}
 Аналогично устроена проверка словосочетаний длины 4.
-
+\newpage
 \begin{algorithm}[!h]
 	\caption{-- Анализ словосочетаний длины 4}\label{alg28}
 	\begin{algorithmic}[1]
@@ -1230,5 +1230,75 @@
 		%\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
-\subsection{Примеры работы алгоритма}
+
+Всё это запускается при помощи функции check() (см. алгоритм \ref{alg36}).
+
+\begin{algorithm}[!h]
+	\caption{~-- Описание функции check()}\label{alg36}
+	\begin{algorithmic}[1]
+		%\algrestore{bkbreak}
+		\Function{check}{l}
+		\State result $\gets [\, ]$ 
+		\While{<<и>> $\in$ l \textbf{or} <<или>> $\in$ l} \Comment{Упрощение предложения посредством замены перечислений}
+		\State l $\gets$ comma(l)
+		\EndWhile
+		\If{len(l)$>3$}
+		\State result $\gets$ result + four(l)
+		\EndIf
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+\pagebreak
+\begin{algorithm}[!h]
+	\caption{~-- Продолжение алгоритма \ref{alg36}}\label{alg37}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
+		\If{len(l)$>2$}
+		\State result $\gets$ result $+$ three(l)
+		\EndIf
+		\If{len(l)$>1$}
+		\State result $\gets$ result $+$ two(l)
+		\EndIf
+		\If{len(l)$=1$} \Comment{Одиночное слово не может быть ошибочным с точки зрения согласования единственного и множественного числа}
+			\State result$\gets$ result $+$ [<<Y>>]
+		\EndIf
+		\State \Return result
+		\EndFunction
+		%\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+Анализирует полученные результаты функция res() (алгоритм \ref{alg38}). 
+
+\begin{algorithm}[!h]
+	\caption{~-- Описание функции res()}\label{alg38}
+	\begin{algorithmic}[1]
+	%	\algrestore{bkbreak}
+		\Function{res}{r}
+		\If{<<N>> $\in $ r}
+			\State print(<<Ошибка в согласовании единственного и множественного числа>>)
+		\ElsIf{<<Y>> $\in $ r}
+		\State print(<<Ошибок в согласовании единственного и множественного числа не обнаружено>>)
+		\Else
+		\State print(<<Есть незнакомые сочетания>>)
+		\EndIf
+		\EndFunction
+		%\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Пример работы алгоритма}
+
+Рассмотрим предложение \textit{<<Он хотел организовать проверку знаний требований охраны труда, купить себе пони и выспаться>>}. Запишем его в строку str. Чтобы проверить согласование единственного и множественного числа, необходимо вызвать res(check(space(str))).
+
+Фунция spaсe() преобразует str в список $l$ = [\textit{<<он>>}, \textit{<<хотел>>}, \textit{<<организовать>>}, \textit{<<проверку>>}, \textit{<<знаний>>}, \textit{<<требований>>}, \textit{<<охраны>>}, \textit{<<труда>>}, \textit{<<,>>}, \textit{<<купить>>}, \textit{<<себе>>}, \textit{<<пони>>}, \textit{<<и>>}, \textit{<<выспаться>>}].
+
+Далее, обрабатывая список $l$, фунция comma() определит id1 $=12$, left $=2$, right $=13$. Проверит, что одиночный инфинитив \textit{<<выспаться>>} не является ошибочным, как и словосочетания \textit{<<купить себе пони>>} (правило 16 таблицы \ref{tab2}) и \textit{<<организовать проверку знаний требований охраны труда>>} (правила 5, 69, 78, 79, 65 таблицы~\ref{tab1}).
+
+После этого функцией comma() список будет преобразован в [\textit{<<он>>}, \textit{<<хотел>>}, \textit{<<учить>>}], который будет проверен функцией check(). В результате срабатывания правил 4, 6 таблицы \ref{tab1} будет получен список result = [\textit{<<Y>>}, \textit{<<Y>>}].
+
+Анализируя result, функция res() примет решение, что <<Ошибок в согласовании единственного и множественного числа не обнаружено>>.
+
+\pagebreak
+
 \end{document}

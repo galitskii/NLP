@@ -14,8 +14,113 @@
 		\begin{tabular}{|c|l|l|l|}
 			\hline
 			\textbf{№} & \multicolumn{1}{c|}{\textbf{Имя столбца}} & \multicolumn{1}{c|}{\textbf{Тип данных}} & \multicolumn{1}{c|}{\textbf{Комментарий}} \\ \hline
-			1& word &                                 & слово в нижнем регистре\\ \hline
-			&                                  &                                 &                                  \\ \hline
+			1& word &NVARCHAR2(60) & слово в нижнем регистре\\ \hline
+			2&mid& NUMBER(10) & id семейства слов  \\ \hline
+			3&fid&NUMBER(6)& id формы слов\\ \hline
+			4&cid&NUMBER(6)& id слова данной формы\\ \hline
+			5&pos&CHAR(1)& часть речи\\ \hline
+			6&singular&CHAR(1)& число \\ \hline
+			7&cow &CHAR(1)&падеж \\ \hline
+			8&tense &  CHAR(1)& время\\ \hline
+			9&kind& CHAR(1)& пол\\ \hline
+			10&animal&CHAR(1)&одушевлённость \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{table}[!h]
+	\begin{center}
+		\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
+		\caption{part\_of\_speech}
+		\begin{tabular}{|c|l|l|l|}
+			\hline
+			\textbf{№} & \multicolumn{1}{c|}{\textbf{Имя столбца}} & \multicolumn{1}{c|}{\textbf{Тип данных}} & \multicolumn{1}{c|}{\textbf{Комментарий}} \\ \hline
+			1&pos &CHAR(1) & id части речи \\ \hline
+			2& name& VARCHAR2(30) & название части речи \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+\begin{table}[!h]
+	\begin{center}
+		\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
+		\caption{simple\_rules}
+		\begin{tabular}{|c|l|l|p{220px}|}
+			\hline
+			\textbf{№} & \multicolumn{1}{c|}{\textbf{Имя столбца}} & \multicolumn{1}{c|}{\textbf{Тип данных}} & \multicolumn{1}{c|}{\textbf{Комментарий}} \\ \hline
+			1&r\_id & NUMBER(10)&id правила\\ \hline
+			2& prt\_l & VARCHAR2(1)& часть речи левого слова в словосочетании \\ \hline
+			3& sing\_l &VARCHAR2(1) & число левого слова в словосочетании \\ \hline
+			4& cow\_l &VARCHAR2(1) & падеж левого слова в словосочетании \\ \hline
+			5& prt\_r &VARCHAR2(1) & часть речи правого слова в словосочетании \\ \hline
+			6& sing\_r &VARCHAR2(1) & число правого слова в словосочетании \\ \hline
+			7& cow\_r & VARCHAR2(1)& падеж правого слова в словосочетании \\ \hline
+			8&ans&VARCHAR2(1)& ответ\\ \hline
+			9&comm &VARCHAR2(1000)& правило\\ \hline
+			10 &ex &VARCHAR2(100)&пример  \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+\begin{table}[!h]
+	\begin{center}
+		\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
+		\caption{case\_of\_word}
+		\begin{tabular}{|c|l|l|l|}
+			\hline
+			\textbf{№} & \multicolumn{1}{c|}{\textbf{Имя столбца}} & \multicolumn{1}{c|}{\textbf{Тип данных}} & \multicolumn{1}{c|}{\textbf{Комментарий}} \\ \hline
+			1&cow &CHAR(1) & id падежа \\ \hline
+			2& name& VARCHAR2(30) & название падежа \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+В таблицах \ref{tab4} и \ref{tab5} подразумевается нумерация слов слева направо.
+\begin{table}[!h]
+	\begin{center}
+		\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
+		\caption{add3\_r}\label{tab4}
+		\begin{tabular}{|c|l|l|l|}
+			\hline
+			\textbf{№} & \multicolumn{1}{c|}{\textbf{Имя столбца}} & \multicolumn{1}{c|}{\textbf{Тип данных}} & \multicolumn{1}{c|}{\textbf{Комментарий}} \\ \hline
+			1&r3\_id &NUMBER(10) &id правила\\ \hline
+			2& prt\_1 &VARCHAR2(1) & часть речи первого слова в словосочетании \\ \hline
+			3& sing\_1 &VARCHAR2(1) & число первого слова в словосочетании \\ \hline
+			4& cow\_1 &VARCHAR2(1) & падеж первого слова в словосочетании \\ \hline
+			5& prt\_2 & VARCHAR2(1)& часть речи второго слова в словосочетании \\ \hline
+			6& sing\_2 &VARCHAR2(1) & число второго слова в словосочетании \\ \hline
+			7& cow\_2 &VARCHAR2(1) & падеж второго слова в словосочетании \\ \hline
+			8& prt\_3 & VARCHAR2(1)& часть речи третьего слова в словосочетании \\ \hline
+			9& sing\_3 &VARCHAR2(1) & число третьего слова в словосочетании \\ \hline
+			10& cow\_3 &VARCHAR2(1) & падеж третьего слова в словосочетании \\ \hline
+			11&ans&VARCHAR2(1)& ответ\\ \hline
+			12&comm &VARCHAR2(1000)& правило\\ \hline
+			13 &ex &VARCHAR2(100)&пример  \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{table}[!h]
+	\begin{center}
+		\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
+		\caption{add4\_r}\label{tab5}
+		\begin{tabular}{|c|l|l|p{220px}|}
+			\hline
+			\textbf{№} & \multicolumn{1}{c|}{\textbf{Имя столбца}} & \multicolumn{1}{c|}{\textbf{Тип данных}} & \multicolumn{1}{c|}{\textbf{Комментарий}} \\ \hline
+			1&r4\_id & NUMBER(10)&id правила\\ \hline
+			2& prt\_1 &VARCHAR2(1) & часть речи первого слова в словосочетании \\ \hline
+			3& sing\_1 & VARCHAR2(1)& число первого слова в словосочетании \\ \hline
+			4& cow\_1 &VARCHAR2(1) & падеж первого слова в словосочетании \\ \hline
+			5& prt\_2 &VARCHAR2(1) & часть речи второго слова в словосочетании \\ \hline
+			6& sing\_2 & VARCHAR2(1)& число второго слова в словосочетании \\ \hline
+			7& cow\_2 &VARCHAR2(1) & падеж второго слова в словосочетании \\ \hline
+			8& prt\_3 &VARCHAR2(1) & часть речи третьего слова в словосочетании \\ \hline
+			9& sing\_3 & VARCHAR2(1)& число третьего слова в словосочетании \\ \hline
+			10& cow\_3 &VARCHAR2(1) & падеж третьего слова в словосочетании \\ \hline
+			11& prt\_4 &VARCHAR2(1) & часть речи третьего слова в словосочетании \\ \hline
+			12& sing\_4 &VARCHAR2(1) & число третьего слова в словосочетании \\ \hline
+			13& cow\_4 & VARCHAR2(1)& падеж третьего слова в словосочетании \\ \hline
+			14&ans&VARCHAR2(1)& ответ\\ \hline
+			15&comm &VARCHAR2(1000)& правило\\ \hline
+			16 &ex &VARCHAR2(100)&пример  \\ \hline
 		\end{tabular}
 	\end{center}
 \end{table}

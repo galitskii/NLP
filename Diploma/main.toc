@@ -7,8 +7,8 @@
 \contentsline {subsection}{\numberline {3.3}Обработка предложения}{7}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Упрощение предложения}{8}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Непосредственная проверка предложения}{29}{subsubsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}Примеры работы алгоритма}{32}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Заключение}{33}{section.4}%
-\contentsline {section}{Список литературы}{34}{section.4}%
-\contentsline {section}{{\normalfont ПРИЛОЖЕНИЕ A. Структура таблиц базы данных}}{35}{appendix.A}%
-\contentsline {section}{{\normalfont ПРИЛОЖЕНИЕ B. Система правил для анализа словосочетаний из двух слов}}{36}{appendix.B}%
+\contentsline {subsubsection}{\numberline {3.3.3}Пример работы алгоритма}{33}{subsubsection.3.3.3}%
+\contentsline {section}{\numberline {4}Заключение}{35}{section.4}%
+\contentsline {section}{Список литературы}{36}{section.4}%
+\contentsline {section}{{\normalfont ПРИЛОЖЕНИЕ A. Структура таблиц базы данных}}{37}{appendix.A}%
+\contentsline {section}{{\normalfont ПРИЛОЖЕНИЕ B. Система правил для анализа словосочетаний из двух слов}}{38}{appendix.B}%
