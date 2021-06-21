@@ -6,7 +6,6 @@
 
 \begin{document}
 \section{Структура таблиц базы данных}\label{app:A}
-
 \begin{table}[!h]
 	\begin{center}
 		\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
@@ -24,39 +23,7 @@
 			8&tense &  CHAR(1)& время\\ \hline
 			9&kind& CHAR(1)& пол\\ \hline
 			10&animal&CHAR(1)&одушевлённость \\ \hline
-		\end{tabular}
-	\end{center}
-\end{table}
-
-\begin{table}[!h]
-	\begin{center}
-		\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
-		\caption{part\_of\_speech}
-		\begin{tabular}{|c|l|l|l|}
-			\hline
-			\textbf{№} & \multicolumn{1}{c|}{\textbf{Имя столбца}} & \multicolumn{1}{c|}{\textbf{Тип данных}} & \multicolumn{1}{c|}{\textbf{Комментарий}} \\ \hline
-			1&pos &CHAR(1) & id части речи \\ \hline
-			2& name& VARCHAR2(30) & название части речи \\ \hline
-		\end{tabular}
-	\end{center}
-\end{table}
-\begin{table}[!h]
-	\begin{center}
-		\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
-		\caption{simple\_rules}
-		\begin{tabular}{|c|l|l|p{220px}|}
-			\hline
-			\textbf{№} & \multicolumn{1}{c|}{\textbf{Имя столбца}} & \multicolumn{1}{c|}{\textbf{Тип данных}} & \multicolumn{1}{c|}{\textbf{Комментарий}} \\ \hline
-			1&r\_id & NUMBER(10)&id правила\\ \hline
-			2& prt\_l & VARCHAR2(1)& часть речи левого слова в словосочетании \\ \hline
-			3& sing\_l &VARCHAR2(1) & число левого слова в словосочетании \\ \hline
-			4& cow\_l &VARCHAR2(1) & падеж левого слова в словосочетании \\ \hline
-			5& prt\_r &VARCHAR2(1) & часть речи правого слова в словосочетании \\ \hline
-			6& sing\_r &VARCHAR2(1) & число правого слова в словосочетании \\ \hline
-			7& cow\_r & VARCHAR2(1)& падеж правого слова в словосочетании \\ \hline
-			8&ans&VARCHAR2(1)& ответ\\ \hline
-			9&comm &VARCHAR2(1000)& правило\\ \hline
-			10 &ex &VARCHAR2(100)&пример  \\ \hline
+			11&person&CHAR(1)& лицо \\ \hline
 		\end{tabular}
 	\end{center}
 \end{table}
@@ -72,13 +39,40 @@
 		\end{tabular}
 	\end{center}
 \end{table}
-
-В таблицах \ref{tab4} и \ref{tab5} подразумевается нумерация слов слева направо.
 \begin{table}[!h]
 	\begin{center}
 		\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
-		\caption{add3\_r}\label{tab4}
+		\caption{part\_of\_speech}
 		\begin{tabular}{|c|l|l|l|}
+			\hline
+			\textbf{№} & \multicolumn{1}{c|}{\textbf{Имя столбца}} & \multicolumn{1}{c|}{\textbf{Тип данных}} & \multicolumn{1}{c|}{\textbf{Комментарий}} \\ \hline
+			1&pos &CHAR(1) & id части речи \\ \hline
+			2& name& VARCHAR2(30) & название части речи \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+\begin{longtable}[c]{|c|l|l|p{215px}|}
+		\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
+		\caption{simple\_rules}\\ \hline
+			\textbf{№} & \textbf{Имя столбца} & \textbf{Тип данных} & \textbf{Комментарий} \\ \hline
+			1&r\_id & NUMBER(10)&id правила\\ \hline
+			2& prt\_l & VARCHAR2(1)& часть речи левого слова в словосочетании \\ \hline
+			3& sing\_l &VARCHAR2(1) & число левого слова в словосочетании \\ \hline
+			4& cow\_l &VARCHAR2(1) & падеж левого слова в словосочетании \\ \hline
+			5& prt\_r &VARCHAR2(1) & часть речи правого слова в словосочетании \\ \hline
+			6& sing\_r &VARCHAR2(1) & число правого слова в словосочетании \\ \hline
+			7& cow\_r & VARCHAR2(1)& падеж правого слова в словосочетании \\ \hline
+			8&ans&VARCHAR2(1)& ответ\\ \hline
+			9&comm &VARCHAR2(1000)& правило\\ \hline
+			10 &ex &VARCHAR2(100)&пример  \\ \hline
+\end{longtable}
+
+В таблицах \ref{tab4} и \ref{tab5} подразумевается нумерация слов слева направо.
+\begin{longtable}[c]{|c|l|l|p{215px}|}
+%	\begin{center}
+		\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
+		\caption{add3\_r}\label{tab4}\\
+%		\begin{tabular}
 			\hline
 			\textbf{№} & \multicolumn{1}{c|}{\textbf{Имя столбца}} & \multicolumn{1}{c|}{\textbf{Тип данных}} & \multicolumn{1}{c|}{\textbf{Комментарий}} \\ \hline
 			1&r3\_id &NUMBER(10) &id правила\\ \hline
@@ -94,15 +88,15 @@
 			11&ans&VARCHAR2(1)& ответ\\ \hline
 			12&comm &VARCHAR2(1000)& правило\\ \hline
 			13 &ex &VARCHAR2(100)&пример  \\ \hline
-		\end{tabular}
-	\end{center}
-\end{table}
+%		\end{tabular}
+%	\end{center}
+\end{longtable}
 
-\begin{table}[!h]
-	\begin{center}
+\begin{longtable}[c]{|c|l|l|p{215px}|}
+%	\begin{center}
 		\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
-		\caption{add4\_r}\label{tab5}
-		\begin{tabular}{|c|l|l|p{220px}|}
+		\caption{add4\_r}\label{tab5}\\
+%		\begin{tabular}{|c|l|l|p{215px}|}
 			\hline
 			\textbf{№} & \multicolumn{1}{c|}{\textbf{Имя столбца}} & \multicolumn{1}{c|}{\textbf{Тип данных}} & \multicolumn{1}{c|}{\textbf{Комментарий}} \\ \hline
 			1&r4\_id & NUMBER(10)&id правила\\ \hline
@@ -121,8 +115,8 @@
 			14&ans&VARCHAR2(1)& ответ\\ \hline
 			15&comm &VARCHAR2(1000)& правило\\ \hline
 			16 &ex &VARCHAR2(100)&пример  \\ \hline
-		\end{tabular}
-	\end{center}
-\end{table}
+%		\end{tabular}
+%	\end{center}
+\end{longtable}
 
 \end{document}

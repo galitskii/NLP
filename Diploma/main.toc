@@ -11,4 +11,4 @@
 \contentsline {section}{\numberline {4}Заключение}{35}{section.4}%
 \contentsline {section}{Список литературы}{36}{section.4}%
 \contentsline {section}{{\normalfont ПРИЛОЖЕНИЕ A. Структура таблиц базы данных}}{37}{appendix.A}%
-\contentsline {section}{{\normalfont ПРИЛОЖЕНИЕ B. Система правил для анализа словосочетаний из двух слов}}{38}{appendix.B}%
+\contentsline {section}{{\normalfont ПРИЛОЖЕНИЕ B. Система правил для анализа словосочетаний из двух слов}}{40}{appendix.B}%
