@@ -104,14 +104,14 @@
 	%	\end{tabular}
 %	\end{center}
 \end{longtable}
-Для таблицы \ref{tab2} номера 1, 2 и 3 соответствуют первому, второму и третьему слову соответственно при их чтении слева направо.
+Для таблицы \ref{tab2} номера 1, 2 и 3 соответствуют первому, второму и третьему словам соответственно при их чтении слева направо.
 \begin{longtable}[c]{|c|c|c|c|c|c|c|c|c|c|c|p{120px}|}
 	%\begin{center}
 	\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
 \caption{Система правил для словосочетаний из трёх слов}\label{tab2}\\
 	%\begin{tabular}
 	\hline
-	\textbf{№}&\textbf{p1} &\textbf{s1}&\textbf{c1}&\textbf{p2}&\textbf{s2}&\textbf{с2}&\textbf{p3}&\textbf{s3}&\textbf{cow3}&\textbf{A}&\textbf{Пример} \\ \hline
+	\textbf{№}&\textbf{p1} &\textbf{s1}&\textbf{c1}&\textbf{p2}&\textbf{s2}&\textbf{с2}&\textbf{p3}&\textbf{s3}&\textbf{c3}&\textbf{A}&\textbf{Пример} \\ \hline
 	1 &b  &Y  &1  &1  &Y  &4  &5  &N &--&N&он руку моют \\ \hline
 	2&b&Y&1&1&N&4&5&N&--&N&он руки моют\\ \hline
 	3&1&N&1&1&Y&4&5&Y&--&N&руки руку моет\\ \hline
@@ -135,5 +135,19 @@
 	21&1&N&1&b&N&4&5&Y&--&N&люди нас видит\\ \hline
 	22&1&Y&1&b&N&4&5&N&--&N&человек нас видят\\ \hline
 	23&1&Y&1&b&Y&4&5&N&--&N&человек меня видят\\ \hline
+	24&1&N&1&b&N&4&5&N&--&Y&люди нас видят\\ \hline
+	25&b&Y&1&b&Y&3&5&N&--&N&он себе купил\\ \hline
+	26&b&N&1&b&Y&3&5&Y&--&N&они себе купил \\ \hline
+\end{longtable}
+
+Для таблицы \ref{tab3} номера 1, 2, 3 и 4 соответствуют первому, второму, третьему и четвёртому словам соответственно при их чтении слева направо.
+\begin{longtable}[c]{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|p{90px}|}
+	%\begin{center}
+	\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
+	\caption{Система правил для словосочетаний из четырёх слов}\label{tab3}\\
+	%\begin{tabular}
+	\hline
+	\textbf{№}&\textbf{p1} &\textbf{s1}&\textbf{c1}&\textbf{p2}&\textbf{s2}&\textbf{с2}&\textbf{p3}&\textbf{s3}&\textbf{c3}&\textbf{p4} &\textbf{s4}&\textbf{c4}&\textbf{A}&\textbf{Пример} \\ \hline
+	1 &b  &Y  &1  &1  &Y  &4  &5  &N &--&N&&&&он руку моют \\ \hline
 \end{longtable}
 \end{document}
