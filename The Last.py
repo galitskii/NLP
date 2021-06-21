@@ -85,8 +85,8 @@ def two(lst):
     result = []
     pov = -1
     sing = []
+    ans1 = []
     for q in range(len(lst) - 1):
-        ans1 = [] 
         cur.execute("select pos, singular, cow from words where word = '%s'" % lst[q])
         res_l = cur.fetchall()
         res_l = list(set(res_l))
@@ -118,9 +118,9 @@ def two(lst):
                 res = cur.fetchall()
                 res = list(set(res))
                 if len(res) > 0:
-                    for k in res:
-                        ans1.append(k[0])
-                        print(k[3], "правило")
+                    for r in res:
+                        ans1.append(r[0])
+        ans1 = list(set(ans1))
         if pov == 1 and uns == -1:
             if 'N' in ans1:
                 result.append('N')
