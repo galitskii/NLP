@@ -380,7 +380,7 @@
 \end{algorithm}
 
 \begin{algorithm}[!h]
-	\caption{-- Продолжение алгоритма \ref{alg7}}\label{alg8}
+	\caption{-- Продолжение алгоритма \ref{alg7}}\label{alg32}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
 		\State  res1$\gets$ l$[$left$-7]$.[pos, singular, cow]
@@ -407,7 +407,7 @@
 Следующий этап~--- поиск начала перечисления. Соответствующий фрагмент описан алгоритмом \ref{alg9}.
 
 Индикатор end отвечает за нахождение начала перечисления (изначально был инициализирован $(-1)$, а после нахождения начала перечисления будет равен $1$). Как и раньше, проверяем первый найденную подстроку на выполнение правил в ней.
-\begin{algorithm}
+\begin{algorithm}[!h]
 	\caption{-- Фрагмент алгоритма \ref{alg8}}\label{alg9}
 	\begin{algorithmic}[1]
 	\If{left$-2\ge 0$\textbf{ and }l$[$left$-1]=$<<,>> \textbf{and} end$=(-1)$}
@@ -427,33 +427,33 @@
 	\If{<<N>>$\in$ r}
 	\State \Return $[$<<он>>, <<писали>> $]$
 	\ElsIf{<<Y>> $\in$ r}
-	\State left$\gets$ left$-3$
-	\State end $\gets 1$
-	\State \textbf{break}
-	\EndIf
-	\EndIf
-	\EndFor
-	\EndIf
-	\If{left$-4\ge 0$\textbf{ and }l$[$left$-1]=$<<,>> \textbf{and} end$=(-1)$}
-	\State res1$\gets$ l$[$left$-4]$.[pos, singular, cow]
-	\For{\textbf{from} $i = 0$ \textbf{to} len(res1)$ - 1$}
-	\If{res1$[i][0]=$<<6>>}
-	\State r $\gets$ check(l$[$left$-4:$ left$-1]$)
-	\If{<<N>>$\in$ r}
-	\State \Return $[$<<он>>, <<писали>> $]$
-	\ElsIf{<<Y>> $\in$ r}
-	\State left$\gets$ left$-4$
-	\State end $\gets 1$
-	\State \textbf{break}
-\EndIf
 	\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
 
-\begin{algorithm}
+\begin{algorithm}[!h]
 	\caption{-- Продолжение алгоритма \ref{alg9}}\label{alg10}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
+		\State left$\gets$ left$-3$
+		\State end $\gets 1$
+		\State \textbf{break}
+			\EndIf
+		\EndIf
+		\EndFor
+		\EndIf
+		\If{left$-4\ge 0$\textbf{ and }l$[$left$-1]=$<<,>> \textbf{and} end$=(-1)$}
+		\State res1$\gets$ l$[$left$-4]$.[pos, singular, cow]
+		\For{\textbf{from} $i = 0$ \textbf{to} len(res1)$ - 1$}
+		\If{res1$[i][0]=$<<6>>}
+		\State r $\gets$ check(l$[$left$-4:$ left$-1]$)
+			\If{<<N>>$\in$ r}
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\ElsIf{<<Y>> $\in$ r}
+		\State left$\gets$ left$-4$
+		\State end $\gets 1$
+		\State \textbf{break}
+		\EndIf
 			\EndIf
 			\EndFor
 			\EndIf
@@ -481,34 +481,42 @@
 			\State \Return $[$<<он>>, <<писали>> $]$
 			\ElsIf{<<Y>> $\in$ r}
 			\State left$\gets$ left$-6$
-			\State end $\gets 1$
-			\State \textbf{break}
-			\EndIf
-			\EndIf
-			\EndFor
-			\EndIf
-			\If{left$-7\ge 0$\textbf{ and }l$[$left$-1]=$<<,>> \textbf{and} end$=(-1)$}
-			\State res1$\gets$ l$[$left$-7]$.[pos, singular, cow]
-			\For{\textbf{from} $i = 0$ \textbf{to} len(res1)$ - 1$}
-			\If{res1$[i][0]=$<<6>>}
-			\State r $\gets$ check(l$[$left$-7:$ left$-1]$)
-			\If{<<N>>$\in$ r}
-			\State \Return $[$<<он>>, <<писали>> $]$
-			\ElsIf{<<Y>> $\in$ r}
-			\State left$\gets$ left$-7$
-			\State end $\gets 1$
-			\State \textbf{break}
-			\EndIf
-			\EndIf
-			\EndFor
-			\EndIf
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!h]
+	\caption{-- Продолжение алгоритма \ref{alg10}}\label{alg33}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
+		\State end $\gets 1$
+		\State \textbf{break}
+		\EndIf
+		\EndIf
+		\EndFor
+		\EndIf
+		\If{left$-7\ge 0$\textbf{ and }l$[$left$-1]=$<<,>> \textbf{and} end$=(-1)$}
+		\State res1$\gets$ l$[$left$-7]$.[pos, singular, cow]
+		\For{\textbf{from} $i = 0$ \textbf{to} len(res1)$ - 1$}
+		\If{res1$[i][0]=$<<6>>}
+		\State r $\gets$ check(l$[$left$-7:$ left$-1]$)
+		\If{<<N>>$\in$ r}
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\ElsIf{<<Y>> $\in$ r}
+		\State left$\gets$ left$-7$
+		\State end $\gets 1$
+		\State \textbf{break}
+		\EndIf
+		\EndIf
+		\EndFor
+		\EndIf
 		%\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
 
 Итак, после выполнения алгоритма \ref{alg9} будут определены границы заменяемой подстроки, после чего необходимо вставить вместо перечисления инфинитивов одиночный инфинитив. Нами было выбрано слово \textit{<<учить>>} (для данной цели можно было выбрать любой инфинитив, так как мы решаем проблему согласования единственного и множественного числа).
 
-\begin{algorithm}
+\begin{algorithm}[!h]
 	\caption{-- Фрагмент алгоритма \ref{alg6}}\label{alg11}
 	\begin{algorithmic}[1]
 		\State l$\gets$ l$[\,:$ left$] +$ $[$<<учить>>$]+$ l$[$ right$+1:\, $id1$]$
