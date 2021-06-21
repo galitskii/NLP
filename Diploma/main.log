@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  21 JUN 2021 17:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  21 JUN 2021 18:57
 entering extended mode
 **./main.tex
 (main.tex
@@ -875,6 +875,29 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \@float@every@algorithm=\toks37
 \c@algorithm=\count323
 )
+(C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
+Package: pdfpages 2021/03/06 v0.5t Insert pages of external PDF documents (AM)
+
+(C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen278
+\ESO@tempdimb=\dimen279
+)
+\AM@pagewidth=\dimen280
+\AM@pageheight=\dimen281
+\AM@fboxrule=\dimen282
+
+(C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
+File: pppdftex.def 2021/03/06 v0.5t Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count324
+\AM@pagebox=\box106
+\AM@global@opts=\toks38
+\AM@pagecnt=\count325
+\AM@toc@title=\toks39
+\c@AM@survey=\count326
+\AM@templatesizebox=\box107
+)
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseudoco
 de.sty
 Package: algpseudocode 
@@ -884,15 +907,15 @@ x.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count324
-\c@ALG@rem=\count325
-\c@ALG@nested=\count326
+\c@ALG@line=\count327
+\c@ALG@rem=\count328
+\c@ALG@nested=\count329
 \ALG@tlm=\skip75
 \ALG@thistlm=\skip76
-\c@ALG@Lnr=\count327
-\c@ALG@blocknr=\count328
-\c@ALG@storecount=\count329
-\c@ALG@tmpcounter=\count330
+\c@ALG@Lnr=\count330
+\c@ALG@blocknr=\count331
+\c@ALG@storecount=\count332
+\c@ALG@tmpcounter=\count333
 \ALG@tmplength=\skip77
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
@@ -900,8 +923,8 @@ Document Style - pseudocode environments for use with the `algorithmicx' style
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
 
 Package: vmargin 2004/07/15 V2.5 set document margins (VK)
-\PaperWidth=\dimen278
-\PaperHeight=\dimen279
+\PaperWidth=\dimen283
+\PaperHeight=\dimen284
 )
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\indentfirst.
 sty
@@ -912,17 +935,17 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 )
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box106
+\ttl@box=\box108
 \beforetitleunit=\skip78
 \aftertitleunit=\skip79
-\ttl@plus=\dimen280
-\ttl@minus=\dimen281
-\ttl@toksa=\toks38
-\titlewidth=\dimen282
-\titlewidthlast=\dimen283
-\titlewidthfirst=\dimen284
+\ttl@plus=\dimen285
+\ttl@minus=\dimen286
+\ttl@toksa=\toks40
+\titlewidth=\dimen287
+\titlewidthlast=\dimen288
+\titlewidthfirst=\dimen289
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 119.
+Package hyperref Info: Option `colorlinks' set `true' on input line 120.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -931,8 +954,8 @@ Package csquotes Info: Redefining alias 'default' -> 'russian'.
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdft
 ex.def
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count331
-\l__pdf_internal_box=\box107
+\l__color_backend_stack_int=\count334
+\l__pdf_internal_box=\box109
 ) (main.aux
 
 LaTeX Warning: Label `synt' multiply defined.
@@ -940,28 +963,28 @@ LaTeX Warning: Label `synt' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Info: Redefining \th on input line 121.
-Package hyperref Info: Link coloring ON on input line 121.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Info: Redefining \th on input line 122.
+Package hyperref Info: Link coloring ON on input line 122.
  (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -972,11 +995,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 estring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count332
+\c@section@level=\count335
 )
-LaTeX Info: Redefining \ref on input line 121.
-LaTeX Info: Redefining \pageref on input line 121.
-LaTeX Info: Redefining \nameref on input line 121.
+LaTeX Info: Redefining \ref on input line 122.
+LaTeX Info: Redefining \pageref on input line 122.
+LaTeX Info: Redefining \nameref on input line 122.
  (main.out) (main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
@@ -985,17 +1008,17 @@ LaTeX Info: Redefining \nameref on input line 121.
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
 i
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count333
-\scratchdimen=\dimen285
-\scratchbox=\box108
-\nofMPsegments=\count334
-\nofMParguments=\count335
-\everyMPshowfont=\toks39
-\MPscratchCnt=\count336
-\MPscratchDim=\dimen286
-\MPnumerator=\count337
-\makeMPintoPDFobject=\count338
-\everyMPtoPDFconversion=\toks40
+\scratchcounter=\count336
+\scratchdimen=\dimen290
+\scratchbox=\box110
+\nofMPsegments=\count337
+\nofMParguments=\count338
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count339
+\MPscratchDim=\dimen291
+\MPnumerator=\count340
+\makeMPintoPDFobject=\count341
+\everyMPtoPDFconversion=\toks42
 )
 (C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
 se.sty
@@ -1017,6 +1040,14 @@ Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 
+(C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+(C:\Users\Home\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
 (content/5ann.tex) [2
 
 {C:/Users/Home/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (main.toc<<t1.cm
@@ -1145,13 +1176,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: Text page 32 contains only floats.
 
 [32] [33] [34] [35] [36]) (content/4zak.tex) [37] (main.bbl)
-Underfull \hbox (badness 2005) in paragraph at lines 170--171
+Underfull \hbox (badness 2005) in paragraph at lines 172--173
 []\T2A/cmr/bx/n/12 Conway, D. An algorithmic approach to English pluralization 
 \T2A/cmr/m/n/12 //
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
 []\T2A/cmr/m/n/12 Морфологический ана-ли-за-тор pymorphy2 [Элек-трон-ный ре-сур
 с] ---
  []
@@ -1160,7 +1191,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--179
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.179 
+l.181 
       ] [39] (content/3pr1.tex [40] [41]) [42] (content/3pr2.tex [43] [44]
 [45]
 Underfull \hbox (badness 4967) in paragraph at lines 123--123
@@ -1190,10 +1221,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 10390BFE24B2CE008BF13C957D942210;3091.
  ) 
 Here is how much of TeX's memory you used:
- 17350 strings out of 479163
- 259946 string characters out of 2854475
- 672800 words of memory out of 3000000
- 34455 multiletter control sequences out of 15000+600000
+ 18016 strings out of 479163
+ 271142 string characters out of 2854475
+ 689395 words of memory out of 3000000
+ 35102 multiletter control sequences out of 15000+600000
  414137 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,11n,79p,1504b,685s stack positions out of 5000i,500n,10000p,200000b,80000s
