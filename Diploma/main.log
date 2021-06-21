@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  21 JUN 2021 13:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  21 JUN 2021 13:50
 entering extended mode
 **./main.tex
 (main.tex
@@ -1125,19 +1125,24 @@ LaTeX Warning: Text page 26 contains only floats.
 
 [26]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+LaTeX Warning: Text page 27 contains only floats.
 
-[27]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+[27] [28]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [28] (content/4zak.tex) [29] (main.bbl)
+[29]
+
+LaTeX Warning: Text page 30 contains only floats.
+
+[30]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [31] [32] (content/4zak.tex) [33] (main.bbl)
 Underfull \hbox (badness 2005) in paragraph at lines 164--165
 []\T2A/cmr/bx/n/12 Conway, D. An algorithmic approach to English pluralization 
 \T2A/cmr/m/n/12 //
@@ -1149,12 +1154,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--169
 с] ---
  []
 
-[30] (content/3pr1.tex) [31] (content/3pr2.tex [32] [33] [34]
+[34] (content/3pr1.tex) [35] (content/3pr2.tex [36] [37] [38]
 Underfull \hbox (badness 4967) in paragraph at lines 123--123
 []|\T2A/cmr/m/n/12 их об-ра-зы по-нра-ви-
  []
 
-[35]
+[39]
 Underfull \hbox (badness 5203) in paragraph at lines 151--151
 []|\T2A/cmr/m/n/12 он хо-тел быть
  []
@@ -1169,18 +1174,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 155--155
 []|\T2A/cmr/m/n/12 птицы хо-те-ли
  []
 
-) [36] [37] [38] [39] [40] [41] [42] (main.aux)
+) [40] (main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A1FB9A89C5CFD3E9A00F7F7A588675C8;3089.
  ) 
 Here is how much of TeX's memory you used:
- 17318 strings out of 479163
- 259729 string characters out of 2854475
- 716263 words of memory out of 3000000
- 34443 multiletter control sequences out of 15000+600000
+ 17312 strings out of 479163
+ 259616 string characters out of 2854475
+ 672263 words of memory out of 3000000
+ 34440 multiletter control sequences out of 15000+600000
  414137 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,11n,79p,1504b,685s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,11n,79p,1504b,691s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
 200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
 bi1200.pk> <C:\Users\Home\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600
@@ -1193,9 +1198,9 @@ e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Home/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Home/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Home/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (41 pages, 385570 bytes).
+Output written on main.pdf (39 pages, 383784 bytes).
 PDF statistics:
- 787 PDF objects out of 1000 (max. 8388607)
- 117 named destinations out of 1000 (max. 500000)
+ 773 PDF objects out of 1000 (max. 8388607)
+ 114 named destinations out of 1000 (max. 500000)
  134 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -938,10 +938,11 @@
 		\State sng1$\gets$ sng1 $+$ list(res$[i][1]$)
 		\State r $\gets$ r $+$ list(l$[$left $-6\, :\, $ left$-1 ]$)
 		\EndIf
-		\EndFor	
+			\EndFor	
 		\State sng1$\gets$ list(set(sng1))
 		\If{(len(sng1) $=1$ \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>> $\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>> $\in$ r)}
 		\State left $\gets$ left$-6$
+		\State end $\gets 1$
 		\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
@@ -950,8 +951,6 @@
 	\caption{-- Продолжение алгоритма \ref{alg20}}\label{alg21}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
-		
-		\State end $\gets 1$
 		\ElsIf{len(sng1)$>0$ \textbf{and} <<Y>> $\in$ sng1}
 		\State \Return $[$<<он>>, <<писали>> $]$
 		\EndIf
@@ -995,7 +994,6 @@
 		\EndIf
 		\EndIf
 		\If{left$-3\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}
-		\State sng1$\gets [\,]$
 		\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
@@ -1004,6 +1002,7 @@
 	\caption{-- Продолжение алгоритма \ref{alg21}}\label{alg22}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
+		\State sng1$\gets [\,]$
 		\State r $\gets [\, ]$
 		\State res1$\gets$ l$[$left$-3]$.$[$pos, singular, cow$]$
 		\State res1$\gets$ list(set(res1))
@@ -1086,41 +1085,39 @@
 	\State k$\gets 0$
 	\State uns$\gets (-1)$
 	\For{\textbf{from} $i= 0$ \textbf{to} len(res$_l$)$-1$}
-	\If{res$_l[i][0]=$ <<1>> \textbf{or} res$_l[i][0]=$ <<b>>}
-	\If{res$_l[i][1]=$ <<N>>}
-	\State uns$\gets 1$
-	\EndIf
-	\EndIf
-	\EndFor
-	\State res$_r \gets$ lst$[q+1]$.$[$pos, singular, cow$]$
-	\For{\textbf{from} $i=0$ \textbf{to} len(res$_r$)$-1$}
-	\If{res$_r[i][0]=$ <<5>>}
-	\State k$\gets$ k$+1$
-	\ElsIf{res$_r[i][0]=$ <<1>> \textbf{or} res$_r[i][0]=$ <<b>>}
-	\If{res$_r[i][1]=$ <<N>>}
-	\State uns $\gets 1$ 
-	\EndIf
-	\EndIf
-	\EndFor
-	\If{k $ > 1$}
-	\State pov$\gets 1$ 
-	\EndIf
-	\For{\textbf{from} i $=0$ \textbf{to} len(res$_l$)$-1$}
-	\For{\textbf{from} j $=0$ \textbf{to} len(res$_r$)$-1$}
-	\State res $\gets$ (ans).simple\_rules.(res$_l[i]$)(res$_r[j]$) \Comment{Записываем ответ для данного словосочетания из таблицы simple\_rules, в которой хранятся правила для словосочетаний длины $2$}
-	\If{len(res) $>0$}
-		\For{\textbf{from} $r=0$ \textbf{to} len(res)$-1$}
-	\State ans$\gets$ ans $+$ res$[r][0]$
 	\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
 
-Здесь, как в случае и с личными глаголами, дополнительный анализ текста производится для решения проблемы омографии.
-\pagebreak
-\begin{algorithm}
+\begin{algorithm}[!h]
 	\caption{-- Продолжение алгоритма \ref{alg24}}\label{alg25}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
+		\If{res$_l[i][0]=$ <<1>> \textbf{or} res$_l[i][0]=$ <<b>>}
+		\If{res$_l[i][1]=$ <<N>>}
+		\State uns$\gets 1$
+			\EndIf
+		\EndIf
+		\EndFor
+		\State res$_r \gets$ lst$[q+1]$.$[$pos, singular, cow$]$
+		\For{\textbf{from} $i=0$ \textbf{to} len(res$_r$)$-1$}
+		\If{res$_r[i][0]=$ <<5>>}
+		\State k$\gets$ k$+1$
+		\ElsIf{res$_r[i][0]=$ <<1>> \textbf{or} res$_r[i][0]=$ <<b>>}
+		\If{res$_r[i][1]=$ <<N>>}
+		\State uns $\gets 1$ 
+		\EndIf
+		\EndIf
+		\EndFor
+		\If{k $ > 1$}
+		\State pov$\gets 1$ 
+		\EndIf
+			\For{\textbf{from} i $=0$ \textbf{to} len(res$_l$)$-1$}
+		\For{\textbf{from} j $=0$ \textbf{to} len(res$_r$)$-1$}
+		\State res $\gets$ (ans).simple\_rules.(res$_l[i]$)(res$_r[j]$) \Comment{Записываем ответ для данного словосочетания из таблицы simple\_rules, в которой хранятся правила для словосочетаний длины $2$}
+		\If{len(res) $>0$}
+		\For{\textbf{from} $r=0$ \textbf{to} len(res)$-1$}
+		\State ans$\gets$ ans $+$ res$[r][0]$
 			\EndFor
 		\EndIf
 			\EndFor
@@ -1138,8 +1135,16 @@
 		\If{<<Y>> $\in$ ans1}
 		\State result $\gets$ result $+$ $[$<<Y>>$]$
 		\ElsIf{<<N>> $\in$ ans1}
-		\State result$\gets$ result $+$ $[$<<N>>$]$
-		\Else
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!h]
+	\caption{-- Продолжение алгоритма \ref{alg25}}\label{alg35}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
+			\State result$\gets$ result $+$ $[$<<N>>$]$
+				\Else
 		\State result $\gets$ result $+$ $[$<<E>>$]$\Comment{<<E>>~--- незнакомое сочетание}
 		\EndIf
 		\EndIf
@@ -1170,19 +1175,11 @@
 		\For{\textbf{from} $r=0$ to len(res)$-1$}
 		\State result$\gets$ result $+$ res$[r][0]$
 		\EndFor
-		\algstore{bkbreak}
-	\end{algorithmic}
-\end{algorithm}
-
-\begin{algorithm}
-	\caption{-- Продолжение алгоритма \ref{alg26}}\label{alg27}
-	\begin{algorithmic}[1]
-		\algrestore{bkbreak}
-				\EndIf
+			\EndIf
 		\EndFor
 		\EndFor
 		\EndFor
-				\State result $\gets$ list(set(result))
+		\State result $\gets$ list(set(result))
 		\If{len(result)$>0$}
 		\If{<<N>> $\in$ result}
 		\State \Return $[$<<N>>$]$\Comment{Если на каком-то этапе сработало правило ошибки, не проверяем дальше}
@@ -1191,19 +1188,18 @@
 		\EndFor
 		\State \Return result
 		\EndFunction
-		%\algstore{bkbreak}
+	%	\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
-
 Аналогично устроена проверка словосочетаний длины 4.
 
 \begin{algorithm}[!h]
-	\caption{-- Анализ словосочетаний длины 3}\label{alg28}
+	\caption{-- Анализ словосочетаний длины 4}\label{alg28}
 	\begin{algorithmic}[1]
 		%\algrestore{bkbreak}
 		\Function{four}{lst}
 		\State result $\gets [\, ]$ 
-		\For{\textbf{from} $i=0$ \textbf{to} len(lst)$-4$}
+			\For{\textbf{from} $i=0$ \textbf{to} len(lst)$-4$}
 		\State res1 $\gets$ lst$[i]$.$[$pos, singular, cow$]$
 		\State res2 $\gets$ lst$[i + 1]$.$[$pos, singular, cow$]$
 		\State res3 $\gets$ lst$[i + 2]$.$[$pos, singular, cow$]$
@@ -1217,7 +1213,7 @@
 		\For{\textbf{from} $r=0$ to len(res)$-1$}
 		\State result$\gets$ result $+$ res$[r][0]$
 		\EndFor
-			\EndIf
+		\EndIf
 		\EndFor
 		\EndFor
 		\EndFor
@@ -1226,14 +1222,6 @@
 		\If{len(result)}
 		\If{<<N>> $\in$ result}
 		\State \Return $[$<<N>>$]$\Comment{Если на каком-то этапе сработало правило ошибки, не проверяем дальше}
-		\algstore{bkbreak}
-	\end{algorithmic}
-\end{algorithm}
-
-\begin{algorithm}[!h]
-	\caption{-- Продолжение алгоритма \ref{alg28}}\label{alg29}
-	\begin{algorithmic}[1]
-		\algrestore{bkbreak}
 		\EndIf
 		\EndIf
 		\EndFor
