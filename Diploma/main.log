@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  21 JUN 2021 16:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  21 JUN 2021 16:01
 entering extended mode
 **./main.tex
 (main.tex
@@ -1142,7 +1142,7 @@ Underfull \hbox (badness 2005) in paragraph at lines 164--165
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
 []\T2A/cmr/m/n/12 Морфологический ана-ли-за-тор pymorphy2 [Элек-трон-ный ре-сур
 с] ---
  []
@@ -1215,7 +1215,7 @@ e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Home/AppData/Local/Programs/MiKTeX/f
 onts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Home/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Home/AppData/Local/Pro
 grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (42 pages, 401588 bytes).
+Output written on main.pdf (42 pages, 401582 bytes).
 PDF statistics:
  822 PDF objects out of 1000 (max. 8388607)
  126 named destinations out of 1000 (max. 500000)
