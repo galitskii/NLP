@@ -39,10 +39,10 @@
 		\State str2 $\gets $ <<>> \Comment{В этой переменной будет храниться преобразованная строка}
 		\State l $\gets$ len(str1)
 		\For{\textbf{from} $i=0$ \textbf{to} $l - 1$} 
-		\If{str1$[i] \in \{$<<.>>; <<,>> $\}$  }
+		\If{str1$[$i$]=$<<,>> \textbf{or} str1$[$i$]=$<<,>> }
 		\State str2 $\gets$ str2 $+$ << >>
 		\EndIf
-		\State str2 $\gets$ str2 $+$ str1$[i]$
+		\State str2 $\gets$ str2 $+$ str1$[$i$]$
 		\EndFor
 		\If{str2[len(str2) $- 1$] $=$ << >>}
 		\State str2 $\gets$ str2[ : len(str2) $- 1$] \Comment{Отбрасываем этот пробел}

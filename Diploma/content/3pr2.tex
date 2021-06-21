@@ -8,19 +8,19 @@
 \section{Система правил для анализа словосочетаний из двух слов}\label{app:B}
 
 Обозначения:\begin{itemize}
-	\item prt~--- часть речи: $1$~--- существительное, $5$~--- личный глагол, $6$~--- инфинитив, $b$~--- местоимение;
-	\item sing~--- число: <<N>>~--- множественное, <<Y>>~--- единственное, <<-->>~--- не определено (инфинитивы);
-	\item cow~--- падеж: $1$~--- именительный, $2$~--- родительный, $3$~--- дательный, $4$~--- винительный, $5$~--- творительный, $6$~--- предложный, <<-->>~--- не определено (личные глаголы и инфинитивы);
-	\item ans~--- ответ: <<Y>>~--- верно, <<N>>~--- неверно.
+	\item p~--- часть речи: $1$~--- существительное, $5$~--- личный глагол, $6$~--- инфинитив, $b$~--- местоимение;
+	\item s~--- число: <<N>>~--- множественное, <<Y>>~--- единственное, <<-->>~--- не определено (инфинитивы);
+	\item c~--- падеж: $1$~--- именительный, $2$~--- родительный, $3$~--- дательный, $4$~--- винительный, $5$~--- творительный, $6$~--- предложный, <<-->>~--- не определено (личные глаголы и инфинитивы);
+	\item A~--- ответ: <<Y>>~--- верно, <<N>>~--- неверно.
 \end{itemize}
 \_r и \_l~--- указатель правого и левого операнда соответственно.
-\begin{longtable}[c]{|c|c|c|c|c|c|c|c|p{90px}|}
+\begin{longtable}[c]{|c|c|c|c|c|c|c|c|p{110px}|}
 	%\begin{center}
 		\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
-	\caption{Система правил для словосочетаний из двух слов}\\
+	\caption{Система правил для словосочетаний из двух слов}\label{tab1}\\
 		%\begin{tabular}
 			\hline
-			\textbf{№}&\textbf{ prt\_l} &\textbf{sing\_l}  &\textbf{cow\_r} & \textbf{prt\_r }&\textbf{sing\_r }& \textbf{cow\_l} & \textbf{ans}  &\textbf{Пример} \\ \hline
+			\textbf{№}&\textbf{ p\_l} &\textbf{s\_l}  &\textbf{c\_r} & \textbf{p\_r }&\textbf{s\_r }& \textbf{c\_l} & \textbf{A}  &\textbf{Пример} \\ \hline
 			1 & b & N & 1 & 5 & N & --  & Y  & мы делали \\ \hline
 			2 &  1 &Y & 1 & 5 & N & -- & N & собака лаяли\\ \hline
 			3 & 1 & Y & 1 & 5 & Y & -- & Y & самолёт летит\\ \hline 
@@ -99,7 +99,19 @@
 			76&1&Y&4&1&Y&2&Y&икру нерки\\ \hline
 			77&5&Y&--&b&N&4&Y&звал их\\ \hline
 			78&1&N&2&1&N&2&Y&знаний требований\\ \hline
+			79&1&N&2&1&Y&2&Y&требований охраны \\ \hline
+			80&5&N&--&1&N&5&Y&будьте людьми\\ \hline
 	%	\end{tabular}
 %	\end{center}
+\end{longtable}
+Для таблицы \ref{tab2} номера 1, 2 и 3 соответствуют первому, второму и третьему слову соответственно при их чтении слева направо.
+\begin{longtable}[c]{|c|c|c|c|c|c|c|c|c|c|c|p{120px}|}
+	%\begin{center}
+	\captionsetup{format=hang,labelsep = endash, singlelinecheck=false}
+\caption{Система правил для словосочетаний из трёх слов}\label{tab2}\\
+	%\begin{tabular}
+	\hline
+	\textbf{№}&\textbf{p1} &\textbf{s1}&\textbf{c1}&\textbf{p2}&\textbf{s2}&\textbf{с2}&\textbf{p3}&\textbf{s3}&\textbf{cow3}&\textbf{A}&\textbf{Пример} \\ \hline
+	1 &b  &Y  &1  &1  &Y  &4  &5  &N &--&N&он руку моют \\ \hline
 \end{longtable}
 \end{document}
