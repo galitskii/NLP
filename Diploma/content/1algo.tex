@@ -551,12 +551,20 @@
 		\EndIf
 		\EndFor
 		\State sng0 $\gets$ list(set(sng0))
-		\If{len(sng0)$ > 1$}
+		\If{len(sng0)$ > 1$}	
 		\State pov $\gets 1$
 		\State sng $\gets $<<Y>> \Comment{Считаем единственным число перечисляемых личных глаголов} 
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+	\caption{-- Продолжение алгоритма \ref{alg12}}\label{alg34}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
 		\EndIf
-		\If{id1$-7\ge 0$ \textbf{and} left$=(-1)$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 7:\,$ id1$]$}
-		\State sng1 $\gets [\, ]$ \Comment{Для записи возможных значений числа}
+		\If{id1$-7\ge 0$ \textbf{and} left$=(-1)$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 7:\,$ id1$]$}	
+			\State sng1 $\gets [\, ]$ \Comment{Для записи возможных значений числа}
 		\State r $\gets [\, ]$ \Comment{Для записи результата проверки по системе правил}
 		\For{\textbf{from} $i=0$ \textbf{to} len(resl7)$ - 1$}
 		\If{resl7$[i][0]=$part}
@@ -576,7 +584,7 @@
 	\end{algorithmic}
 \end{algorithm}
 
-Здесь следует рассмотреть решение проблемы омографии. Оно представлено в строках \algref{alg12}{st1}~--~\algref{alg12}{st2}. Для начала проверяем, является ли первое слово рассматриваемого предложения личным глаголом, число которого определено неоднозначно. Это имеет значение, поскольку в рамках поставленных ограничений если в предложении есть личные глаголы в повелительном наклонении, то с одного из них оно начинается. Например: \textit{<<Учите математику, высыпайтесь и будьте людьми>>}.
+Здесь следует рассмотреть решение проблемы омографии. Оно представлено в строках \algref{alg12}{st1}~--~\algref{alg34}{st2}. Для начала проверяем, является ли первое слово рассматриваемого предложения личным глаголом, число которого определено неоднозначно. Это имеет значение, поскольку в рамках поставленных ограничений если в предложении есть личные глаголы в повелительном наклонении, то с одного из них оно начинается. Например: \textit{<<Учите математику, высыпайтесь и будьте людьми>>}.
 
 Далее проверяем, что рассматриваемое словосочетание нужной длины и не содержит запятых. Если вдруг первое слово данного словосочетания оказалось личным глаголом, то мы запоминаем какого оно числа может быть; а также проверяем данное словосочетание на наличие или отсутствие ошибок в согласовании единственного и множественного числа.
 
@@ -588,8 +596,8 @@
 
 Это мы и проверяем. В остальных случаях возвращаем заведомо неверное предложение. Совершенно аналогично рассматриваются словосочетания меньшей длины:
 
-\begin{algorithm}
-	\caption{-- Продолжение алгоритма \ref{alg12}}\label{alg13}
+\begin{algorithm}[!h]
+	\caption{-- Продолжение алгоритма \ref{alg34}}\label{alg13}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
 		\If{id1$-6\ge 0$ \textbf{and} left$=(-1)$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 6:\,$ id1$]$}
@@ -602,14 +610,6 @@
 		\EndIf
 		\EndFor
 		\If{len(sng1)$ > 0$} 
-		\algstore{bkbreak}
-	\end{algorithmic}
-\end{algorithm}
-
-\begin{algorithm}
-	\caption{-- Продолжение алгоритма \ref{alg13}}\label{alg14}
-	\begin{algorithmic}[1]
-		\algrestore{bkbreak}
 		\If{(len(sng1)$=1$ \textbf{and} sng $\in$ sng1 \textbf{and} <<Y>>$\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov$=1$) \textbf{and} <<Y>> $\in$ r)}я
 		\State left$\gets$ id1$-6$
 		\Else
@@ -633,6 +633,14 @@
 		\State \Return $[$<<он>>, <<писали>> $]$
 		\EndIf
 		\EndIf
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!h]
+	\caption{-- Продолжение алгоритма \ref{alg13}}\label{alg14}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
 		\EndIf
 		\If{id1$-4\ge 0$ \textbf{and} left$=(-1)$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 4:\,$ id1$]$}
 		\State sng1 $\gets [\, ]$ 
@@ -655,15 +663,6 @@
 		\State sng1 $\gets [\, ]$ 
 		\State r $\gets [\, ]$
 		\For{\textbf{from} $i=0$ \textbf{to} len(resl3)$ - 1$}
-		\algstore{bkbreak}
-	\end{algorithmic}
-\end{algorithm}
-%\pagebreak
-\begin{algorithm}
-	\caption{-- Продолжение алгоритма \ref{alg14}}\label{alg15}
-	\begin{algorithmic}[1]
-		\algrestore{bkbreak}
-		
 		\If{resl3$[i][0]=$part}
 		\State sng1$\gets$ sng1 $+$ list(resl3$[i][1]$)
 		\State r$\gets$ r $+$ list(check(l$[$id1$-3\, :\, $ id1 $]$))
@@ -686,6 +685,14 @@
 		\State r$\gets$ r $+$ list(check(l$[$id1$-2\, :\, $ id1 $]$))
 		\EndIf
 		\EndFor
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+%\pagebreak
+\begin{algorithm}[!h]
+	\caption{-- Продолжение алгоритма \ref{alg14}}\label{alg15}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
 		\If{len(sng1)$ > 0$}
 		\If{(len(sng1)$=1$ \textbf{and} sng $\in$ sng1 \textbf{and} <<Y>>$\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov$=1$) \textbf{and} <<Y>> $\in$ r)}
 		\State left$\gets$ id1$-2$
@@ -716,7 +723,7 @@
 Итак, по завершении работы алгоритма \ref{alg15} будут определены границы левого и правого операндов союза.
 
 Затем, как и в случае с инфинитивами, осуществляется поиск участков между двумя запятыми (при их наличии), а затем~--- поиск начала перечисления.
-\begin{algorithm}
+\begin{algorithm}[!h]
 	\caption{-- Продолжение алгоритма \ref{alg15}}\label{alg16}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
@@ -731,9 +738,17 @@
 		\EndFor
 		\State sng1$\gets$ list(set(sng1))
 		\If{(len(sng1 $=1$) \textbf{and} sng$\in$ sng1) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$))}
-		\State left $\gets$ left$-2$
-		\Else
-		\State \Return $[$<<он>>, <<писали>> $]$
+			\State left $\gets$ left$-2$
+			\Else
+			\State \Return $[$<<он>>, <<писали>> $]$
+	\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!h]
+	\caption{-- Продолжение алгоритма \ref{alg16}}\label{alg17}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
 		\EndIf
 		\ElsIf{left$-4\ge 0$ \textbf{and} l$[$left$-4]=$ <<,>> \textbf{and} l$[$left$-1]=$ <<,>>}
 		\State sng1$\gets [\, ]$
@@ -754,14 +769,6 @@
 		\ElsIf{left$-5\ge 0$ \textbf{and} l$[$left$-5]=$ <<,>> \textbf{and} l$[$left$-1]=$ <<,>>}
 		\State sng1$\gets [\, ]$
 		\State r$\gets [\, ]$
-	\algstore{bkbreak}
-	\end{algorithmic}
-\end{algorithm}
-
-\begin{algorithm}
-	\caption{-- Продолжение алгоритма \ref{alg16}}\label{alg17}
-	\begin{algorithmic}[1]
-		\algrestore{bkbreak}
 				\State res1$\gets$ l$[$left$-4]$.$[$pos, singular, cow$]$
 		\For{\textbf{from }$i=0$\textbf{ to} len(res1)$ - 1$}
 		\If{res1$[i][0]=$part}
@@ -786,12 +793,20 @@
 		\EndIf
 		\EndFor
 		\State sng1$\gets$ list(set(sng1))
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!h]
+	\caption{-- Продолжение алгоритма \ref{alg17}}\label{alg18}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
 		\If{(len(sng1 $=1$) \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>>$\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>>$\in$ r)}
 		\State left $\gets$ left$-5$
 		\Else
 		\State \Return $[$<<он>>, <<писали>> $]$
 		\EndIf
-			\ElsIf{left$-7\ge 0$ \textbf{and} l$[$left$-7]=$ <<,>> \textbf{and} l$[$left$-1]=$ <<,>>}
+		\ElsIf{left$-7\ge 0$ \textbf{and} l$[$left$-7]=$ <<,>> \textbf{and} l$[$left$-1]=$ <<,>>}
 		\State sng1$\gets [\, ]$
 		\State r$\gets [\, ]$
 		\State res1$\gets$ l$[$left$-6]$.$[$pos, singular, cow$]$
@@ -805,16 +820,8 @@
 		\If{(len(sng1 $=1$) \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>>$\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>>$\in$ r)}
 		\State left $\gets$ left$-6$
 		\Else
-				\State \Return $[$<<он>>, <<писали>> $]$
+		\State \Return $[$<<он>>, <<писали>> $]$
 		\EndIf
-		\algstore{bkbreak}
-	\end{algorithmic}
-\end{algorithm}
-
-\begin{algorithm}
-	\caption{-- Продолжение алгоритма \ref{alg17}}\label{alg18}
-	\begin{algorithmic}[1]
-		\algrestore{bkbreak}
 					\ElsIf{left$-8\ge 0$ \textbf{and} l$[$left$-8]=$ <<,>> \textbf{and} l$[$left$-1]=$ <<,>>}
 		\State sng1$\gets [\, ]$
 		\State r$\gets [\, ]$
@@ -829,15 +836,23 @@
 		\If{(len(sng1 $=1$) \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>>$\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>>$\in$ r)}
 		\State left $\gets$ left$-7$
 		\Else
-		\State \Return $[$<<он>>, <<писали>> $]$
+			\State \Return $[$<<он>>, <<писали>> $]$
 		\EndIf
-			\ElsIf{left$-9\ge 0$ \textbf{and} l$[$left$-9]=$ <<,>> \textbf{and} l$[$left$-1]=$ <<,>>}
+		\ElsIf{left$-9\ge 0$ \textbf{and} l$[$left$-9]=$ <<,>> \textbf{and} l$[$left$-1]=$ <<,>>}
 		\State sng1$\gets [\, ]$
 		\State r$\gets [\, ]$
 		\State res1$\gets$ l$[$left$-8]$.$[$pos, singular, cow$]$
 		\For{\textbf{from }$i=0$ \textbf{to} len(res1)$ - 1$}
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!h]
+	\caption{-- Продолжение алгоритма \ref{alg18}}\label{alg19}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
 		\If{res1$[i][0]=$ part}
-		\State sng1$\gets$ sng1 $+$ list(res$[i][1]$)
+			\State sng1$\gets$ sng1 $+$ list(res$[i][1]$)
 		\State r$\gets$ r $+$ check(l$[$left $-8\, :\, $ left$-1 ]$)
 		\EndIf
 		\EndFor
@@ -860,14 +875,6 @@
 		\EndIf
 		\EndFor	
 		\State sng1$\gets$ list(set(sng1))
-		\algstore{bkbreak}
-	\end{algorithmic}
-\end{algorithm}
-
-\begin{algorithm}
-	\caption{-- Продолжение алгоритма \ref{alg18}}\label{alg19}
-	\begin{algorithmic}[1]
-		\algrestore{bkbreak}
 		\If{(len(sng1) $=1$ \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>> $\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>> $\in$ r)}
 				\State left $\gets$ left$-9$
 		\State end $\gets 1$
@@ -886,41 +893,41 @@
 			\State r $\gets$ r $+$ list(l$[$left $-8\, :\, $ left$-1 ]$)
 			\EndIf
 			\EndFor	
-			\State sng1$\gets$ list(set(sng1))
-			\If{(len(sng1) $=1$ \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>> $\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>> $\in$ r)}
-			\State left $\gets$ left$-8$
-			\State end $\gets 1$
-			\ElsIf{len(sng1)$>0$ \textbf{and} <<Y>> $\in$ sng1}
-			\State \Return $[$<<он>>, <<писали>> $]$
-			\EndIf
-			\EndIf
-			\If{left$-7\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}
-			\State sng1$\gets [\,]$
-			\State r $\gets [\, ]$
-			\State res1$\gets$ l$[$left$-7]$.$[$pos, singular, cow$]$
-			\State res1$\gets$ list(set(res1))
-			\For{\textbf{from} $i=0$ \textbf{to} len(res1)$-1$}
-			\If{res1$[i][0]=$ part}
-			\State sng1$\gets$ sng1 $+$ list(res$[i][1]$)
-			\State r $\gets$ r $+$ list(l$[$left $-7\, :\, $ left$-1 ]$)
-			\EndIf
-			\EndFor	
-			\State sng1$\gets$ list(set(sng1))
-			\If{(len(sng1) $=1$ \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>> $\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>> $\in$ r)}
-			\State left $\gets$ left$-7$
-			\State end $\gets 1$
-			\ElsIf{len(sng1)$>0$ \textbf{and} <<Y>> $\in$ sng1}
-			\State \Return $[$<<он>>, <<писали>> $]$
-\EndIf
-\EndIf
 		\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
 
-\begin{algorithm}
+\begin{algorithm}[!h]
 	\caption{-- Продолжение алгоритма \ref{alg19}}\label{alg20}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
+		\State sng1$\gets$ list(set(sng1))
+		\If{(len(sng1) $=1$ \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>> $\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>> $\in$ r)}
+		\State left $\gets$ left$-8$
+		\State end $\gets 1$
+		\ElsIf{len(sng1)$>0$ \textbf{and} <<Y>> $\in$ sng1}
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\EndIf
+		\EndIf	
+		\If{left$-7\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}
+		\State sng1$\gets [\,]$
+		\State r $\gets [\, ]$
+		\State res1$\gets$ l$[$left$-7]$.$[$pos, singular, cow$]$
+		\State res1$\gets$ list(set(res1))
+		\For{\textbf{from} $i=0$ \textbf{to} len(res1)$-1$}
+		\If{res1$[i][0]=$ part}
+		\State sng1$\gets$ sng1 $+$ list(res$[i][1]$)
+				\State r $\gets$ r $+$ list(l$[$left $-7\, :\, $ left$-1 ]$)
+		\EndIf
+		\EndFor	
+		\State sng1$\gets$ list(set(sng1))
+		\If{(len(sng1) $=1$ \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>> $\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>> $\in$ r)}
+		\State left $\gets$ left$-7$
+		\State end $\gets 1$
+		\ElsIf{len(sng1)$>0$ \textbf{and} <<Y>> $\in$ sng1}
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\EndIf
+		\EndIf
 		\If{left$-6\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}
 		\State sng1$\gets [\,]$
 		\State r $\gets [\, ]$
@@ -935,12 +942,21 @@
 		\State sng1$\gets$ list(set(sng1))
 		\If{(len(sng1) $=1$ \textbf{and} sng$\in$ sng1 \textbf{and} <<Y>> $\in$ r) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$) \textbf{and} <<Y>> $\in$ r)}
 		\State left $\gets$ left$-6$
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!h]
+	\caption{-- Продолжение алгоритма \ref{alg20}}\label{alg21}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
+		
 		\State end $\gets 1$
 		\ElsIf{len(sng1)$>0$ \textbf{and} <<Y>> $\in$ sng1}
 		\State \Return $[$<<он>>, <<писали>> $]$
 		\EndIf
 		\EndIf
-		\If{left$-5\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}
+				\If{left$-5\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}
 		\State sng1$\gets [\,]$
 		\State r $\gets [\, ]$
 		\State res1$\gets$ l$[$left$-5]$.$[$pos, singular, cow$]$
@@ -964,14 +980,6 @@
 		\State r $\gets [\, ]$
 		\State res1$\gets$ l$[$left$-4]$.$[$pos, singular, cow$]$
 		\State res1$\gets$ list(set(res1))
-		\algstore{bkbreak}
-	\end{algorithmic}
-\end{algorithm}
-
-\begin{algorithm}
-	\caption{-- Продолжение алгоритма \ref{alg20}}\label{alg21}
-	\begin{algorithmic}[1]
-		\algrestore{bkbreak}
 		\For{\textbf{from} $i=0$ \textbf{to} len(res1)$-1$}
 		\If{res1$[i][0]=$ part}
 		\State sng1$\gets$ sng1 $+$ list(res$[i][1]$)
@@ -988,6 +996,14 @@
 		\EndIf
 		\If{left$-3\ge 0$ \textbf{and} l$[$left$-1]=$ <<,>> \textbf{and} end $=(-1)$}
 		\State sng1$\gets [\,]$
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!h]
+	\caption{-- Продолжение алгоритма \ref{alg21}}\label{alg22}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
 		\State r $\gets [\, ]$
 		\State res1$\gets$ l$[$left$-3]$.$[$pos, singular, cow$]$
 		\State res1$\gets$ list(set(res1))
@@ -1016,14 +1032,6 @@
 		\EndFor	
 		\State sng1$\gets$ list(set(sng1))
 		\If{(len(sng1) $=1$ \textbf{and} sng$\in$ sng1) \textbf{or} (len(sng1)$>1$ \textbf{and} (sng$=$<<N>> \textbf{or} pov~$=~1$))}
-		\algstore{bkbreak}
-	\end{algorithmic}
-\end{algorithm}
-\pagebreak
-\begin{algorithm}
-	\caption{-- Продолжение алгоритма \ref{alg21}}\label{alg22}
-	\begin{algorithmic}[1]
-		\algrestore{bkbreak}
 				\State left $\gets$ left$-2$
 		\State end $\gets 1$
 		\ElsIf{len(sng1)$>0$ \textbf{and} <<Y>> $\in$ sng1}
