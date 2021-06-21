@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  21 JUN 2021 13:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.28)  21 JUN 2021 14:04
 entering extended mode
 **./main.tex
 (main.tex
@@ -1179,10 +1179,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A1FB9A89C5CFD3E9A00F7F7A588675C8;3089.
  ) 
 Here is how much of TeX's memory you used:
- 17312 strings out of 479163
- 259616 string characters out of 2854475
- 672263 words of memory out of 3000000
- 34440 multiletter control sequences out of 15000+600000
+ 17311 strings out of 479163
+ 259609 string characters out of 2854475
+ 672181 words of memory out of 3000000
+ 34439 multiletter control sequences out of 15000+600000
  414137 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,11n,79p,1504b,691s stack positions out of 5000i,500n,10000p,200000b,80000s
