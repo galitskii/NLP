@@ -20,7 +20,7 @@
 	\end{minipage}
 \end{figure}
 
-В рамках предложенного нами подхода мы описываем слово при помощи трёх параметров: часть речи, число и падеж. Нами было выявлено около сотни правил для словосочетаний длины $2$, $3$ или $4$, по которым можно определить, нет ли ошибки в согласовании единственного и множественного числа? Полученные результаты представлены в приложении \ref{app:B}.
+В рамках предложенного нами подхода мы описываем слово при помощи трёх параметров: часть речи, число и падеж. Нами было выявлено более сотни правил для словосочетаний длины $2$, $3$ или $4$, по которым можно определить наличие или отсутствие ошибки в согласовании единственного и множественного числа. Полученные результаты представлены в приложении \ref{app:B}.
 
 В основе предложенного нами подхода лежит гипотеза, согласно которой одно и то же предложение являться и не являться ошибочным одновременно с точки зрения согласования единственного и множественного числа не может. 
 
@@ -31,7 +31,7 @@
 
 Полученное предложение передаётся функции space(), которая преобразует считанную строку в список. Механизм её работы описывает алгоритм \ref{alg1}.
 
-\begin{algorithm}
+\begin{algorithm}[!h]
 	\caption{-- Предварительная обработка входных данных}\label{alg1}
 	\begin{algorithmic}[1]
 		\Function{space}{str1}
@@ -52,7 +52,7 @@
 	\end{algorithmic}
 \end{algorithm}
 
-Таким образом, функция space() возвращает список, состоящий из слов и знаков препинания исходной строки.
+Таким образом, функция space() возвращает список, состоящий из слов и знаков препинания исходной строки. Так, приняв на вход строку \textit{<<Он ел, пил и спал>>}, функция вернёт список [\textit{<<он>>}, \textit{<<ел>>}, \textit{<<,>>}, \textit{<<пил>>}, \textit{<<и>>}, \textit{<<спал>>}].
 
 \subsection{Обработка предложения}
 
@@ -64,6 +64,8 @@
 
 Затем проверяем предложение без перечислений при помощи разработанной нами системы правил. 
 
+Так, получив на вход список [\textit{<<он>>}, \textit{<<ел>>}, \textit{<<,>>}, \textit{<<пил>>}, \textit{<<и>>}, \textit{<<спал>>}], программа преобразует его в [\textit{<<он>>}, \textit{<<учил>>}] (заменив перечисление личных глаголов в единственном числе \textit{<<ел>>}, \textit{<<,>>}, \textit{<<пил>>}, \textit{<<и>>}, \textit{<<спал>>} на личный глагол в единственном числе \textit{<<учил>>}). После этого будет принято решение о том, что \textit{ошибок в согласовании единственного и множественного числа не обнаружено} (в соответствии с правилом~4 таблицы \ref{tab1} приложения \ref{app:B}).
+
 Согласно теореме Гёделя о неполноте, формальная арифметика либо противоречива, либо неполна \cite{forms}. Чтобы избежать противоречивости разработанной системы, мы включили лишь те правила, которые встречаются на практике, а не перебрали все возможные комбинации используемых нами параметров.
 
 \subsubsection{Упрощение предложения}
@@ -71,7 +73,7 @@
 
 За упрощение предложения отвечает функция comma(), которая принимает на вход список, полученный из исходного предложения при помощи функции space(), описанной выше; а возвращает список, в виде которого представлено упрощённое предложение. Функция comma() вызывается только в том случае, если в предложении есть <<и>> или <<или>>. Механизм её работы описывает алгоритм \ref{alg2}.
 
-\begin{algorithm}
+\begin{algorithm}[!h]
 	\caption{-- Обработка перечислений}\label{alg2}
 	\begin{algorithmic}[1]
 		\Function{comma}{l} \Comment{l~--- подготовленная строка в виде списка}
@@ -79,6 +81,14 @@
 		\State end$\gets (-1)$ \Comment{Индикатор нахождения начала перечисления}
 		\State left $\gets (-1)$ \Comment{Левая и правая границы заменяемого участка изначально}
 		\State right $\gets (-1)$\Comment{инициализируем невозможными значениями: $(-1)$}
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!h]
+	\caption{-- Продолжение алгоритма \ref{alg2}}\label{alg30}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
 		\State llen $\gets $len(l) \Comment{Длина исходного списка}
 		\If{<<и>> $\in$ l}
 		\State w$\gets$ <<и>>\Comment{w хранит союз, использующийся в перечислении}
@@ -91,8 +101,8 @@
 \end{algorithm}
 В рамках установленных нами ограничений <<и>> или <<или>> могут быть использованы только для перечислений личных глаголов или инфинитивов.
 
-\begin{algorithm}
-	\caption{-- Продолжение алгоритма \ref{alg2}}\label{alg3}
+\begin{algorithm}[!h]
+	\caption{-- Продолжение алгоритма \ref{alg30}}\label{alg31}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
 				\If{llen $>$ id1 $+ 1$}
@@ -129,21 +139,29 @@
 		\State resl7 $\gets$ l[id1 $-7$].[pos, singular, cow]
 		\EndIf
 		\If{id1 $+1 <$ llen}
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!h]
+	\caption{-- Продолжение алгоритма \ref{alg31}}\label{alg3}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
 		\For{\textbf{from} $i=0$ \textbf{to} len(resp1)$- 1$}
 		\If{resp1$[i][0]=$<<6>>} \Comment{Слово оказалось инфинитивом}
 		\State part$\gets$ <<6>> \textbf{and} right $\gets$ id1 $+1$
-				\EndIf
-					\EndFor
-					\If{right$=(-1)$}\Comment{Если же это не инфинитив}
-					\For{\textbf{from} $i=0$ \textbf{to} len(resp1)$-1$}
-					\If{resp1$[i][0]=$<<5>>}\Comment{Слово оказалось личным глаголом}
-					\State right $\gets$id1$ + 1$ \textbf{and}  part $\gets$ <<5>>
-					\State sng $\gets $l$[i][1]$ \Comment{Для личных глаголов важно число}
-					\State \textbf{break}
-							\EndIf
-							\EndFor
-									\EndIf
-											\EndIf
+		\EndIf
+		\EndFor
+		\If{right$=(-1)$}\Comment{Если же это не инфинитив}
+		\For{\textbf{from} $i=0$ \textbf{to} len(resp1)$-1$}
+		\If{resp1$[i][0]=$<<5>>}\Comment{Слово оказалось личным глаголом}
+		\State right $\gets$id1$ + 1$ \textbf{and}  part $\gets$ <<5>>
+		\State sng $\gets $l$[i][1]$ \Comment{Для личных глаголов важно число}
+		\State \textbf{break}
+		\EndIf
+		\EndFor
+		\EndIf
+		\EndIf
 		\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
@@ -164,7 +182,7 @@
 	\item Одиночный инфинитив. Например: \textit{<<Быть>>}.
 \end{enumerate}
 Итак, первым делом инициализируем левую границу заменяемого <<куска>> списка.
-\begin{algorithm}
+\begin{algorithm}[!h]
 	\caption{-- Продолжение алгоритма \ref{alg3}}\label{alg4}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
@@ -176,15 +194,7 @@
 		\If{<<N>>$\in $ r}
 		\State \Return $[$<<он>>, <<писали>> $]$ \Comment{Заведомо неверное предложение}
 		\ElsIf{<<Y>>$\in $ r}
-		\algstore{bkbreak}
-	\end{algorithmic}
-\end{algorithm}
-
-\begin{algorithm}
-	\caption{-- Продолжение алгоритма \ref{alg4}}\label{alg5}
-	\begin{algorithmic}[1]
-		\algrestore{bkbreak}
-		\State left $\gets$ id1$-6$ \Comment{Инициализировали границу левого операнда <<и>>}
+		\State left $\gets$ id1$-6$ \Comment{Инициализировали границу левого операнда союза}
 		\State \textbf{break}
 		\EndIf
 		\EndIf
@@ -215,6 +225,14 @@
 		\EndIf
 		\EndIf
 		\EndFor
+		\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!h]
+	\caption{-- Продолжение алгоритма \ref{alg4}}\label{alg5}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
 		\EndIf
 		\If{id1$-3\ge 0$ \textbf{and} left$=-1$ \textbf{and} <<,>>$\notin$ l$[$id1$ - 3:\,$ id1$]$}
 		\For{\textbf{from} $i = 0$ \textbf{to} len(resl3)$-1$}
@@ -233,7 +251,7 @@
 	\end{algorithmic}
 \end{algorithm}
 Таким образом, в результате выполнения данного фрагмента кода будет определены границы левого и правого операндов союза.
-\begin{algorithm}
+\begin{algorithm}[!h]
 	\caption{-- Продолжение алгоритма \ref{alg5}}\label{alg6}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}	
@@ -283,7 +301,7 @@
 
 Также важен порядок рассмотрения случаев: в первую очередь следует искать самые <<короткие>> словосочетания между запятыми (иначе можем <<захватить>> подстроку с запятыми). Этот и последующие этапы описаны в алгоритме \ref{alg7}.
 
-\begin{algorithm}
+\begin{algorithm}[!h]
 	\caption{-- Фрагмент алгоритма \ref{alg6}}\label{alg7}
 	\begin{algorithmic}[1]
 	\While{<<,>>$\in$ l$[1:$ left $]$}\Comment{Пока есть запятые}
@@ -301,31 +319,32 @@
 	\If{res1$[i][0]=$part}
 	\State r $\gets$ check(l$[$left$-3:$ left$-1 ]$)
 	\If{<<N>> $\in$ r}
-	\State \Return $[$<<он>>, <<писали>> $]$
-	\ElsIf{<<Y>> $\in$ r}
-	\State left$\gets$ left$-3$
-	\State \textbf{break}
-	\EndIf
-	\EndIf
-	\EndFor
-	\ElsIf{l$[$left $-1]=$ <<,>> \textbf{and} l$[$left $-5]=$ <<,>>}
-	\State  res1$\gets$ l$[$left$-4]$.[pos, singular, cow]
-	\For{\textbf{from} $i = 0$ \textbf{to} len(res1)}
-	\If{res1$[i][0]=$part}
-	\State r $\gets$ check(l$[$left$-4:$ left$-1 ]$)
-	\If{<<N>> $\in$ r}
-	\State \Return $[$<<он>>, <<писали>> $]$
-	\ElsIf{<<Y>> $\in$ r}
-	\State left$\gets$ left$-4$
-	\State \textbf{break}
+		\State \Return $[$<<он>>, <<писали>> $]$
 	\algstore{bkbreak}
 	\end{algorithmic}
 	\end{algorithm}
 
-\begin{algorithm}
+\begin{algorithm}[!h]
 	\caption{-- Продолжение алгоритма \ref{alg7}}\label{alg8}
 	\begin{algorithmic}[1]
 		\algrestore{bkbreak}
+		\ElsIf{<<Y>> $\in$ r}
+		\State left$\gets$ left$-3$
+		\State \textbf{break}
+		\EndIf
+		\EndIf
+		\EndFor
+		\ElsIf{l$[$left $-1]=$ <<,>> \textbf{and} l$[$left $-5]=$ <<,>>}
+		\State  res1$\gets$ l$[$left$-4]$.[pos, singular, cow]
+		\For{\textbf{from} $i = 0$ \textbf{to} len(res1)}
+		\If{res1$[i][0]=$part}
+		\State r $\gets$ check(l$[$left$-4:$ left$-1 ]$)
+		\If{<<N>> $\in$ r}
+		\State \Return $[$<<он>>, <<писали>> $]$
+		\ElsIf{<<Y>> $\in$ r}
+		\State left$\gets$ left$-4$
+		\State \textbf{break}
+		
 			\EndIf
 		\EndIf
 			\EndFor
@@ -355,7 +374,15 @@
 		\EndIf
 		\EndIf
 		\EndFor
-		\ElsIf{l$[$left $-1]=$ <<,>> \textbf{and} l$[$left $-8]=$ <<,>>}
+\ElsIf{l$[$left $-1]=$ <<,>> \textbf{and} l$[$left $-8]=$ <<,>>}
+\algstore{bkbreak}
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[!h]
+	\caption{-- Продолжение алгоритма \ref{alg7}}\label{alg8}
+	\begin{algorithmic}[1]
+		\algrestore{bkbreak}
 		\State  res1$\gets$ l$[$left$-7]$.[pos, singular, cow]
 		\For{\textbf{from} $i = 0$ \textbf{to} len(res1)}
 		\If{res1$[i][0]=$part}
@@ -370,11 +397,10 @@
 		\EndFor
 		\Else \State Алгоритм \ref{alg9}
 		\EndIf
-			\EndWhile
+		\EndWhile
 		%\algstore{bkbreak}
 	\end{algorithmic}
 \end{algorithm}
-\newpage
 
 Итак, в результате работы фрагментов \ref{alg7} и \ref{alg8} будет сдвинута граница до <<первой>> запятой.
 
